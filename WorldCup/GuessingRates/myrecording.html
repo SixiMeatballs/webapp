@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="full-screen" content="yes">
+		<title>我的记录</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/select_game.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myrecording.css"/>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/select_game.js"></script>
+	</head>
+	<body>
+		<div class="root_container">
+			<div class="header">
+				<img onclick="javascript:window.history.back(-1);" src="img/global/back_icon.png"/>
+				<span>我的记录</span>
+				<a href="help.html">
+		        	<img src="img/global/help.png"/>
+		        </a>
+			</div>
+			<div class="roundlist"  id="roundlist" onscroll="roundListBar.onScroll()">
+				<ul id="scrollUl">
+					<li name="roundListItem">
+						<div class="name">A</div>
+						<div class="status">1</div>
+					</li>
+					<li name="roundListItem" class="activated">
+						<div class="name">B</div>
+						<div class="status">2</div>
+					</li>
+					<li name="roundListItem">
+						<div class="name">C</div>
+						<div class="status">3</div>
+					</li>
+					<li name="roundListItem">
+						<div class="name">D</div>
+						<div class="status">4</div>
+					</li>
+					<li name="roundListItem">
+						<div class="name">E</div>
+						<div class="status">5</div>
+					</li>
+					<li name="roundListItem">
+						<div class="name">F</div>
+						<div class="status">3</div>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="center">
+				<div class="con_tittles">
+					<div class="integral">本轮积分  80</div>
+					<div class="winrate">本轮胜率 80%</div>
+					<div class="ranking">本轮排名 10</div>
+				</div>
+				<div class="match_list">
+					<ul>
+						<li>
+							<div class="match_time">
+								<div>比赛时间</div>
+								<div>06/23</div>
+								<div>13:20</div>
+								<div>（已完赛）</div>
+							</div>
+							<div class="match_data">
+								<div class="host team">
+									<div class="hostimg  flag">
+										<img src="img/global/host.png"/>
+									</div>
+									<div class="hostscore  score activated">
+										<span>俄罗斯</span>
+										<span>胜 +5</span>
+										<img src="img/global/v.png"/>
+										<!--<img src="img/global/x.png"/>-->
+									</div>
+								</div>
+								<div class="vs">
+									<div>VS</div>
+									<div class="score">
+										<span>平</span>
+										<span>+3</span>
+									</div>
+								</div>
+								<div class="guest  team">
+									<div class="guestimg  flag">
+										<img src="img/global/guest.png"/>
+									</div>
+									<div class="guestscore score">
+										<span>沙特阿拉伯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="match_time">
+								<div>比赛时间</div>
+								<div>06/23</div>
+								<div>13:20</div>
+								<div>（已完赛）</div>
+							</div>
+							<div class="match_data">
+								<div class="host team">
+									<div class="hostimg  flag">
+										<img src="img/global/host.png"/>
+									</div>
+									<div class="hostscore  score">
+										<span>俄罗斯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+								<div class="vs">
+									<div>VS</div>
+									<div class="score activated">
+										<span>平</span>
+										<span>+3</span>
+										<img src="img/global/x.png"/>
+									</div>
+								</div>
+								<div class="guest  team">
+									<div class="guestimg  flag">
+										<img src="img/global/guest.png"/>
+									</div>
+									<div class="guestscore score">
+										<span>沙特阿拉伯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="match_time">
+								<div>比赛时间</div>
+								<div>06/23</div>
+								<div>13:20</div>
+								<div>（已完赛）</div>
+							</div>
+							<div class="match_data">
+								<div class="host team">
+									<div class="hostimg  flag">
+										<img src="img/global/host.png"/>
+									</div>
+									<div class="hostscore  score activated">
+										<span>俄罗斯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+								<div class="vs">
+									<div>VS</div>
+									<div class="score">
+										<span>平</span>
+										<span>+3</span>
+									</div>
+								</div>
+								<div class="guest  team">
+									<div class="guestimg  flag">
+										<img src="img/global/guest.png"/>
+									</div>
+									<div class="guestscore score">
+										<span>沙特阿拉伯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="match_time">
+								<div class="starttime"> 
+									<div>比赛时间</div>
+									<div>06/23</div>
+									<div>13:20</div>
+								</div>
+								<div class="endtime">
+									<div>封盘时间</div>
+									<div>06/23</div>
+									<div>13:20</div>
+								</div>
+							</div>
+							<div class="match_data">
+								<div class="host team">
+									<div class="hostimg  flag">
+										<img src="img/global/host.png"/>
+									</div>
+									<div class="hostscore  score activated">
+										<span>俄罗斯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+								<div class="vs">
+									<div>VS</div>
+									<div class="score">
+										<span>平</span>
+										<span>+3</span>
+									</div>
+								</div>
+								<div class="guest  team">
+									<div class="guestimg  flag">
+										<img src="img/global/guest.png"/>
+									</div>
+									<div class="guestscore score">
+										<span>沙特阿拉伯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="match_time">
+								<div class="starttime"> 
+									<div>比赛时间</div>
+									<div>06/23</div>
+									<div>13:20</div>
+								</div>
+								<div class="endtime">
+									<div>封盘时间</div>
+									<div>06/23</div>
+									<div>13:20</div>
+								</div>
+							</div>
+							<div class="match_data">
+								<div class="host team">
+									<div class="hostimg  flag">
+										<img src="img/global/host.png"/>
+									</div>
+									<div class="hostscore  score activated">
+										<span>俄罗斯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+								<div class="vs">
+									<div>VS</div>
+									<div class="score">
+										<span>平</span>
+										<span>+3</span>
+									</div>
+								</div>
+								<div class="guest  team">
+									<div class="guestimg  flag">
+										<img src="img/global/guest.png"/>
+									</div>
+									<div class="guestscore score">
+										<span>沙特阿拉伯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+		
+		
+	</body>
+</html>
+
+
+<script language="javascript" type="text/javascript">
+    roundListBar.init();
+</script>

@@ -1,0 +1,17 @@
+.match_list li .match_item_title{ padding:0.15rem 0.2rem; display:flex; flex-direction:row; align-items: center;}
+.match_list li .match_item_title .match_state{width:0.2rem;height:0.2rem;border-radius:50%; margin:0 0.2rem;}
+.match_list li{display:flex; flex-direction:column;}
+.match_list li .match_item_data{display:flex; flex-direction:column; padding:0.22rem 0.6rem 0.36rem 0.6rem;}
+.match_list li .match_item_data .match_state{width:1.3rem;height:0.36rem;line-height:0.36rem;text-align:center; border-radius:0.18rem;margin-left:0.16rem;}
+.match_list li .match_item_data .match_title{display:flex; flex-direction:row; align-items:center;}
+.match_list li .match_item_data .match_result div{display:flex;flex-direction:column; align-items:center; justify-content:center;}
+.match_list li .match_item_data .match_result{display:flex; flex-direction:row; padding-top:0.5rem; justify-content:center; align-items: center;}
+.match_list li .match_item_data .match_result .match_score{margin:0 1.5rem; letter-spacing:0.1rem;}
+.match_list li .match_item_data .match_result .match_team .match_team_logo{width:0.6rem; height:0.6rem; margin-bottom:0.24rem;}
+.match_list li .match_item_data .match_result .match_team .match_team_logo img{width:0.6rem;height:0.6rem;}
+
+.match_list .comingsoon .match_state{background-color:#f62707;}
+.match_list .playing .match_state{background-color:#41b92d;}
+.match_list .delay .match_state{background-color:#f66416;}
+.match_list .cancel .match_state{background-color:#0367bf;}
+.match_list .finished .match_state{background-color:#999999;}

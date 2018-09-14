@@ -1,0 +1,96 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.containers{
+	position: relative;
+}
+
+.navs{
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.collapse .navbar-right{
+	margin-top: 14px;
+}
+.collapse .navbar-right li {
+	margin: 0 15px;
+}
+.collapse ul li a{
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 20px;
+	letter-spacing: 0px;
+	color: #ffffff;
+}
+.collapse ul li a:hover{
+	color: #000;
+}
+/*主体内容*/
+.section{
+	position: absolute;
+	top: 212px;
+	width: 100%;
+}
+.slogan{
+	margin-top: 100px;
+	height: 400px;
+	text-align: center;
+}
+.slogan span{
+	display: block;
+}
+.slogan .s1{
+	font-family: PangMenZhengDao;
+	font-size: 120px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 12px;
+	color: #ffffff;
+}
+.slogan .s2{
+	font-size: 18px;
+	color: #FFFFFF;
+	margin-bottom: 40px;
+}
+.slogan .btn{
+	width: 238px;
+	height: 50px;
+	background-color: rgb(3, 177, 255);
+	border-radius: 8px;
+	opacity: 0.95;
+	border: 0;
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	line-height: 40px;
+	color: #ffffff;
+	position: relative;
+	behavior: url(iecss.htc);
+}
+.slogan .btn:hover{
+	color: #000000;
+}
+.well{
+	width: 110px;
+	height: 110px;
+	padding: 0;
+}
+
+
+
+/*底部栏*/
+.footer{
+	width: 100%;
+	height: 70px;
+	position: fixed;
+	bottom: 0;
+	background-color:rgb(255,255,255) ;
+	font-size: 12px;
+	text-align: center;
+	line-height: 60px;
+	font-family: MicrosoftYaHei;
+	color: #757575;
+}

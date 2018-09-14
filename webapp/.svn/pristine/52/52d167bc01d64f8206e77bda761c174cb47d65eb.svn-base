@@ -1,0 +1,156 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "pingfang sc ";
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  font-size: 0.3rem;
+  color: #333;
+}
+.container .main-panel {
+  background-color: #fff;
+  margin-top: 0.2rem;
+  padding-left: 0.3rem;
+  box-sizing: border-box;
+}
+.container .main-panel .recharge-input {
+  height: 1rem;
+  min-height: 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.01rem solid #eee;
+}
+.container .main-panel .recharge-input .inputbox {
+  flex: 1;
+  padding-left: 0.3rem;
+  border: none;
+  outline: none;
+}
+.container .main-panel .recharge-input .del-icon {
+  display: none;
+  width: 0.3rem;
+  height: 0.3rem;
+  margin-right: 0.3rem;
+}
+.container .main-panel .recharge-panel {
+  margin-top: 0.2rem;
+  display: flex;
+  flex-direction: column;
+}
+.container .main-panel .recharge-panel .panel-list {
+  margin: 0.3rem 0;
+  padding-left: 0.1rem;
+  padding-right: 0.4rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.container .main-panel .recharge-panel .panel-list .panel-item {
+  display: flex;
+  flex-direction: column;
+}
+.container .main-panel .recharge-panel .panel-list .panel-item .panel-card {
+  width: 3.25rem;
+  height: 2rem;
+  border-radius: 0.2rem;
+  background-color: #00B562;
+  position: relative;
+  color: #fff;
+  font-size: 0.36rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .main-panel .recharge-panel .panel-list .panel-item .panel-card .gift {
+  height: 0.5rem;
+  position: absolute;
+  right: 0;
+  top: 0.2rem;
+  padding: 0.05rem 0.1rem;
+  box-sizing: border-box;
+  background-color: #F8E71D;
+  color: #333;
+  font-size: 0.24rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+.container .main-panel .recharge-panel .panel-list .panel-item .panel-card .gift-icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0.82rem;
+  height: 0.82rem;
+}
+.container .main-panel .recharge-panel .panel-list .panel-item .selected {
+  border: 0.05rem solid #DE3E3E;
+  box-sizing: border-box;
+}
+.container .main-panel .recharge-panel .panel-list .panel-item .panel-value {
+  margin-top: 0.2rem;
+  text-align: center;
+}
+.container .menuList {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding-left: 0.3rem;
+  margin-top: 0.18rem;
+}
+.container .menuList .menu-item {
+  height: 0.94rem;
+  min-height: 0.94rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.01rem solid #eee;
+}
+.container .menuList .menu-item .menu-icon {
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+}
+.container .menuList .menu-item .menu-name {
+  flex: 1;
+  font-size: 0.3rem;
+  color: #333;
+}
+.container .menuList .menu-item .select-icon {
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-right: 0.3rem;
+}
+.container .menuList .menu-item:last-child {
+  border-bottom: none;
+}
+.container .recharge-tips pre {
+  padding: 0.3rem;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+}
+.container .blank {
+  width: 100%;
+  height: 1rem;
+}
+.container .pay-btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 1rem;
+  background: #DE3E3E;
+  text-align: center;
+  color: #fff;
+  line-height: 1rem;
+}

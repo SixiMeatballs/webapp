@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>世界杯活动</title>
+    <link rel="stylesheet" type="text/css" href="css/instructions.css" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <script src="../../Content/js/jquery-3.3.1.min.js"></script>
+    <script src="../SuperTeam/js/share.js?v"></script>
+    <script src="/Content/js/main.js"></script>
+    <link href="/Content/boxstyle.css" rel="stylesheet" />
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/Content/js/vue.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="img/H5-arrow.png" class="wcs back-icon" />
+        <div class="title">
+            <div class="line"></div>
+            <div class="dot"></div>
+            <span>开奖规则</span>
+            <div class="dot"></div>
+            <div class="line"></div>
+        </div>
+        <div class="content">
+            <p>
+                1.开奖码规则</br>
+                &nbsp;&nbsp;a)	每期活动封盘后，根据总抽奖券数随机打乱生成编号（如：1 : mjxi36，2 : xpo2l3 … 356 : 5do6i7），短信发送开奖码和编号至用户。</br>
+                &nbsp;&nbsp;b)	开奖码依据封盘当天17点30分 “广东快乐十分”高频彩的八位开奖数值，依次提取每个号码的个位数组成开奖种子mod 总劵数，余数数字为一等奖编号，向下顺延后10位则获得二等奖，后100位则获得三等奖。
+            </p>
+            <p>2.开奖计算公式：一等奖编号 = mod （开奖种子 ，总劵数）</p>
+            <p>
+                3. 举例：</br>
+                假设总劵数为10200个，17点30分“广东快乐十分开奖码为”16、18、15、12、20、6、3、1，则种子为：68520631；</br>
+                一等奖编号 = mod （68520631，10200）=68520631÷10200余 7231=7231</br>
+                二等奖编号 = [7232 - 7241]</br>
+                三等奖编号 = [7242 – 7341]</br>
+                备注：mod为计算两数相除的余数
+            </p>
+            <p>4.每人仅限一次中奖机会，已中奖用户不能参与其他奖项的抽取。</p>
+            <p>5.微猜保证所有中奖码绝对真实有效，欢迎参与者随时验证！</p>
+        </div>
+    </div>
+    <script language="JavaScript" type="text/javascript">
+        var container = document.querySelector('.container');
+        var back_icon = document.querySelector('.back-icon');
+
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            back_icon.style.marginTop = '0.64rem';
+        }
+    </script>
+</body>
+</html>

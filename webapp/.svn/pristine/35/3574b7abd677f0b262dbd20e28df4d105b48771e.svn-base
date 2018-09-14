@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>微猜-泛娱乐电商</title>
+    <link href="css/ad_share.css" rel="stylesheet" />
+</head>
+<style>
+    body {
+        background: #6665FF;
+        background: url(images/share2.jpg) no-repeat;
+        background-size: 100% auto;
+        height: 17rem;
+    }
+
+    a {
+        background: #dd363d;
+    }
+</style>
+<body>
+
+
+    <a id="hrefs" class="linkedme">立即去抢</a>
+    <script src="js/rem.js"></script>
+    <script src="../../Content/js/jquery-3.3.1.min.js"></script>
+    <script src="https://lkme.cc/js/linkedme.min.js"></script>
+    <script src="/Content/js/openapp.js?v=2018052302"></script>
+    <script src="../../share/js/device.js"></script>
+    <script type="text/javascript">
+        InitOpenApp(
+            {
+                ActionType: 'Activity',
+                ActionValue: 'INDEX',
+                Parameters: null
+            }
+        );
+        var footer = document.querySelector('#hrefs');
+        change(footer, 'iPhoneX', 2);
+    </script>
+
+</body>
+</html>

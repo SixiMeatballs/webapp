@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="full-screen" content="yes">
+    <title>简介</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/help.css" />
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <link href="../../Content/boxstyle.css" rel="stylesheet" />
+</head>
+<style type="text/css">
+	p{padding: 0.2rem;font-size: 0.3rem;font-family: pingfang sc;}
+</style>
+<body>
+    <div class="root_container">
+        <div class="header">
+            <img onclick="javascript:window.history.back(-1);" src="img/global/back_icon.png" />
+            <span>简介</span>
+        </div>
+        <div style="padding: 0.2rem;font-size: 0.3rem;color: #4A99AE;font-family: pingfang sc;overflow:scroll;">
+            <p>玩法介绍：</p>
+            <p>
+                1、玩法：玩家在选择比赛轮次后，在本轮众赛事中，选择几场竞猜胜、平、负，猜够本轮要求的次数，确定后提交比赛信息。<br>
+                2、排名由一定比例的“猜对的胜平负中的积分总和”以及一定比例的“胜率”总和计算。排名公式为：积分x(0.8+胜率x0.2)。<br>
+                3、积分卡：如果玩家在任何一轮的比赛中，积分没有达到晋级的条件，可以购买积分卡，取得晋级该轮比赛的最低积分。购买积分卡需要花费猜豆。<br>
+                4、资格卡：如果玩家想参与某轮的比赛而没有资格时，可购买资格卡直接参与。购买资格卡需要花费猜豆。<br>
+                5、我参与的比赛记录可在“我的记录”中查看。<br>
+                6、奖品：每轮排名靠前的以及总排名靠前的，都会得到一定的奖励。具体查看奖品页。<br>
+            </p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //针对ios做处理
+        var container = document.querySelector('.root_container');
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            container.style.paddingTop = '0.44rem';
+        }
+    </script>
+
+</body>
+</html>

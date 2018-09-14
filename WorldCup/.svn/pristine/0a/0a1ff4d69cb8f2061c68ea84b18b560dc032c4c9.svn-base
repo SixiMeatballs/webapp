@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" Content="text/html; Charset=utf-8">
+    <title></title>
+    <!--<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>-->
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+<form action="http://192.168.1.101:8080/getUserInfo" method="post">
+    id:<input type="text" name="id"/><br>
+    <input type="submit" value="Submit"/>
+</form>
+
+<a href="http://192.168.1.101:8080/getUserAllInfo?id=4">查询</a>
+<div id="info"></div>
+</body>
+<script type="text/javascript">
+    $(function () {
+        $.ajax({
+            type: 'post',
+            url: 'http://192.168.1.101:8080/getUserListJson',
+            async: true,
+            jsonp: 'jsoncallback',
+            success: function (data) {
+
+//                $('#info').html(data);
+                var result = $.parseJSON(data);
+                var userList = result.data;
+
+                var tabStr = "<table border='1'>";
+
+                $.each(userList, function (i, user) {
+                    tabStr += "<tr><td>" + user.id
+                        + "</td><td>" + user.name
+                        + "</td><td>" + user.password
+                        + "</td><td>" + user.level
+                        + "</td></tr>";
+                });
+                tabStr += "</table>";
+                $('#info').html(tabStr);
+
+            },
+            error: function () {
+                $('#info').html("有问题");
+            }
+        });
+
+    });
+</script>
+</html>

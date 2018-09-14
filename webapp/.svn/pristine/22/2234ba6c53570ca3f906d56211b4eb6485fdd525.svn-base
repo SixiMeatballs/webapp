@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>开奖公告</title>
+    <link rel="stylesheet" type="text/css" href="css/announce.css?1" />
+    <script src="../../Content/js/jquery-3.3.1.min.js"></script>
+    <script src="../SuperTeam/js/share.js?v"></script>
+    <script src="/Content/js/main.js"></script>
+    <link href="/Content/boxstyle.css" rel="stylesheet" />
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/Content/js/vue.min.js"></script>
+    <script src="js/board.js?0"></script>
+    <link href="/Content/boxstyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <img class="back-icon wcs" src="img/H5-arrow.png" />
+        <template v-if="LottoryNotice != null && LottoryNotice.ScheduleInfo != null">
+            <!--本期活动-->
+            <div class="count" v-if="LottoryNotice.ScheduleInfo.Status==0 && (shutdownstatus==1 || shutdownstatus==2) ">
+                <div class="eventTitle">{{LottoryNotice.ScheduleInfo.ScheduleName}}</div>
+                <div class="headline">
+                    <div class="line"></div>
+                    <div class="dot"></div>
+                    <span v-if="shutdownstatus==1">距离活动结束</span>
+                    <span v-if="shutdownstatus==2">距离活动开奖</span>
+                    <div class="dot"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="countdownTime">
+                    <div class="countdown">
+                        <div class="numBg">{{CountDown.dd}}</div>
+                        <div class="unit">天</div>
+                    </div>
+                    <div class="countdown">
+                        <div class="numBg">{{CountDown.hh}}</div>
+                        <div class="unit">时</div>
+                    </div>
+                    <div class="countdown">
+                        <div class="numBg">{{CountDown.mm}}</div>
+                        <div class="unit">分</div>
+                    </div>
+                    <div class="countdown">
+                        <div class="numBg">{{CountDown.ss}}</div>
+                        <div class="unit">秒</div>
+                    </div>
+                </div>
+            </div>
+            <!--已取消-->
+            <div class="count" v-if="LottoryNotice.ScheduleInfo.Status==5">
+                <div class="eventTitle">{{LottoryNotice.ScheduleInfo.ScheduleName}}</div>
+                <div class="countCon"><img src="img/announce/cancel.png" /></div>
+            </div>
+            <!--已暂停-->
+            <div class="count" v-if="LottoryNotice.ScheduleInfo.Status==4">
+                <div class="eventTitle">{{LottoryNotice.ScheduleInfo.ScheduleName}}</div>
+                <div class="countCon"><img src="img/announce/pause.png" /></div>
+            </div>
+            <!--已开奖-->
+            <div class="count" v-if="LottoryNotice.ScheduleInfo.Status==3">
+                <div class="eventTitle">{{LottoryNotice.ScheduleInfo.ScheduleName}}</div>
+                <div class="countCon" style="margin-bottom:0;"><img src="img/announce/already.png" /></div>
+                <a href="list.html?ScheduleId={{LottoryNotice.ScheduleInfo.ScheduleId}}" class="already">查看中奖名单</a>
+            </div>
+            <!--开奖中-->
+            <div class="count" v-if="LottoryNotice.ScheduleInfo.Status==0 && shutdownstatus==3">
+                <div class="eventTitle">{{LottoryNotice.ScheduleInfo.ScheduleName}}</div>
+                <div class="countCon"><img src="img/announce/open.png" /></div>
+            </div>
+        </template>
+
+
+
+        <div class="nextActive">
+            <div class="title">
+                <img src="img/announce/next.png" />
+            </div>
+            <div class="activeCon">
+                <div class="conTitle">
+                    <div class="date">开奖期数</div>
+                    <div class="start">活动开始时间</div>
+                    <div class="end">活动结束时间</div>
+                    <div class="state">活动状态</div>
+                </div>
+                <template v-if="LottoryNotice != null && LottoryNotice.NextScheduleInfo != null && LottoryNotice.NextScheduleInfo.length>0">
+                    <div class="conItem" v-for="r in LottoryNotice.NextScheduleInfo">
+                        <div class="date">
+                            <span>{{r.ScheduleName}}</span>
+                        </div>
+                        <div class="start">{{r.StartTime}}</div>
+                        <div class="end">{{r.EndTime}}</div>
+                        <div class="state">筹备中</div>
+                    </div>
+                </template>
+
+                <div class="warm">以微猜实际发布日期为准</div>
+            </div>
+        </div>
+        <div class="nextActive">
+            <div class="title">
+                <img src="img/announce/past.png" />
+            </div>
+            <div class="activeCon">
+                <div class="conTitle">
+                    <div class="date">开奖期数</div>
+                    <div class="starts">活动开始时间</div>
+                    <div class="state">活动状态</div>
+                    <div class="list">中奖名单</div>
+                </div>
+
+                <template v-if="LottoryNotice != null && LottoryNotice.PreScheduleInfo != null && LottoryNotice.PreScheduleInfo.length>0">
+                    <div class="conItem" v-for="r in LottoryNotice.PreScheduleInfo">
+                        <div class="date">
+                            <span>{{r.ScheduleName}}</span>
+                        </div>
+                        <div class="starts">{{r.StartTime}}至{{r.EndTime}}</div>
+                        <div class="state">已结束</div>
+                        <a href="list.html?ScheduleId={{r.ScheduleId}}"><div class="list">去查看</div></a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+    <script language="JavaScript" type="text/javascript">
+        var container = document.querySelector('.container');
+        var back_icon = document.querySelector('.back-icon');
+
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            back_icon.style.marginTop = '0.64rem';
+        }
+    </script>
+</body>
+</html>

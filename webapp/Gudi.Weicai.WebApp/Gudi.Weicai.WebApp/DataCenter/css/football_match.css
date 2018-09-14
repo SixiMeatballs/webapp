@@ -1,0 +1,39 @@
+.page_title{box-sizing: content-box;}
+.lineup{height:13rem; min-height:13rem; max-height:13rem;background: url(../images/football_court.png) no-repeat, -webkit-linear-gradient(top,#54c06f,#54c06f);background-size: 100%;background-position-y: 0.3rem;}
+.lineup ul{width: 100%;display: flex;position: relative;min-height: 6.5rem;}
+
+.lineup ul .row_3{margin-top: 0.85rem;}
+.lineup ul .row_5{margin-top: 0.4rem;margin-left: 0.2rem;}
+
+.content_main .match_action{position: relative;}
+.content_main .match_action .line{width: 0.04rem;height: 100%;background-color: #1092FF;position: absolute;top: 0rem;}
+
+.content_main .match_info{width: 100%;display: flex;justify-content: space-around;margin-top: 0.2rem;}
+.content_main .match_info li{display: flex;align-items: center;}
+.content_main .match_info li img{width: 0.36rem;height: 0.36rem;margin-right: 0.2rem;}
+
+.match_action li .pop{width:2.5rem;position: relative;/*border: 0.01rem solid #ccc;*/border-radius: 0.1rem;background-color: #F0F0F0;min-height: 0.75rem;display: flex;flex-direction: column;}
+.match_action li .pop .player_name{display: flex;margin: 0.2rem 0;}
+.match_action li .pop .right_player{flex-direction: row;}
+.match_action li .pop .left_player{flex-direction: row-reverse;}
+.match_action li .pop .arrow{position: absolute;top:40%;width:0;height:0;font-size:0;border:solid 0.15rem;z-index: 2;}
+.match_action li .pop .left{left:-0.28rem;border-color:#FFFFFF #F0F0F0 #FFFFFF #FFFFFF;}
+.match_action li .pop .right{right:-0.3rem;border-color:#FFFFFF #FFFFFF #FFFFFF #F0F0F0;}
+.match_action li .pop .card{width: 0.22rem;height: 0.34rem;margin:0  0.15rem;}
+.match_action li .pop .yellow{background-color: #fbd016;}
+.match_action li .pop .red{background-color: #fb4816;}
+.match_action li .pop img{width: 0.3rem;height: 0.3rem;margin: 0 0.1rem;}
+
+.match_action li .pop .change{display: flex;align-items: center;}
+.match_action li .pop .change_in,.change_out{margin:0.1rem  0;}
+.match_action li .pop .change img{width: 0.26rem;height: 0.26rem;margin-left: 0.1rem;}
+
+.hidden{background-color: #FFFFFF!important;border: none!important;}
+
+
+.player_container{margin-top: 0; padding-top:0.2rem;}
+
+.team_members .team_info img{height: 0.96rem;}
+
+.publictop{position: fixed;top: 4.58rem;width: 100%;z-index: 3;}
+.publictop div{float: left;}

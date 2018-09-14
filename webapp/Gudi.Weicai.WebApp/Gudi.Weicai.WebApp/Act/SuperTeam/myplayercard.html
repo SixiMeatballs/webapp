@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="x5-orientation" content="portrait | landscape" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="full-screen" content="yes">
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>我的球员卡</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/my_player_cards.css?2" />
+    <script src="js/jquery.js"></script>
+    <link href="../../Content/layer/mobile/need/layer.css" rel="stylesheet" />
+    <script src="../../Content/layer/mobile/layer.js"></script>
+    <script src="../../Content/js/main.js"></script>
+    <script src="js/share.js"></script>
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/Content/js/vue.min.js"></script>
+    <link href="../../Content/boxstyle.css" rel="stylesheet" />
+    <script src="js/myplayercard.js"></script>
+</head>
+<body>
+    <div class="root_container" id="page_myplayercard" v-cloak>
+        <input type="hidden" id="hiddenusertoken" value="" />
+        <div class="header">
+            <div class="back_icon" onclick="javascript:window.history.back(-1);"><img src="images/global/back.png" /></div>
+            <div class="title">我的球员卡</div>
+        </div>
+        <div class="cards_title">
+            <div v-bind:class="{active:cardlist.current==='unopened'}" v-on:click="getCardList('unopened')">未拆开</div>
+            <div v-bind:class="{active:cardlist.current==='unused'}" v-on:click="getCardList('unused')">未使用</div>
+            <div v-bind:class="{active:cardlist.current==='used'}" v-on:click="getCardList('used')">已使用</div>
+        </div>
+        <div class="card_con" usetype="unopened" v-show="cardlist.current === 'unopened'">
+            <div v-for="card in cardlist.unopened" class="player_card" cardtype="card{{card.Level}}">
+                <div class="left">
+                    <img src="images/global/playercard.png" class="playercardimg" />
+                </div>
+                <div class="middle">
+                    <div class="card_name">
+                        <template v-if="card.Level === 1">
+                            青铜球员卡
+                        </template>
+                        <template v-if="card.Level === 2">
+                            白银球员卡
+                        </template>
+                        <template v-if="card.Level === 3">
+                            黄金球员卡
+                        </template>
+                    </div>
+                    <div class="coins">
+                        × {{card.Count}}
+                    </div>
+                </div>
+                <div class="right">
+                    <div v-on:click="showOpenCard(card.Level,card.Count)">拆开</div>
+                </div>
+            </div>
+        </div>
+        <div class="card_con" usetype="unused" v-show="cardlist.current === 'unused'">
+            <div v-for="card in cardlist.unused" class="player_card" cardtype="card{{card.Level}}">
+                <div class="left">
+                    <img :src="card.CardPicture" class="playercardimg" />
+                </div>
+                <div class="middle">
+                    <div class="player_name">{{card.PlayerName}}</div>
+                    <div class="get_time">
+                        <div>获得时间：{{card.CreateTime}}</div>
+                        <div>失效时间：{{card.ExpiredTime}}</div>
+                    </div>
+                </div>
+                <template v-if="card.Level === 1">
+                    <div class="card_names">青铜卡</div>
+                </template>
+                <template v-if="card.Level === 2">
+                    <div class="card_names">白银卡</div>
+                </template>
+                <template v-if="card.Level === 3">
+                    <div class="card_names">黄金卡</div>
+                </template>
+                <div class="bg">
+                    <template v-if="card.Discount>0 && card.Discount<10">
+                        <img src="images/selectplayer/{{card.Discount}}.png" class="playercardimg" />
+                    </template>
+                    <template v-else>
+                        <img src="images/selectplayer/1.png" class="playercardimg" />
+                    </template>
+                </div>
+            </div>
+        </div>
+        <div class="card_con" usetype="used" v-show="cardlist.current === 'used'">
+            <div v-for="card in cardlist.used" class="player_card">
+                <div class="left">
+                    <img :src="card.CardPicture" class="playercardimg" />
+                </div>
+                <div class="middle">
+                    <div class="player_name">{{card.PlayerName}}</div>
+                    <div class="get_time">
+                        <div>使用时间：{{card.UsedTime}}</div>
+                    </div>
+                </div>
+                <template v-if="card.Level === 1">
+                    <div class="card_names">青铜卡</div>
+                </template>
+                <template v-if="card.Level === 2">
+                    <div class="card_names">白银卡</div>
+                </template>
+                <template v-if="card.Level === 3">
+                    <div class="card_names">黄金卡</div>
+                </template>
+                <img id="used" src="images/selectplayer/used.png" />
+                <div class="bg">
+                    <template v-if="card.Discount>0 && card.Discount<10">
+                        <img src="images/selectplayer/{{card.Discount}}.png" class="playercardimg" />
+                    </template>
+                    <template v-else>
+                        <img src="images/selectplayer/1.png" class="playercardimg" />
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <div class="fix_bottom full_width">
+            <img class="full_width" src="images/myplayercard/draw_card.png" @click="jumpDrawCard()" />
+        </div>
+
+        <div class="info_alert" style="display: none;" v-show="opencard.status === 0">
+            <div class="card_alert">
+                <div class="alert_con card_con" style="min-height: 0;flex: none;">
+                    <div class="player_card" cardtype="card{{opencard.level}}">
+                        <div class="left">
+                            <img src="images/selectplayer/player{{opencard.level}}.png" class="playercardimg" />
+                        </div>
+                        <div class="middle">
+                            <div class="card_name" v-show="opencard.level===1">青铜球员卡</div>
+                            <div class="card_name" v-show="opencard.level===2">白银球员卡</div>
+                            <div class="card_name" v-show="opencard.level===3">黄金球员卡</div>
+                            <div class="coins">
+                                × {{opencard.count}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert_btn">
+                    <div v-on:click="openCard(opencard.level,1)">打开一张</div>
+                    <div class="line"></div>
+                    <div v-on:click="openCard(opencard.level,opencard.count)">全部打开</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info_alert" v-show="opencard.status === 1">
+            <div class="card_alerts">
+                <div class="alert_con card_con" style="min-height: 0;flex: none;">
+                    <div class="player_card" v-for="card in opencard.result" cardtype="card{{card.level}}">
+                        <div class="left">
+                            <img v-bind:src="card.photo" class="playercardimg" />
+                        </div>
+                        <div class="middle">
+                            <div class="player_name">{{card.PlayerName}}</div>
+                            <div class="get_time">
+                                <div>获得时间：{{card.CreateTime}}</div>
+                                <div>失效时间：{{card.ExpiredTime}}</div>
+                            </div>
+                        </div>
+                        <div class="card_name" v-show="opencard.level===1">青铜卡</div>
+                        <div class="card_name" v-show="opencard.level===2">白银卡</div>
+                        <div class="card_name" v-show="opencard.level===3">黄金卡</div>
+                        <div class="bg">
+                            <template v-if="card.Discount>0 && card.Discount<10">
+                                <img src="images/selectplayer/{{card.Discount}}.png" class="playercardimg" />
+                            </template>
+                            <template v-else>
+                                <img src="images/selectplayer/1.png" class="playercardimg" />
+                            </template>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="alert_btn alert_btns" v-on:click="closeOpenCardResult();">确定</div>
+            </div>
+        </div>
+
+
+
+
+        <div class="blank blank_all"  v-show="cardlist.current === 'unopened' && cardlist.unopened.length==0">
+            <img src="images/global/blankimg.png" />
+            <span>您还没有球员卡，点击下方按钮去抽卡</span>
+        </div>
+        <div class="blank blank_all" v-show="cardlist.current === 'unused' && cardlist.unused.length==0">
+            <img src="images/global/blankimg.png" />
+            <span>您还没有球员卡，点击下方按钮去抽卡</span>
+        </div>
+        <div class="blank blank_all"  v-show="cardlist.current === 'used' && cardlist.used.length==0">
+            <img src="images/global/blankimg.png" />
+            <span>您还没有球员卡，点击下方按钮去抽卡</span>
+        </div>
+
+    </div>
+    <script src="../../share/js/device.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.playercardimg').error(function () {
+                $(this).attr("src", "images/global/playercard.png");
+            })
+        });
+        //针对ios做处理
+        var container = document.querySelector('.root_container');
+        var fix_bottom = document.querySelector('.fix_bottom');
+        var blank = document.querySelectorAll('.blank_all');
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            container.style.paddingTop = '0.44rem';
+            blank[0].style.top = '2.04rem';
+            blank[1].style.top = '2.04rem';
+            blank[2].style.top = '2.04rem';
+        }
+        change(fix_bottom,"iPhoneX",2)
+    </script>
+</body>
+</html>

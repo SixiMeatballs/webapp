@@ -1,0 +1,8 @@
+.con_tittles{width: 100%;height: 0.74rem;background: url(../img/global/alter_title_bg.png) no-repeat;background-size: 100% 100%;display: flex;justify-content: space-around;align-items: center;margin-top: 0.12rem;}
+.con_tittles div{font-size: 0.24rem;color: #fff;}
+
+.roundlist ul li{width: 2rem;}
+.roundlist ul li .name{width: 2rem;font-size: 0.24rem;text-align: center;}
+.roundlist ul li .status{width: 0.6rem; height: 0.6rem;font-size: 0.18rem;letter-spacing: 0.02rem;color: #000;border-radius: 50%;background-color: #33C93F;position: absolute;top: 0;right: 0.1rem;text-align: center;line-height: 0.6rem;}
+
+.center .match_list ul li .match_time .starttime{width: 100%;justify-content: center;}

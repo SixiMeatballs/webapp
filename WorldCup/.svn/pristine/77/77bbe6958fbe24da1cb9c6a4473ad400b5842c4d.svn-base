@@ -1,0 +1,8 @@
+.prize_list ul{width: 100%;overflow: scroll;padding: 0.4rem 0.3rem 0 0.3rem;display: flex;flex-wrap: wrap;}
+.prize_list ul li{display: flex;flex-direction: column;align-items: center;justify-content: center;width: 30%;margin-bottom: 0.4rem;}
+.prize_list ul li .prize_img{width: 1.28rem;height: 1.28rem;background: #fff;border-radius: 0.2rem;}
+.prize_list ul li .prize_img img{width: 100%;}
+.prize_list ul li div{color: #fff;}
+.prize_list ul li .ranking{font-size: 0.23rem;}
+
+.prize_list ul li .prize_name{font-size: 0.19rem;}

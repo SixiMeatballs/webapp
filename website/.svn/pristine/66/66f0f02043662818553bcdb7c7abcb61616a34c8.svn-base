@@ -1,0 +1,70 @@
+body{
+	background-color: #E7E8EC;
+}
+/*导航栏*/
+.navs{
+	width: 100%;
+	height: 80px;
+	background-color: #f2f2f3;	
+	margin-bottom: 60px;
+}
+.navs .collapse .navbar-right{
+	margin-top: 14px;
+}
+ .navs .collapse .navbar-right li {
+	margin: 0 15px;
+}
+ .navs .collapse ul li a{
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 20px;
+	letter-spacing: 0px;
+	color: #333333;
+}
+.navs .collapse ul li a:hover{
+	color: #e5005c;
+	background-color: rgba(0,0,0,0);
+}
+/*内容*/
+.section{
+	margin-top: 40px;
+}
+h4{
+	margin-left: 30px;
+	margin-top: 42px!important;
+	margin-bottom: 20px!important;
+}
+.container{
+	width: 1170px;
+}
+.container .con-bottom{
+	width: 1190px;
+	border-top: 1px solid #F2F3F4;
+	padding-top: 50px;
+	padding-left: 30px;
+}
+.container .con-bottom p{
+	font-family: MicrosoftYaHei;
+	font-size: 16px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 34px;
+	letter-spacing: 0px;
+	color: #3f3a39;
+}
+
+/*底部栏*/
+.footer{
+	width: 100%;
+	height: 70px;
+	position: fixed;
+	bottom: 0;
+	background-color:#1E1B29;
+	font-size: 12px;
+	text-align: center;
+	line-height: 60px;
+	font-family: MicrosoftYaHei;
+	color: #757575;
+}

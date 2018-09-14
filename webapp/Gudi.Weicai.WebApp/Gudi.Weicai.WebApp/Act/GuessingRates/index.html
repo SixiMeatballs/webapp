@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="full-screen" content="yes">
+    <title>猜胜率</title>
+    <script src="../SuperTeam/js/jquery.js"></script>
+    <script src="../../Content/js/main.js?0"></script>
+    <script src="../SuperTeam/js/share.js"></script>
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link href="../../Content/boxstyle.css" rel="stylesheet" />
+
+</head>
+<body>
+    <input type="hidden" id="hiddenusertoken" value="" />
+    <div class="container body-section">
+        <div class="header">
+            <img class="wcs" src="img/global/back_icon.png"  />
+            <a href="help.html">
+                <img src="img/global/help.png" />
+            </a>
+        </div>
+        <div class="center">
+            <div class="center_panel">
+                <div class="thems">
+                    <img src="img/global/bg_3.png" />
+                </div>
+                <a href="select_round.html" class="playgame">
+                    <img src="img/index/button.png" />
+                </a>
+            </div>
+        </div>
+        <div class="bottom">
+            <a href="myrecording.html">
+                <img src="img/index/myrecording.png" />
+            </a>
+            <a href="ranking.html">
+                <img src="img/index/ranking.png" />
+            </a>
+            <a href="prize.html">
+                <img src="img/index/prize.png" />
+            </a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        localStorage.removeItem(constWord.ActivedGuessRoundId);
+        //针对ios做处理
+        var container = document.querySelector('.container');
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            container.style.paddingTop = '0.54rem';
+        }
+    </script>
+</body>
+</html>

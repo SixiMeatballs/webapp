@@ -1,0 +1,72 @@
+.cards_title{width: 100%;height: 0.65rem;min-height:0.65rem;background: rgba(34,81,109,.6);display: flex;justify-content: space-between;align-items: center;}
+.cards_title div{width: 33.33%;height: 100%;line-height: 0.65rem;text-align: center;font-size: 0.24rem;color: #778D9D;letter-spacing: 0.02rem;}
+.cards_title .active{border-bottom: 0.03rem  solid #fff;box-sizing: border-box;color: #E8EBED;}
+
+.root_container{position: relative;}
+.mask{width: 100%;height: 100%;position: absolute;top: 0;filter: blur(0.5rem);background: rgba(0,0,0,.6);}
+
+
+
+.card_con{width: 100%;padding:0.433rem  0.195rem ;box-sizing: border-box; min-height:9rem; overflow:scroll;flex: 1;}
+
+.card_con .player_card{border-radius:0.2rem;background:#0f2e3e;display: flex;justify-content: flex-start;align-items: center;height: 2rem; margin-bottom:0.3rem;position: relative;}
+.card_con .player_card .left{width: 1.508rem;background: #0C344E;height:100%;border-radius:0.2rem 0 0 0.2rem;display: flex;justify-content: center;align-items: center;padding-top: 0.1rem; box-sizing: border-box;overflow: hidden;}
+.card_con .player_card .left img{width: 1rem;margin:0 auto;border-radius: 0.1rem;}
+.card_con .player_card .middle {padding-left:0.3rem;font-size: 0.36rem;letter-spacing: 0.02rem;display: flex;flex-direction:column;justify-content: space-around;}
+.card_con .player_card .middle .card_name{font-size: 0.25rem;position: static;}
+.card_con .player_card .middle .coins{margin-top:0.2rem; padding-left:0.4rem; font-size: 0.23rem;}
+.card_con .player_card .right{flex: 1;display: flex;justify-content: flex-end;margin-right: 0.3rem;}
+.card_con .player_card .right div{width: 1.051rem;height: 0.4875rem;border-radius: 0.1rem 0.1rem;background-color: #FE8E3A;text-align: center;line-height: 0.4875rem;font-size:0.24rem;letter-spacing: 0.02rem;}
+
+.card_con .player_card .middle .player_name{font-size: 0.3rem;color: #F0873B;}
+.card_con .player_card .middle .get_time{display: flex;flex-direction: column;margin-top: 0.2rem;}
+.card_con .player_card .middle .get_time div{font-size: 0.22rem;color: #859197;}
+.card_con .player_card .bg{align-self: flex-start;background: url(../images/selectplayer/discount_bg.png) no-repeat ; width: 0.96rem;height: 0.96rem;background-size: 100%;position: absolute;top: 0.05rem;right: 0.01rem;}
+.card_con .player_card .bg img{position: absolute;top: 0.1rem;right: 0.1rem;width: 0.52rem;}
+.card_con .player_card .card_names{position: absolute;bottom: 0.1rem;right: 0.1rem;font-size: 0.26rem;letter-spacing: 0.02rem;}
+
+.card_con .player_card #used{position: absolute;top: 0.2rem;right: 1rem;width: 1rem;}
+.card_con  .mask{width: 100%;height: 100%;background-color: rgba(0,0,0,.3);position: absolute;top: 0;z-index: 3;}
+
+
+
+div[cardtype='card1']{box-shadow:0 0 0.2rem #02b5eb;}
+div[cardtype='card1'] .card_name{color:#02c3ff;}
+div[cardtype='card1'] .card_names{color:#02c3ff;}
+div[cardtype='card1'] .coins{background:url(../images/myplayercard/bronze.png) no-repeat;background-size: 21%;}
+div[cardtype='card2']{box-shadow:0 0 0.2rem #cdd1d7;}
+div[cardtype='card2'] .card_name{color:#FFF;}
+div[cardtype='card2'] .card_names{color:#FFF;}
+div[cardtype='card2'] .coins{background:url(../images/myplayercard/silver.png) no-repeat; background-size: 21%;}
+div[cardtype='card3']{box-shadow:0 0 0.2rem #e3d941;}
+div[cardtype='card3'] .card_name{color:#FFbf00;}
+div[cardtype='card3'] .card_names{color:#FFbf00;}
+div[cardtype='card3'] .coins{background:url(../images/myplayercard/gold.png) no-repeat; background-size: 21%;}
+
+.fix_bottom a img{height: 1rem;}
+
+.card_alert,.card_alerts{position: absolute;top:0;right: 0;left: 0;bottom: 0;margin: auto;width: 100%;height: 35%;background: #0E364F;display: flex;flex-direction: column;}
+
+.card_alert{height: 35%;}
+.card_alerts{max-height: 65%;min-height: 35%;}
+.card_alerts .alert_con{width: 100%;max-height: 90%;min-height:75%;padding: 0.4rem;box-sizing: border-box;} 
+
+.card_alert .alert_con{width: 100%;height: 75%;padding: 0.4rem;box-sizing: border-box;} 
+.alert_btn{width: 100%;flex: 1;display: flex;justify-content: space-around;background: url(../images/createteam/text_bg.png) no-repeat;background-size: 100% 100%;min-height: 1rem;}
+.alert_btn div{font-size: 0.3rem;color: #FFC000;display: flex;align-items: center;letter-spacing: 0.03rem;}
+.alert_btn .line{width: 0.02rem;height:96%;background-color: #386D8F;}
+
+
+.alert_con .player_card .middle .get_time div{font-size: 0.23rem;}
+.alert_btns{font-size: 0.3rem;color: #FFC000;display: flex;align-items: center;letter-spacing: 0.03rem;}
+.alert_con .player_card .card_name{font-size: 0.26rem;letter-spacing: 0.02rem;position: absolute;bottom: 0.15rem;right: 0.1rem;}
+
+
+.header{z-index: 2;}
+.fix_bottom{z-index: 2;margin-bottom: -0.2rem;}
+
+.blank{width: 100%;height: 100%;background-color: #124464;opacity: 0.8;position: absolute;top: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+.blank img{margin-bottom: 0.2rem;width: 3rem;height: 1.3rem;}
+.blank span{font-size: 0.23rem; color: #6189a1;}
+.blank_all{top:1.65rem;}
+.iPhoneX{margin-bottom:0.4rem;}

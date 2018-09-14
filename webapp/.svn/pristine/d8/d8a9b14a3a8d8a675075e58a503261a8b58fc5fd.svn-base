@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="full-screen" content="yes">
+    <title>足球球队详情</title>
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/navigationSwitcher.js"></script>
+    <link rel="stylesheet" href="css/global.css?001">
+    <link rel="stylesheet" href="css/team_country.css">
+    <link rel="stylesheet" href="css/team_football.css">
+    <script src="/Act/SuperTeam/js/jquery.js"></script>
+    <script src="/Content/js/main.js"></script>
+    <script src="/Act/SuperTeam/js/share.js"></script>
+    <script src="/Content/js/vue.min.js"></script>
+    <style type="text/css">
+        .match_list .status_2 .match_state { background-color: #f62707; }
+        .match_list .status_4 .match_state { background-color: #41b92d; }
+        .match_list .status_3 .match_state { background-color: #f66416; }
+        .match_list .status_5 .match_state { background-color: #0367bf; }
+        .match_list .status_6 .match_state { background-color: #999999; }
+    </style>
+    <script src="js/football_team.js"></script>
+</head>
+<body>
+    <div class="container" id="page_football_team"  v-cloak>
+        <input type="hidden" id="hiddenusertoken" value="" />
+        <header>
+            <div class="page_title font_1L padding_top_sysbar bg_g">
+                <div class="btn_back"><img src="images/back.png" /></div>
+                <div class="title_text">{{teamtype}}</div>
+            </div>
+            <div class="team_brife bg_g">
+                <div class="logo"><img v-bind:src="intro.TeamCover" /></div>
+                <div class="content">
+                    <div class="team_name font_3L">{{intro.TeamName}}</div>
+                    <div class="team_name_en font_6L">{{intro.TeamEnglishName}}</div>
+                    <div class="team_desc font_6L">{{intro.TeamFoundTime}} / {{intro.Area}}</div>
+                </div>
+            </div>
+        </header>
+        <nav class="navbar font_4A" id="navigation">
+            <ul class="column_4">
+                <li section-name="intro" class="activated">简介</li>
+                <li  section-name="match" v-on:click="GetTeamSchedule()">赛程</li>
+                <li  section-name="statistics" v-on:click="GetTeamStat(1,0)">数据统计</li>
+                <li  section-name="player" v-on:click="GetTeamPlayer()">球员</li>
+            </ul>
+        </nav>
+        <!--简介-->
+        <section name="intro">
+            <template v-if="intro.Field.length > 0 || intro.Master.length > 0 || intro.TeamDesc.length >0 || (intro.List != null && intro.List.length > 0)">
+                <div class="content_title font_4A bg_j">
+                    <template v-if="intro.Field.length > 0 || intro.Master.length > 0">
+                        <div class="bg_g icon_bar"></div>
+                    </template>
+                    <template v-else>
+                        <div class="bg_c icon_bar"></div>
+                    </template>
+                    <div class="font_4A content_title_text">基本资料</div>
+                </div>
+                <div class="content_main bg_l">
+                    <div class="content_row">
+                        <div class="content_block">
+                            <div class="font_5B">球队主场：</div>
+                            <div class="font_5A">{{intro.Field}}</div>
+                        </div>
+                    </div>
+                    <div class="content_row">
+                        <div class="content_block">
+                            <div class="font_5B">主教练：</div>
+                            <div class="font_5A">{{intro.Master}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_title font_4A bg_j">
+                    <template v-if="intro.TeamDesc.length > 0">
+                        <div class="bg_g icon_bar"></div>
+                    </template>
+                    <template v-else>
+                        <div class="bg_c icon_bar"></div>
+                    </template>
+                    <div class="font_4A content_title_text">球队简介</div>
+                </div>
+                <div class="content_main font_6B  bg_l">
+                    {{{intro.TeamDesc}}}
+                </div>
+                <div class="content_title font_4A bg_j">
+                    <template v-if="intro.List != null && intro.List.length > 0">
+                        <div class="bg_g icon_bar"></div>
+                    </template>
+                    <template v-else>
+                        <div class="bg_c icon_bar"></div>
+                    </template>
+                    <div class="font_4A content_title_text">球队荣誉</div>
+                </div>
+                <div class="content_main flex_column bg_l">
+                    <ul class="content_table font_5A">
+                        <li class="font_5B">
+                            <div class="match_event">夺冠赛事</div>
+                            <div class="match_num">夺冠次数</div>
+                            <div class="match_year">夺冠赛季 / 年份</div>
+                        </li>
+                        <li v-for="h in intro.List">
+                            <div class="match_event">{{h.HonorName}}</div>
+                            <div class="match_num">{{h.Count}}次</div>
+                            <div class="match_year">{{h.GetSeason}}</div>
+                        </li>
+                    </ul>
+                </div>
+            </template>
+            <template v-else>
+                <div class="blank font_3C bg_j">
+                    <img src="images/nodata.png" alt="">
+                    <span>暂无数据！</span>
+                </div>
+            </template>
+        </section>
+        <!--//简介-->
+        <!--赛程-->
+        <section name="match" style="display: none;">
+            <template v-if="schedule != null && schedule.length > 0">
+                <ul class="match_list bg_l">
+                    <li v-for="s in schedule" class="status_{{s.Status}}">
+                        <div class="match_item_title bg_j"><div class="match_state"></div><div class="font_6C">{{s.StartTime}} 开赛</div></div>
+                        <div class="match_item_data">
+                            <div class="match_title">
+                                <div class="font_6B">{{s.GameName}}</div>
+                                <template v-if="s.Status === 1">
+                                    <div class="match_state font_7L">未开始</div>
+                                </template>
+                                <template v-if="s.Status === 2">
+                                    <div class="match_state font_7L">即将开始</div>
+                                </template>
+                                <template v-if="s.Status === 3">
+                                    <div class="match_state font_7L">比赛延期</div>
+                                </template>
+                                <template v-if="s.Status === 4">
+                                    <div class="match_state font_7L">比赛中</div>
+                                </template>
+                                <template v-if="s.Status === 5">
+                                    <div class="match_state font_7L">比赛取消</div>
+                                </template>
+                                <template v-if="s.Status === 6">
+                                    <div class="match_state font_7L">已结束</div>
+                                </template>
+                            </div>
+                            <div class="match_result" onclick="gotourl('football_match.html?GameId={{s.GameId}}&&ScheduleId={{s.ScheduleId}}')">
+                                <div class="match_team">
+                                    <div class="match_team_logo"><img v-bind:src="s.HomeTeamCover" /></div>
+                                    <div class="font_3AB  host text_nowrap_ellipsis">{{s.HomeTeamName}}<span class="font_6C">(主)</span></div>
+                                </div>
+                                <div class="match_score">
+                                    <template v-if="s.Status === 4 || s.Status === 6">
+                                        <div class="font_1AB score">{{s.HomeTeamScore}}:{{s.GuestTeamScore}}</div>
+                                    </template>
+                                    <template v-else>
+                                        <div class="font_1AB score">-:-</div>
+                                    </template>
+                                </div>
+                                <div class="match_team">
+                                    <div class="match_team_logo"><img v-bind:src="s.GuestTeamCover" /></div>
+                                    <div class="font_3AB text_nowrap_ellipsis">{{s.GuestTeamName}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </template>
+            <template v-else>
+                <div class="blank font_3C bg_j">
+                    <img src="images/nodata.png" alt="">
+                    <span>暂无数据！</span>
+                </div>
+            </template>
+        </section>
+        <!--//赛程-->
+        <!--数据统计-->
+        <section name="statistics" style="display: none;">
+            <div class="content_title font_4A bg_j">
+                <template v-if="stat.StatsList != null && stat.StatsList.length > 0">
+                    <div class="bg_g icon_bar"></div>
+                </template>
+                <template v-else>
+                    <div class="bg_c icon_bar"></div>
+                </template>
+                <div class="font_4A content_title_text">{{datatype === 1?"进攻":"防守"}}数据</div>
+            </div>
+            <div class="content_main statistics bg_l">
+                <div class="item" v-for="s in stat.StatsList">
+                    <div class="font_3AB">{{s.StatsValue}}</div>
+                    <div class="font_6C">{{s.StatsName}}</div>
+                </div>
+            </div>
+            <div class="content_title font_4A bg_j">
+                <template v-if="stat.SettingList != null && stat.SettingList.length >0">
+                    <div class="bg_g icon_bar"></div>
+                </template>
+                <template v-else>
+                    <div class="bg_c icon_bar"></div>
+                </template>              
+                <div class="font_4A content_title_text">{{datatype === 1?"进攻":"防守"}}数据详情</div>
+            </div>
+            <div class="player_container bg_l">
+                <ul class="font_5B">
+                    <li class="player_container_titles item_bg_j">
+                        <div class="victory four">比赛</div>
+                        <div class="draw large">时间</div>
+                        <div class="negative four">主队</div>
+                        <div class="win_rate double">比分</div>
+                        <div class="foul four">客队</div>
+                        <div class="four" v-for="setting in stat.SettingList">
+                            {{setting.StatsName}}
+                        </div>
+                    </li>
+                    <li v-for="s in stat.DetailsList">
+                        <div class="victory four">{{s.GameName}}</div>
+                        <div class="draw large">{{s.StartTime}}</div>
+                        <div class="negative four">{{s.HomeTeamName}}</div>
+                        <div class="win_rate double">{{s.HomeTeamScore}}-{{s.GuestTeamScore}}</div>
+                        <div class="foul four">{{s.GuestTeamName}}</div>
+                        <div class="four" v-for="data in s.List">{{data.StatsValue}}</div>
+                    </li>
+                </ul>
+            </div>
+            <ul class="button">
+                <li v-on:click="GetTeamStat(1,1)" v-show="datatype === 1 || expand === 1">进攻数据</li>
+                <li v-on:click="GetTeamStat(2,1)" v-show="datatype === 2 || expand === 1">防守数据</li>
+            </ul>
+            <!--<div class="blank font_3C bg_j">
+                <img src="images/nodata.png" alt="">
+                <span>暂无数据！</span>
+            </div>-->
+        </section>
+        <!--球员-->
+        <section name="player" style="display: none;">
+            <template v-if="player != null && player.length > 0">
+                <ul class="player_list_header font_5C bg_j">
+                    <li class="name">姓名</li>
+                    <li class="number">球衣号码</li>
+                    <li class="position">位置</li>
+                    <li class="price">预计身价</li>
+                </ul>
+                <ul class="player_list font_5B bg_l">
+                    <li v-for="p in player">
+                        <div class="name"><img v-bind:src="p.PlayerCover" /> <div class="text_nowrap_ellipsis" onclick="gotourl('football_player.html?id={{p.PlayerId}}')">{{p.PlayerName}}</div></div>
+                        <div class="number">{{p.Number}}</div>
+                        <div class="position">{{p.Place}}</div>
+                        <div class="price">{{p.Value}}英镑</div>
+                    </li>
+                </ul>
+            </template>
+            <template v-else>
+                <div class="blank font_3C bg_j">
+                    <img src="images/nodata.png" alt="">
+                    <span>暂无数据！</span>
+                </div>
+            </template>
+        </section>
+        <!--//球员-->
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    var navs = document.querySelectorAll('#navigation ul li');
+    var sections = document.querySelectorAll('section');
+    navigationSwitcher.init(navs, sections);
+</script>

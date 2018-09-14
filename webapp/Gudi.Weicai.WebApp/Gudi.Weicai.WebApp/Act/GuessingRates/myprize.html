@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="full-screen" content="yes">
+    <title>我的奖品</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/myprize.css" />
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../SuperTeam/js/jquery.js"></script>
+    <script src="../../Content/js/main.js"></script>
+    <script src="../SuperTeam/js/share.js"></script>
+    <script src="../../Content/js/vue.min.js"></script>
+    <script src="js/myprize.js"></script>
+    <link href="../../Content/boxstyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="root_container" id="page_myprize" v-cloak>
+        <input type="hidden" id="hiddenusertoken" value="" />
+        <div class="header">
+            <img onclick="javascript:window.history.back(-1);" src="img/global/back_icon.png" />
+            <span>我的奖品</span>
+            <a href="help.html">
+                <img src="img/global/help.png" />
+            </a>
+        </div>
+        <div class="prize_list">
+            <ul>
+                <li v-for="p in prizelist">
+                    <div class="prize_panel">
+                        <div class="prize_img"><img v-bind:src="p.PrizePicture" /></div>
+                        <div class="prize_intro">
+                            <div class="prize_name">{{p.PrizeName}}</div>
+                            <div class="prize_date">获奖时间：{{p.CreateTime}}</div>
+                        </div>
+                        <div class="prize_state">
+                            <div v-show="p.Status" class="state_txt">已领取&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                            <div v-show="!p.Status" class="state_btn" v-on:click="receivePrize(p.Id,p.IsVirtual)">领取</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //针对ios做处理
+        var container = document.querySelector('.root_container');
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            container.style.paddingTop = '0.44rem';
+        }
+    </script>
+
+</body>
+</html>

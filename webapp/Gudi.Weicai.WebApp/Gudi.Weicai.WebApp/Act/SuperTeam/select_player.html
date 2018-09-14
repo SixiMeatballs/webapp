@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="x5-orientation" content="portrait | landscape" />
+	<meta name="screen-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true" />
+	<meta name="full-screen" content="yes">
+	<meta name="format-detection" content="telephone=no, email=no" />
+    <title>最强战队</title>
+    <link rel="stylesheet" href="css/global.css?1">
+    <link rel="stylesheet" href="css/style_select_player.css?6">
+    <script src="js/jquery.js"></script>
+    <script src="../../Content/js/main.js?0"></script>
+    <script src="js/share.js"></script>
+       <script src="/Content/js/vue.min.js"></script>
+    <script src="js/select_player.js"></script>
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <link href="css/progress.css?1" rel="stylesheet" />  
+</head>
+<body>
+    <input type="hidden" id="hiddenusertoken" value="" />
+    <div class="root_container" id="page_select_player" v-cloak>
+        <div class="header">
+            <div class="back_icon">
+                <img onclick="window.history.go(-1);" src="images/global/back.png" />
+            </div>
+            <div class="title">{{teamname}}</div>
+        </div>
+        <section>
+	        <div class="selected_player_list">
+	            <div class="selected_statistics">
+	                <div>
+	                    <div>已选球员</div>
+	                    <div>{{selectedcount}}/11</div>
+	                </div>
+	            </div>
+	            <div class="player_selected_list">
+	                <ul>
+	                    <li v-for="r in selectedplayerlist">
+	                        <div class="player_delete" @click="removePlayer(r)"><img src="images/selectplayer/player_delete.png" /></div>
+	                        <img :src="r.PlayerPicture"  style="border-radius:50%;" class="selectedplayerimg" @click="removePlayer(r)"/>
+	                        <span style="display:none">{{r.MyCardName}}</span>
+	                    </li>
+	                    <li v-for="r in 11" v-if="r>=selectedcount">
+	                        <div></div>
+	                        <img src="images/selectplayer/unselectedicon.png"  />
+	                    </li>
+	                </ul>
+	            </div>
+	        </div>
+	        <div class="country_list">
+	            <ul>
+	                <li v-for="r in teamlist" v-bind:class="{ activated: r.TeamId==activatedteam.TeamId }" @click="changeActivedTeam(r)">
+	                    <div class="country_item">
+	                        <div class="countryName">{{r.TeamName}}</div>
+	                        <div class="selectedCount" v-if="r.Count>0">{{r.Count}}</div>
+	                    </div>
+	                </li>
+	            </ul>
+	        </div>
+	        <div class="player_list">
+	            <ul class="content">
+	                <li v-for="r in playerlist" class="player_panel" v-bind:class="{ player_selected: r.IsChoice,player_unselected: r.IsChoice==false }">
+	                    <div class="player_name">{{r.PlayerName}}</div>
+	                    <div class="container">
+	                        <div class="player_position forward"></div>
+	                        <div class="player_card_list">
+	                            <template v-if="(CommonCardEnableCount+r.PlayerCardCount+r.SelectCardId)>0">
+	                                <div class="current_card" @click="selectCard(r,-1)">
+	                                    <span v-if="r.SelectCardId===0">球员卡</span>
+	                                    <span v-else>{{r.CardName}}</span>
+	                                    >
+	                                </div>
+	                            </template>
+	                            <div class="player_card_popup_panel divcard{{r.PlayerId}}" style="display:none; z-index:999;">
+	                                <ul>
+	                                    <li class="player_card" @click.stop="selectCard(r,0)" style="z-index:999;">
+	                                        <template v-if="r.SelectCardId===0">
+	                                            <input type="radio" name="selectCard{{r.PlayerId}}" value="1" checked>
+	                                        </template>
+	                                        <template v-else>
+	                                            <input type="radio" name="selectCard{{r.PlayerId}}" value="1">
+	                                        </template>
+	                                        <div>不使用</div>
+	                                    </li>
+	                                    <li class="player_card" v-for="r1 in CommonCardList" v-if="r1.SelectedStatus==0 || r1.MyCardId===r.SelectCardId" @click.stop="selectCard(r,0,r1,1)">
+	                                        <template v-if="r.SelectCardId===r1.MyCardId">
+	                                            <input type="radio" name="selectCard{{r.PlayerId}}" value="1" checked>
+	                                        </template>
+	                                        <template v-else>
+	                                            <input type="radio" name="selectCard{{r.PlayerId}}" value="1">
+	                                        </template>
+	                                        <div>{{r1.CardName}}({{r1.Discount}})</div>
+	                                    </li>
+	                                    <li class="player_card" v-for="r1 in r.CardList" @click.stop="selectCard(r,0,r1,0)">
+	                                        <template v-if="r.SelectCardId===r1.MyCardId">
+	                                            <input type="radio" name="selectCard{{r.PlayerId}}" value="1" checked>
+	                                        </template>
+	                                        <template v-else>
+	                                            <input type="radio" name="selectCard{{r.PlayerId}}" value="1">
+	                                        </template>
+	                                        <div>{{r1.CardName}}({{r1.Discount}})</div>
+	                                    </li>
+	                                </ul>
+	                            </div>
+	                        </div>
+	                        <div class="player_salary">
+	                            <div class="gold_icon"><img src="images/selectplayer/goldicon.png"  /></div>                          
+	                            <template v-if="r.SelectCardId>0">
+	                            	<div class="current">{{r.CurValue}}万</div>
+	                                <div class="deleted">{{r.Value}}万</div>
+	                            </template>
+	                            <template v-else>
+	                                <div class="current">{{r.Value}}万</div>
+	                            </template>
+	                        </div>
+	                        <div class="player_pic">
+	                            <img :src="r.Photo" class="playerimg" />
+	                        </div>
+	                    </div>
+	                    <template v-if="r.IsChoice">
+	                        <div class="player_button" @click="removePlayer(r)">
+	                            已选择
+	                        </div>
+	                    </template>
+	                    <template v-else>
+	                        <div class="player_button" @click="selectPlayer(r,-1)">
+	                            选择
+	                        </div>
+	                    </template>
+	                </li>
+	            </ul>
+	        </div>
+        </section>
+        
+        <div class="fix_bottom">
+            <div class="salary_panel" name="country_player_tax">
+                <div class="info">
+                    <div class="lblSalary">工资帽：<!--{{totalsalary}}-{{CommonCardList.length}}-{{youhuiSalary}}-{{chaochuSalary}}-{{NeedBonus}}--></div>
+                    <div class="lblFreeSalary">{{freeSalary}}万(免费)</div>
+                    <img class="lblFreeSalaryimg" src="images/selectplayer/triangle.png"/>
+                    <div class="lblMaxSalary">
+                        <span v-if="maxSalary>=10000">{{maxSalary/10000}}亿</span>
+                        <span v-else>{{maxSalary}}万</span>
+                        <img class="lblMaxSalaryimg" src="images/selectplayer/triangle.png"/>
+                    </div>
+                </div>
+                <div class="salaryBar" style="top:0.9rem;">
+                    <div class="barValue {{process.css}}">
+                        <div class="leftbarValue" style="width:{{process.width}}rem;"></div>
+                    </div>
+                    <div class="icoFootball" style="left:{{process.left}}rem;"></div>
+                    <div class="Salaryword" style="left:{{process.wordleft}}rem;">{{process.word}}</div>
+                </div>
+                <div class="lblDescription">提示：超出免费工资帽，需缴纳奢侈税，奢侈税可用猜豆购买。</div>
+            </div>
+            <img @click="infoalert()" class="full_width" src="images/global/btn_next_activated.png">
+        </div>
+
+        <div class="info_alert" style="display:none;" id="teaminfo">
+            <div class="team_info">
+                <div class="team_info_title">
+                    球队信息（11位）
+                    <img src="images/createteam/clear.png" class="boxclose" />
+                </div>
+                <ul class="info_list">
+                    <li v-for="r in selectedplayerlist">
+                        <div class="left">
+                            <img :src="r.PlayerPicture" class="selectedplayerimg" />
+                            <template v-if="r.MyCardId>0">
+                                <div>{{r.PlayerName}}-</div>
+                            </template>
+                            <template v-if="r.MyCardId==0">
+                                <div>{{r.PlayerName}}</div>
+                            </template>
+                        </div>
+                        <div class="player_cardname">{{r.MyCardName}}</div>
+                        <div class="coin">
+                            <img src="images/selectplayer/goldicon.png" />
+                            <div>{{r.FinalValue}}万</div>
+                        </div>
+                    </li>
+
+                </ul>
+                <div class="salary_info full_width">
+                    <div class="con">
+                        <div class="con_info">
+                            <div>已使用工资帽：</div>
+                            <div>
+                                <span v-if="totalsalary>=10000">{{totalsalary/10000}}亿</span>
+                                <span v-else>{{totalsalary}}万</span>
+                            </div>
+                        </div>
+                        <div class="con_info">
+                            <div>奢侈税：</div>
+                            <div>
+                                <span v-if="chaochuSalary>=10000">{{chaochuSalary/10000}}亿</span>
+                                <span v-else>{{chaochuSalary}}万</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="con">
+                        <div class="con_info">
+                            <div>优惠工资帽：</div>
+                            <div>
+                                <span v-if="youhuiSalary>=10000">{{youhuiSalary/10000}}亿</span>
+                                <span v-else>{{youhuiSalary}}万</span>
+                            </div>
+                        </div>
+                        <div class="con_info">
+                            <div>需缴纳：</div>
+                            <div>{{NeedBonus}} 猜豆</div>
+                        </div>
+                    </div>
+                </div>
+
+                <template v-if="selectedcount>=11">
+                    <div class="button full_width boxconfirm">确定</div>
+                </template>
+                <template v-else>
+                    <div class="button full_width">确定</div>
+                </template>
+
+            </div>
+
+
+
+
+        </div>
+
+        <div class="info_alert" style="display: none;" id="boxnext">
+            <div class="message">
+                <div class="message_con">确定要缴纳{{NeedBonus}}猜豆奢侈税来完成球队的创建吗？</div>
+                <div class="buttons full_width">
+                    <div class="boxclose">取消</div>
+                    <div class="line"></div>
+                    <div class="boxconfirm">确定</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info_alert" style="display: none;" id="boxchanchualert">
+            <div class="message">
+                <div class="message_con1">
+                    <div>您的球队工资帽已超上限</div>
+                    <div>
+                        <span v-if="maxSalary>=10000">工资帽最高上限为：{{maxSalary/10000}}亿</span>
+                        <span v-else>工资帽最高上限为：{{maxSalary}}万</span>
+                    </div>
+                </div>
+                <div class="button full_width boxclose">确定</div>
+            </div>
+        </div>
+
+        <div class="info_alert" style="display: none;" id="boxcannotnext">
+            <div class="message">
+                <div class="message_con1">
+                    <div>球员尚未选择完成，无法进入下一步</div>
+                </div>
+                <div class="button full_width boxclose">确定</div>
+            </div>
+        </div>
+
+        <div class="info_alert" style="display: none;" id="boxcannotselect">
+            <div class="message">
+                <div class="message_con1">
+                    <div>已选择11位球员</div>
+                </div>
+                <div class="button full_width boxclose">确定</div>
+            </div>
+        </div>
+
+        <div class="info_alert" style="display: none;" id="boxok">
+            <div class="message">
+
+                <div class="message_con1 success">
+                    <img src="images/selectplayer/success.png" />
+                    <div>参与成功！</div>
+                    <div>您可以去我的球队中查看</div>
+                </div>
+                <div class="button  full_width">
+                    <div><a href="select_round.html">继续组建</a></div>
+                    <div class="line"></div>
+                    <div><a href="myteam.html">前往查看</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info_alert" style="display: none;"  id="boxmoneyless">
+            <div class="recharge">
+                <div class="text">账户余额不足，您可以通过以下途径获取猜豆</div>
+                <ul class="recharge_list">
+                    <li onclick="NativeJumpDetail('recharge')">去充值</li>
+                    <li onclick="NativeJumpDetail('mission')">做任务</li>
+                    <li onclick="NativeJumpDetail('turntable')">玩转盘</li>
+                    <li class="boxclose">取消</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        //针对ios做处理
+        var container = document.querySelector('.root_container');
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            container.style.paddingTop = '0.44rem';
+        }
+    </script>
+</body>
+</html>

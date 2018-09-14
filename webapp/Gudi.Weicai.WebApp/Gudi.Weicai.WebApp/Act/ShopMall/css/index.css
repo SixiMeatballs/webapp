@@ -1,0 +1,172 @@
+.shopList{
+	display: flex;
+	flex-direction: column;
+	overflow: scroll;
+	padding: 0.3rem 0rem 0.3rem 0.3rem;
+	height: 5rem;
+	margin-top: 1.2rem;
+}
+.shopList .shopCeil{
+	display: flex;
+	margin-bottom: 0.3rem;
+	min-height: 2.4rem;
+}
+.shopList .shopCeil .ceilImg{
+	width: 2.4rem;
+	height: 2.4rem;
+}
+.shopList .shopCeil  .shopInfo{
+	display: flex;
+	flex-direction: column;
+	margin-left: 0.3rem;
+    border-bottom:0.01rem solid #eee;
+}
+.shopList .shopCeil  .shopInfo .shopTitle{
+	font-size: 0.28rem;
+	color: #333;
+}
+.shopList .shopCeil  .shopInfo .shopState{
+	width: 4rem;
+	/*height: 0.3rem;*/
+	border-radius: 0.3rem 0.3rem;
+	display: flex;
+	align-items: center;
+	background: #999;
+	font-size: 0.24rem;
+	color: #fff;
+	padding-left:0.1rem;
+	margin:0.2rem 0 ;
+}
+.shopList .shopCeil  .shopInfo .shopState img{
+	width: 0.22rem;
+	height: 0.22rem;
+	border-radius: 50%;
+	padding-right: 0.1rem;
+}
+.shopList .shopCeil  .shopInfo .hurry{
+	background: #FC3653;
+}
+.shopList .shopCeil  .shopInfo .start{
+	background: #F8AE3A;
+}
+.shopList .shopCeil  .shopInfo  .shopPrice{
+	display: flex;
+	align-items: baseline;
+	color: #999;
+	font-size: 0.24rem;
+}
+.shopList .shopCeil  .shopInfo .shopPrice .currentPrice{
+	font-size: 0.48rem;
+}
+.shopList .shopCeil  .shopInfo .shopPrice .currentPrice:first-letter{
+	font-size: 0.3rem;
+}
+.shopList .shopCeil  .shopInfo .shopPrice .activated{
+	color: #FF0036;
+}
+.shopList .shopCeil  .shopInfo .shopPrice .text{
+	margin: 0 0.3rem;
+}
+
+.shopList .shopCeil .shopInfo .shopOriginalPrice{
+			font-size: 0.24rem;
+			color: #999999;
+			text-decoration: line-through;
+		}
+
+.ad {
+	width: 6.9rem;
+	height: 1.8rem;
+	margin: 0.3rem;
+}
+.ad img{
+	width: 100%;
+}
+
+.recommend{
+	background: #F0F0F0;
+	display: flex;
+	flex-direction: column;
+}
+.recommend .recommendTitle{
+	width: 100%;
+	height: 0.88rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+}
+.recommend .recommendTitle .line{
+	width: 0.43rem;
+	height: 0.02rem;
+	background: #f62d4a;
+}
+.recommend .recommendTitle .center{
+	margin: 0 0.2rem;
+	display: flex;
+	align-items: center;
+	font-size: 0.3rem;
+	color: #F62D4A;
+}
+.recommend .recommendTitle .center img{
+	width: 0.36rem;
+	height: 0.36rem;
+	border-radius: 50%;
+	margin-right: 0.13rem;
+}
+
+.recommend .recomList{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.recommend .recomCeil{
+	display: flex;
+	flex-direction: column;
+	background: #fff;
+	width: 3.7rem;
+	height: 5.3rem;
+	margin: 0.1rem 0;
+}
+.recommend .recomCeil .img{
+	width: 3.7rem;
+	height: 3.7rem;
+	background: #CCCCCC;
+}
+.recommend .recomCeil .productInfo{
+	display: flex;
+	flex-direction: column;
+	padding: 0.25rem;
+	box-sizing: border-box;
+}
+.recommend .recomCeil .productInfo .productTitle{
+	min-height: 0.3rem;
+	font-size: 0.28rem;
+	color: #333;
+	margin-bottom: 0.38rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;	
+}
+.recommend .recomCeil .productInfo .productPrice{
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.22rem;
+	color: #999;
+	align-items: baseline;
+}
+.recommend .recomCeil .productInfo .productPrice .currentPrice{
+	color: #FF0036;
+	font-size: 0.36rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.recommend .recomCeil .productInfo .productPrice .proNum{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.recommend .recomCeil .productInfo .productPrice .currentPrice:first-letter{
+	font-size: 0.22rem;
+}

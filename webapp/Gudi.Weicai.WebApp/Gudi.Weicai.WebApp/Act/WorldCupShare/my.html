@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="css/share.css?1112" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>万元大奖活动</title>
+    <script src="../../Content/js/jquery-3.3.1.min.js"></script>
+    <script src="../SuperTeam/js/share.js"></script>
+    <script src="/Content/js/main.js"></script>
+    <link href="/Content/boxstyle.css" rel="stylesheet" />
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/Content/js/vue.min.js"></script>
+    <script src="js/my.js?2"></script>
+    <script src="../../share/js/device.js"></script>
+</head>
+<style>
+    .iphonex_container{padding-top:0.84rem !important;}
+    .back-icon-iphonex{top:0.84rem !important;}
+</style>
+<body>
+    <div class="container">
+        <input type="hidden" id="hiddenusertoken" value="" />
+
+        <a href="description.html" class="eventEnter">活动说明</a>
+        <img class="back-icon wcs" src="img/H5-arrow.png" />
+
+
+        <div class="eventTitle"><img src="img/share/title.png" /></div>
+        <template v-if="LottoryCode==null">
+            <div class="lotteryCode">
+                <div class="codeTitle">
+                    <div class="titleLeft">我的抽奖码</div>
+                    <div class="titleRight">已获得<span class="codeNum">0</span>个开奖码</div>
+                </div>
+                <div class="codeContent">
+                    <div class="code">暂无开奖码</div>
+                    <div class="code middleCode">暂无开奖码</div>
+                    <div class="code">暂无开奖码</div>
+                    <div class="code">暂无开奖码</div>
+                    <div class="code middleCode">暂无开奖码</div>
+                    <div class="code">暂无开奖码</div>
+                </div>
+                <div class="userInfo">
+                    <div class="userImg">
+                        <img src="img/share/userBlank.png" />
+                    </div>
+                    <div class="userName">请登录</div>
+                </div>
+            </div>
+
+        </template>
+        <template v-else>
+            <div class="lotteryCode">
+                <div class="codeTitle">
+                    <div class="titleLeft">我的抽奖码</div>
+                    <div class="titleRight">已获得<span class="codeNum">{{LottoryCode.LottoryCodeCount}}</span>个开奖码<span v-if="LottoryCode.LottoryCodeCount==6">，坐等开奖</span></div>
+                </div>
+                <div class="codeContent">
+                    <div class="code activatedCode" v-for="(index,r) in LottoryCode.LottoryCodeList" v-bind:class="{ middleCode: index%3==1 }">{{r.LotteryCode}}</div>
+                    <template v-if="LottoryCode.LottoryCodeCount<6">
+                    </template>
+                    <div class="code" v-for="r in 6" v-if="r>=LottoryCode.LottoryCodeCount" v-bind:class="{ middleCode: r%3==1 }">暂无开奖码</div>
+                </div>
+                <div class="userInfo">
+                    <div class="userImg">
+                        <img :src="LottoryCode.AccountHeadUrl" />
+                    </div>
+                    <div class="userName">{{LottoryCode.AccountName}}</div>
+                </div>
+            </div>
+        </template>
+
+        <template v-if="ScheduleInfo!=null && shutdownstatus!=0">
+            <div class="count" datatype="countDown">
+                <div class="lotteryDate">{{ScheduleInfo.ScheduleName}}</div>
+
+                <div class="title" v-if="shutdownstatus==1">
+                    <div class="line"></div>
+                    <div class="dot"></div>
+                    <span>距离活动截止</span>
+                    <div class="dot"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="title" v-if="shutdownstatus==4">
+                    <div class="line"></div>
+                    <div class="dot"></div>
+                    <span>距离活动开始</span>
+                    <div class="dot"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="title" v-if="shutdownstatus==2">
+                    <div class="line"></div>
+                    <div class="dot"></div>
+                    <span>距离活动开奖</span>
+                    <div class="dot"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="title" v-if="shutdownstatus==3">
+                    <div class="line"></div>
+                    <div class="dot"></div>
+                    <span>活动开奖中</span>
+                    <div class="dot"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="countdownTime" v-if="shutdownstatus==1 || shutdownstatus==2 || shutdownstatus==4">
+                    <div class="countdown">
+                        <div class="numBg">{{CountDown.dd}}</div>
+                        <div class="unit">天</div>
+                    </div>
+                    <div class="countdown">
+                        <div class="numBg">{{CountDown.hh}}</div>
+                        <div class="unit">时</div>
+                    </div>
+                    <div class="countdown">
+                        <div class="numBg">{{CountDown.mm}}</div>
+                        <div class="unit">分</div>
+                    </div>
+                    <div class="countdown">
+                        <div class="numBg">{{CountDown.ss}}</div>
+                        <div class="unit">秒</div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template v-else>
+            <div class="count">
+                <div class="lotteryDate" style="opacity:0;"></div>
+                <div class="headline">暂无活动</div>
+                <div class="countCon" id="countCon">暂无活动</div>
+            </div>
+        </template>
+
+
+        <div class="prizeSet">
+            <div class="setTitle">奖项设置</div>
+            <template v-if="ScheduleInfo!=null && ScheduleInfo.PrizeList!=null && ScheduleInfo.PrizeList.length!=null">
+                <ul class="awards">
+                    <li v-for="r in ScheduleInfo.PrizeList">
+                        <div class="ranking">{{r.PrizeName}}（{{r.PrizeCount}}名）</div>
+                        <div class="prizeCon">{{r.PrizeContent}}</div>
+                    </li>
+                </ul>
+            </template>
+            <template v-else>
+                <ul class="awards">
+                    <li>
+                        <div class="ranking"></div>
+                        <div class="prizeCon"></div>
+                    </li>
+
+                </ul>
+            </template>
+            <a href="board.html" class="prizeButton"><img src="img/share/button.png" /></a>
+        </div>
+
+        <div class="process">
+            <div class="title">
+                <div class="line"></div>
+                <div class="dot"></div>
+                <span>活动流程</span>
+                <div class="dot"></div>
+                <div class="line"></div>
+            </div>
+            <img src="img/share/process.png" alt="Alternate Text" />
+            <div class="processCon">分享后，每位好友助力一次，您都将获得一个抽奖码，与此同时好友也将获得一次抽奖中话费的机会。</div>
+        </div>
+
+        <div class="disclaimer">
+            <div class="title">
+                <div class="line"></div>
+                <div class="dot"></div>
+                <span>免责声明</span>
+                <div class="dot"></div>
+                <div class="line"></div>
+            </div>
+
+
+            <div class="processCon">
+                <p>一、严禁用户恶意刷抽奖码等违规行为，如查询情况属实，将取消中奖福利并追求其法律责任；</p>
+                <p>二、如遇不可抗力因素，本次活动因无法进行时，微猜在法律允许的范围内有权决定取消、终止、修改或暂停本活动；</p>
+                <p>三、任何参与本活动的用户，应仔细阅读完本声明，一旦参加本活动，即被视为对本声明全部内容的认可和接受；</p>
+                <p>四、本次活动最终解释权归微猜所有。</p>
+            </div>
+        </div>
+        <a class="share" @click="Share()" id="footer">分享获得抽奖码</a>
+        <div class="alert" style="display: none;" id="boxerror">
+            <div class="content">
+                <img class="bg" src="img/alert1.png" />
+                <img class="close  boxclose" src="img/close.png" />
+                <div class="infos">
+                    <span>{{errormessage}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert" style="display: none; background: rgba(0,0,0,0);" id="boxbindphone">
+            <div class="message">
+                <span class="title">未绑定手机号</span>
+                <span class="con">前往我的>设置>账户与安全</span>
+                <span class="con">绑定手机号后即可分享</span>
+                <span class="button boxclose">确定</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script language="JavaScript" type="text/javascript">
+        var container = document.querySelector('.container');
+        var footer = document.querySelector('#footer');
+        var back_icon = document.querySelector('.back-icon');
+        change(container, 'iphonex_container', 2);
+        change(back_icon, 'back-icon-iphonex', 2);
+        change(footer, 'iphonex_bottom', 2);
+        change(footer, 'iphonex_bottom',1);
+
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            container.style.paddingTop = '0.44rem';
+            back_icon.style.top = '0.44rem';
+        }
+    </script>
+</body>
+</html>

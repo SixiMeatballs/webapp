@@ -1,0 +1,55 @@
+.match_list li .match_item_title{ padding:0.15rem 0.2rem; display:flex; flex-direction:row; align-items: center;}
+.match_list li .match_item_title .match_state{width:0.2rem;height:0.2rem;border-radius:50%; margin:0 0.2rem;}
+.match_list li{display:flex; flex-direction:column;}
+.match_list li .match_item_data{display:flex; flex-direction:column; padding:0.22rem 0.6rem 0.36rem 0.6rem;}
+.match_list li .match_item_data .match_state{width:1.3rem;height:0.36rem;line-height:0.36rem;text-align:center; border-radius:0.18rem;margin-left:0.16rem;}
+.match_list li .match_item_data .match_title{display:flex; flex-direction:row; align-items:center;}
+.match_list li .match_item_data .match_result div{display:flex;flex-direction:column; align-items:center; justify-content:center;width: 3rem;min-width: 3rem;}
+.match_list li .match_item_data .match_result .match_team .host{flex-direction: row;}
+.match_list li .match_item_data .match_result{display:flex; flex-direction:row; padding-top:0.5rem; justify-content:center; align-items: center;}
+.match_list li .match_item_data .match_result .match_score{margin:0 0.2rem; letter-spacing:0.1rem;width: 1.5rem;min-width: 1.5rem;}
+.match_list li .match_item_data .match_result .match_team .match_team_logo{width:0.6rem; height:0.6rem; margin-bottom:0.24rem;}
+.match_list li .match_item_data .match_result .match_team .match_team_logo img{width:0.6rem;height:0.6rem;}
+
+.match_list .comingsoon .match_state{background-color:#f62707;}
+.match_list .playing .match_state{background-color:#41b92d;}
+.match_list .delay .match_state{background-color:#f66416;}
+.match_list .cancel .match_state{background-color:#0367bf;}
+.match_list .finished .match_state{background-color:#999999;}
+
+
+
+.player_list_header{display:flex; flex-direction:row; align-items:left; width:100%;position: absolute;padding: 0.22rem;box-sizing: border-box;}
+
+.player_list_header .name{width:2.03rem;margin-left:0.1rem;}
+.player_list_header .number{width:1.68rem}
+.player_list_header .position{width:1.74rem}
+.player_list_header .price{width:1.14rem}
+
+.player_list{margin-top: 0.8rem;padding: 0.22rem;box-sizing: border-box;}
+.player_list li{display: flex;align-items:center; margin-bottom:0.4rem;}
+.player_list li .name{display:flex;align-items: center; width:2.2rem;}
+.player_list li .name img{width: 0.54rem; margin-right:0.1rem;border-radius: 50%;}
+.player_list li .number{text-align:center;width:0.9rem;}
+.player_list li .position{text-align:center;width:1.9rem;}
+.player_list li .price{text-align:center;width:2rem;}
+
+
+.player_container {border-top: 0.1rem solid #fff;overflow: scroll; width: 100%;
+}
+.player_container ul li{display: flex;align-items: center;margin-bottom: 0.4rem;text-align: center; flex-wrap:nowrap;}
+.player_container ul li div{ display: inline-block; white-space: nowrap; min-width:1rem;}
+.player_container ul .player_container_titles div{padding:0.2rem 0;}
+.player_container ul li .double{min-width:1rem;}
+.player_container ul li .four{min-width: 1.5rem}
+.player_container ul li .large{min-width: 3rem}
+
+.statistics{display:flex;flex-direction:row;flex-wrap: wrap;  align-content: center;}
+.statistics .item{width:33%; display:flex; flex-direction:column; align-items: center; margin:0.2rem 0;}
+.statistics .item div{margin:0.14rem 0;}
+
+.content_main p span{font-size: 0.26rem!important;color: #666!important;font-family: "pingfang sc"!important;}
+
+.content_main .content_table .match_event{width: 1.5rem;min-width: 1.5rem;text-align: center;}
+.content_main .content_table .match_num{width: 1.5rem;min-width: 1.5rem;text-align: center;}
+.content_main .content_table .match_year{flex:1;text-align: right;}

@@ -1,0 +1,14 @@
+.lineup{height:11rem; min-height:11rem; max-height:11rem;background: url(../images/basketball_court.png) no-repeat, -webkit-linear-gradient(top,#54c06f,#54c06f);background-size: 100%;background-position-y: 0.3rem;}
+.lineup ul{width: 100%;display: flex;position: relative;height: 5.5rem;min-height: 5.5rem;}
+.lineup ul li div:nth-child(2){margin-left: 0.5rem;}
+
+.lineup ul .row_1{margin-top: 0.7rem;}
+.lineup .guest .row_1{margin-bottom: 0.9rem;margin-top: 0;}
+
+.team_members .team_info img{height: 0.96rem;}
+
+
+.player_container{margin-top: 0; padding-top:0.2rem;}
+
+.publictop{position: fixed;top: 4.58rem;width: 100%;z-index: 3;}
+.publictop div{float: left;}

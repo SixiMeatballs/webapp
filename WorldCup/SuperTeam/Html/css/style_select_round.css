@@ -1,0 +1,49 @@
+.round_list_container{font-size:2.16rem; color:#eee; width:90%; min-height:8rem; overflow:hidden; background-image:url(../images/createteam/round_list.png); background-repeat:no-repeat; background-size:100% 100%; padding:0 5%; margin:0; overflow:scroll;}
+.round_list_container ul{padding:1.2rem 0 0 0;margin:0;list-style:none;display:flex;  flex-direction: row; flex-wrap: nowrap; align-items:center;}
+.round_list_container ul li{display:flex; flex-direction:column; align-items: center; margin-top:0;}
+.round_list_container ul li div{text-align:center; width:12rem; padding:0; margin:0;}
+.round_list_container ul li .round_name{font-size:2.3rem;}
+.round_list_container .activated{ color:#FFc000; margin-top:-0.4rem;}
+.round_list_container .activated .round_name{font-size:2.8rem;}
+.round_list_container .activated .round_title{font-size:2.1rem;}
+
+.match_list_container{display:flex; flex-direction:column; width:100%;padding:1rem 0; min-height:40rem; max-height:90rem;}
+.match_list_container .match_daterange{margin:0 4.2rem;background:#155578; color:#EEE; text-align:center; font-size:2.2rem;padding:0.5rem 0; border-radius:1rem 1rem 0 0; box-shadow:0 1rem 1rem #000; overflow:auto; min-height:3.41rem;}
+.match_list_container .match_list{color:#80a6be;overflow:auto; padding:0 1rem; margin:0 4.2rem; background:rgba(18, 75, 110, 0.8); border-radius:0 0 1rem 1rem; box-shadow:0 1rem 1rem #000;}
+.match_list_container .match_list ul{padding:0; margin:0; display:flex; flex-direction: column;}
+.match_list_container .match_list ul li{margin:1rem 0 1rem 0;  display:flex; flex-direction:column;}
+.match_list_container .match_list ul li .match_data{display:flex; flex-direction: row; justify-content:space-around; align-items:center;}
+.match_list_container .match_list .team{ display:flex; align-items:center; min-height:3rem;}
+.match_list_container .match_list .matchTitle{position:relative; text-align:center; font-size:2.16rem; margin-bottom:-1rem;}
+.match_list_container .match_list .teamLogo img{ width:7.8rem;}
+.match_list_container .match_list .teamName{ font-size:2.6rem; color:#fdc000;  overflow: hidden; text-overflow:ellipsis;white-space: nowrap; width:16.25rem;}
+.match_list_container .match_list .hostTeam{float:left; overflow: hidden;}
+.match_list_container .match_list .guestTeam{float:right; overflow: hidden;}
+.match_list_container .match_list .hostTeam .teamName{text-align:left;margin:0 0 0 1.5rem; }
+.match_list_container .match_list .guestTeam .teamName{text-align:right;margin:0 1.5rem 0 0; }
+.match_list_container .match_list .match_date{clear:both; margin-top: -1.25rem; text-align:center; font-size:2.16rem}
+
+#countdown{position:absolute; color:white; font-family:Impact; font-size: 5.4rem; top: 5rem; width:100%;}
+#countdown div{float:left;position:absolute; width:8.6rem;text-align: center;}
+#countdown #days{left:9.5rem;}
+#countdown #hours{left:19.9rem;}
+#countdown #minutes{left:30.5rem;}
+#countdown #seconds{left:40.6rem;}
+
+#salary{position:absolute; color:#81471A; font-family:Impact; font-size:2.3rem; bottom: 4rem; width:100%;}
+#salary div{;position:absolute; width:8.6rem;text-align: center;}
+#salary #salary_free{left: 14.2rem;}
+#salary #salary_max{right: 9.5rem;}
+
+#bottom_button{background: url(../images/createteam/text_bg.png) no-repeat top center;background-size: 100% 100%;text-align: center;font-size: 2.7rem;color: #8E908F;height: 8.45rem;line-height: 8.45rem;}
+
+
+.root_container{position: relative;}
+#select{width: 100%;height: 100%;background: rgba(0,0,0,.4);position: absolute;top: 0;}
+#select #select_alert{position: absolute;top: 40%;width: 100%;height: 26.22rem;background-color: #0E3650;display: flex;flex-direction: column;align-items: center;}
+#select #select_alert .alert_head {width: 100%;display: flex;margin-top: 3.25rem;}
+#select #select_alert .alert_head div{font-size: 2.7rem;letter-spacing: 0.2rem;margin-left: 30rem;color: #5A7B92;}
+#select #select_alert .alert_con{width: 41.81rem;height: 6.17rem;display: flex;justify-content: flex-start;align-items: center;background-color: #071923;margin-top: 3.25rem;border-radius: 2rem 2rem;}
+#select #select_alert .alert_con .input_info{font-size: 2.38rem;color: #485056;letter-spacing: 0.1rem;margin-left: 2.16rem;}
+#select #select_alert .alert_con input[type=text]{border: 0;outline: 0;height: 3.35rem;background-color: #071923;font-size: 2.1rem;color: #7496AD;margin-top: 0.3rem;margin-left: 1rem;}
+#select #select_alert  .alert_bottom{margin-top: 3.25rem;}

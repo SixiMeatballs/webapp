@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <link href="css/beans.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="history">
+            <div class="listItem">
+                <img src="http://placehold.it/64x64" alt="">
+                <div class="titleInfo">
+                    <span>奖励</span>
+                    <span class="userDate">2018-08-02</span>
+                </div>
+                <div class="userNum">1551抵扣券</div>
+            </div>
+            <div class="listItem">
+                <img src="http://placehold.it/64x64" alt="">
+                <div class="titleInfo">
+                    <span>奖励</span>
+                    <span class="userDate">2018-08-02</span>
+                </div>
+                <div class="userNum">1551抵扣券</div>
+            </div>
+            <div class="listItem">
+                <img src="http://placehold.it/64x64" alt="">
+                <div class="titleInfo">
+                    <span>奖励</span>
+                    <span class="userDate">2018-08-02</span>
+                </div>
+                <div class="userNum">1551抵扣券</div>
+            </div>
+            <div class="listItem">
+                <img src="http://placehold.it/64x64" alt="">
+                <div class="titleInfo">
+                    <span>奖励</span>
+                    <span class="userDate">2018-08-02</span>
+                </div>
+                <div class="userNum">1551抵扣券</div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../share/js/rem.js"></script>
+</body>
+
+</html>

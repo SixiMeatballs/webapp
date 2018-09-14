@@ -1,0 +1,329 @@
+
+.container{
+	background: #F0F0F0;
+}
+
+.banner{
+	height: 3.75rem;
+}
+.banner img{
+	width: 100%;
+}
+
+.couponTitle{
+	height: 0.8rem;
+	background: #fff;
+	color: #333;
+	font-size: 0.26rem;
+	line-height: 0.8rem;
+	padding-left: 0.3rem;
+	margin-bottom: 0.2rem;
+}
+
+.couponIntro{
+	height: 1.92rem;
+	display: flex;
+	flex-direction: column;
+	background: #fff;
+	padding: 0.3rem;
+	box-sizing: border-box;
+	font-size: 0.26rem;
+	color: #333;
+}
+.couponIntro .subtitle{
+	font-size: 0.3rem;
+	margin-bottom: 0.05rem;
+}
+.couponIntro .special{
+	margin-top: 0.3rem;
+}
+
+ .couponList{
+ 	padding: 0.3rem;
+ }
+ .couponList .couponCeil{
+	height: 1.8rem;
+	min-height: 1.8rem;
+	display: flex;
+	margin-bottom: 0.2rem;
+	background: #fff;
+	border-radius: 0.2rem;
+}
+ .couponList .couponCeil .faceValue{
+	width: 2rem;
+	height: 1.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.1rem;
+	color: #EC6A20;
+	font-size: 0.26rem;
+}
+ .couponList .couponCeil .faceValue .value{
+	font-size: 0.69rem;
+	font-weight: bold;
+}
+ .couponList .couponCeil .faceValue .value:first-letter{
+	font-size: 0.34rem;
+}
+ .couponList .couponCeil .useDate{
+ 	width: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 0.24rem;
+	color: #666;
+	margin-left: 0.2rem;
+}
+ .couponList .couponCeil .useDate .activated{
+ 	font-size: 0.3rem;
+ 	color: #f62707;
+ 	margin-bottom: 0.14rem;
+ }
+ .couponList .couponCeil .useDate .condition{
+ 	margin-bottom: 0.1rem;
+ }
+.couponList .couponCeil .collectionNum{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.couponList .couponCeil .collectionNum .circle-bar {
+	width: 1rem;
+	height: 1rem;
+	position: relative;
+	background-color: #ff0036;
+}
+
+.couponList .couponCeil .collectionNum .circle-bar-left,
+.circle-bar-right {
+	width: 1rem;
+	height: 1rem;
+	background-color: #CCC;
+}
+
+.couponList .couponCeil .collectionNum  .circle-bar-right {
+	clip: rect(0, auto, auto, 0.5rem);
+}
+
+.couponList .couponCeil .collectionNum  .circle-bar-left {
+	clip: rect(0, 0.5rem, auto, 0);
+}
+
+.couponList .couponCeil .collectionNum  .mask {
+	width: 0.8rem;
+	height: 0.8rem;
+	background-color: #fff;
+	text-align: center;
+	line-height: 0.2rem;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.couponList .couponCeil .collectionNum  .mask :first-child {
+	font-size: 0.15rem;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	display: flex;
+	flex-direction: column;
+}
+.couponList .couponCeil .collectionNum  .mask .topTips{
+	top: -0.3rem;
+}
+.couponList .couponCeil .collectionNum  .mask .nums{
+	top: 0.15rem;
+	font-size: 0.18rem;
+}
+.couponList .couponCeil .collectionNum   .circle-bar * {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+
+.couponList .couponCeil .collectionNum   .circle-bar,
+.circle-bar>* {
+	border-radius: 50%;
+}
+.couponList .couponCeil .collectionNum  .collectionButton{
+	width: 1.24rem;
+	height: 0.4rem;
+	border-radius: 0.4rem   0.4rem;
+	background: #F62707;
+	color: #fff;
+	font-size: 0.24rem;
+	text-align: center;
+	line-height: 0.4rem;
+	margin-top: 0.1rem;
+}
+.couponList .couponCeil .collectionNum .buttonState{
+	background: #999999;
+}
+
+.commonAlert{
+	width: 4rem;
+	height: 2rem;
+	background: rgba(49,49,49,0.8);
+	padding: 0.6rem;
+	box-sizing: border-box;
+	font-size: 0.3rem;
+	color: #fff;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+
+.receiveAlert{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	background: rgba(0,0,0,.4);
+	z-index: 9;
+}
+.receive{
+	width: 6.02rem;
+	height: 6.7rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+.receive .closeIcon{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+.receive .closeIcon img{
+	width: 0.5rem;
+	border-radius: 50%;
+}
+.receive .closeIcon .line{
+	width: 0.02rem;
+	height: 0.6rem;
+	background: #fff;
+	margin-right: 0.25rem;
+}
+.receive .packageCon{
+	width: 100%;
+	height: 5.6rem;
+	background: url(../img/receiveBg.png) no-repeat;
+	background-size: 100%;
+	padding: 0.48rem 0.3rem 0;
+	box-sizing: border-box;
+}
+.receive .packageCon .packageTitle{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.receive .packageCon .packageTitle span{
+	font-size: 0.48rem;
+	color: #fff;
+	font-family: Noto Sans S Chinese;
+	font-weight: bold;
+}
+.receive .packageCon .packageTitle .subtitle{
+	font-size: 0.42rem;
+	color: #fff;
+	font-family:NotoSansHans-Black;
+	font-weight: bold;
+	margin-bottom: 0.4rem;
+}
+.receive .packageCon .packageTitle .couponContent{
+	width: 5.26rem;
+	height: 1.2rem;
+	background: url(../img/couponBg.png) no-repeat;
+	background-size: 100%;
+}
+.receive .packageCon .packageTitle .successIcon{
+    width: 1.3rem;
+	height: 1.3rem;
+	border-radius: 50%;
+}
+.receive .packageCon .phone {
+    width: 4.6rem;
+    height: 0.92rem;
+    border-radius: 0.1rem;
+    color: #999999;
+    font-size: 0.3rem;
+    padding-left: 1.1rem;
+    box-sizing: border-box;
+    margin-left: 0.3rem;
+}
+.receive .packageCon .packageButton{
+	width: 4.6rem;
+	height: 0.92rem;
+	border-radius: 0.1rem;
+	background: #FEAC0F;
+	font-size: 0.36rem;
+	color: #fff;
+	margin-left: 0.3rem;
+	margin-top: 0.3rem;
+	text-align: center;
+	line-height: 0.92rem;
+}
+
+.packageTitle .couponContent{
+	height: 1.2rem;
+	min-height: 1.2rem;
+	display: flex;
+	margin-bottom: 0.1rem;
+}
+.packageTitle .couponContent .faceValue{
+	width: 2rem;
+	height: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	font-size: 0.26rem;
+}
+.packageTitle .couponContent .faceValue .value{
+	font-size: 0.44rem;
+	font-weight: bold;
+}
+.packageTitle .couponContent .faceValue .value:first-letter{
+	font-size: 0.22rem;
+}
+.packageTitle .couponContent .useDate{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex: 1;
+	font-size: 0.24rem;
+	color: #666;
+	margin-left: 0.2rem;
+}
+.successAlert{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	background: rgba(0,0,0,.4);
+	z-index: 9;
+}
+.successAlerted {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(0,0,0,.4);
+    z-index: 9;
+}
+.successAlert .packageTitle .successIcon{
+	width: 1.3rem;
+	height: 1.3rem;
+	border-radius: 50%;
+}

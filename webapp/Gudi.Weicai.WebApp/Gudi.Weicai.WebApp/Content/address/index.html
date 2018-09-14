@@ -1,0 +1,87 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <title>城市选择</title>
+    <link rel="stylesheet" type="text/css" href="css/mui.picker.css" />
+    <link rel="stylesheet" type="text/css" href="css/mui.css" />
+    <style>
+        * {
+            font-size: 14px;
+        }
+
+        p {
+            text-align: center;
+            background: #f00;
+            padding: 10px 0;
+            margin: 20px 0 0 0;
+            color: #fff
+        }
+    </style>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <p id="useData">选择时间</p>
+    <input type="text" id="useData_id" />
+    <p id="city_text">选择省市区</p>
+    <input type="text" id="city_id" />
+    <p id="city_text1" class="r-tx-txt2 r-tx-txt2s fl">选择省市</p>
+    <input type="text" id="city_id1" />
+    <p id="city_text2" class="r-tx-txt2 r-tx-txt2s fl">选择省</p>
+    <input type="text" id="city_id2" />
+</body>
+<script src="js/mui.min.js"></script>
+<script src="js/mui.picker.min.js"></script>
+<script src="js/data.city.js"></script>
+<script>
+    //时间选择就不多说了，mui框架自带，重点是城市
+    var start_time_picker = new mui.DtPicker({ "type": "date", "beginYear": 1960, "endYear": 2020 });
+    $("#useData").on("tap", function () {
+        setTimeout(function () {
+            start_time_picker.show(function (items) {
+                $("#useData_id").val(items.text);
+                $("#useData").html(items.text);
+            });
+        }, 200);
+    });
+
+    //选择省市区
+    var city_picker = new mui.PopPicker({ layer: 3 });
+    city_picker.setData(init_city_picker);
+    $("#city_text").on("tap", function () {
+        setTimeout(function () {
+            city_picker.show(function (items) {
+                $("#city_id").val((items[0] || {}).value + "," + (items[1] || {}).value + "," + (items[2] || {}).value);//该ID为接收城市ID字段
+                $("#city_text").html((items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text);
+            });
+        }, 200);
+    });
+    //选择省市
+    var city_picker1 = new mui.PopPicker({ layer: 2 });
+    city_picker1.setData(init_city_picker);
+    $("#city_text1").on("tap", function () {
+        setTimeout(function () {
+            city_picker1.show(function (items) {
+                $("#city_id1").val((items[0] || {}).value + "," + (items[1] || {}).value);
+                $("#city_text1").html((items[0] || {}).text + " " + (items[1] || {}).text);
+            });
+        }, 200);
+    });
+    //选择省
+    var city_picker2 = new mui.PopPicker({ layer: 1 });
+    city_picker2.setData(init_city_picker);
+    $("#city_text2").on("tap", function () {
+        setTimeout(function () {
+            city_picker2.show(function (items) {
+                $("#city_id2").val((items[0] || {}).value);
+                $("#city_text2").html((items[0] || {}).text);
+            });
+        }, 200);
+    });
+</script>
+</html>

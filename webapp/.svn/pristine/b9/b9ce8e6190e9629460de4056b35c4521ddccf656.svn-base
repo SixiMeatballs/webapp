@@ -1,0 +1,13 @@
+.player_list_header{display:flex; flex-direction:row; align-items:left; width:100%;}
+
+.player_list_header .name{width:2.03rem;margin-left:0.1rem;}
+.player_list_header .number{width:1.68rem}
+.player_list_header .position{width:1.74rem}
+.player_list_header .price{width:1.14rem}
+
+.player_list li{display: flex;align-items:center; margin-bottom:0.4rem;}
+.player_list li .name{display:flex;align-items: center; width:2.2rem;}
+.player_list li .name img{width: 0.54rem; margin-right:0.1rem;}
+.player_list li .number{text-align:center;width:0.9rem;}
+.player_list li .position{text-align:center;width:1.9rem;}
+.player_list li .price{text-align:center;width:2rem;}

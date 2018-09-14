@@ -1,0 +1,21 @@
+.header {
+	background: url(../img/global/header_bg.png) no-repeat;
+	background-size: 100% 100%;
+	align-items: center;
+}
+
+.header span {
+	font-size: 0.3rem;
+	color: #fff;
+	text-shadow: 0 0 0.3rem #019bf4;
+	flex: 1;
+	justify-content: center;
+	display: flex;
+	margin-right: 1rem;
+	letter-spacing: 0.03rem;
+}
+
+p{
+	font-size: 0.3rem;
+	color: #63e0ff;
+}

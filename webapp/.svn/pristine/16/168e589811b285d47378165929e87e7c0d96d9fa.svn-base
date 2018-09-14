@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="full-screen" content="yes">
+    <title>球员</title>
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/navigationSwitcher.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/global.css?001">
+    <link rel="stylesheet" href="css/team_country.css">
+    <link rel="stylesheet" href="css/team_football_player.css">
+    <script src="/Act/SuperTeam/js/jquery.js"></script>
+    <script src="/Content/js/main.js"></script>
+    <script src="/Act/SuperTeam/js/share.js"></script>
+    <script src="/Content/js/vue.min.js"></script>
+    <link href="/Content/address/css/mui.css" rel="stylesheet" />
+    <link href="/Content/address/css/mui.picker.css" rel="stylesheet" />
+    <script src="/Content/address/js/mui.min.js"></script>
+    <script src="/Content/address/js/mui.picker.min.js"></script>
+    <script src="js/actionsheetdemo.js"></script>
+</head>
+<body>
+    <input type="hidden" id="hiddenusertoken" value="" />
+    <div class="container" id="actionsheetdemo">
+        <ul class="button">
+            <li @click="actionSheetOpen()">{{control.text}}</li>
+        </ul>
+        <a href="/DataCenter/football_team.html?id=51903&teamtype=2" target="_blank">点我测试_blank打开</a><br />
+        <a href="/DataCenter/football_team.html?id=51903&teamtype=2">点我测试当前页面打开</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+.header_bg{width:100%;height:30rem;min-height:30rem;background: url(../images/prize/prize_bg.png) no-repeat;background-size: 100% 100%;}
+.header_bg .back_icon{margin-left: 3rem;margin-top: 3rem;}
+.header_bg .back_icon img{width: 5.8rem;}
+
+
+.prize_title{width: 100%;height: 6.5rem;min-height: 6.5rem;background: rgba(12,52,78,.6);display: flex; justify-content: space-around;align-items: center;}
+.prize_title div{width: 50%;height: 100%;line-height: 6.5rem;text-align: center;font-size: 2.275rem;color: #E2E4E7;letter-spacing: .2rem;}
+.prize_title .active{border-bottom: 0.325rem solid #fff;box-sizing: border-box;}
+
+
+.paize_content{display: flex;justify-content: flex-start;width: 100%;overflow: scroll;padding-top: 0.54rem; height:100%;}
+
+.paize_content ul{overflow:scroll;}
+.paize_content .round{background-color: rgba(18,65,95,.75);}
+.paize_content .round li{width: 9.425rem;height: 7.58rem;border-bottom: 0.11rem solid #144B6E;display: flex;flex-direction: column;align-items: center;background-color: #19608E;padding-top: 1.2rem;box-sizing: border-box;}
+.paize_content .round li div{font-size: 2.2rem;color: #fff;letter-spacing: .2rem;}
+.paize_content .round  .activated div{color: #6E92AD;}
+.paize_content .round  .activimg{background-color: #1E79B2;}
+
+.paize_content .paize_list{flex-grow: 1;background-color: rgba(15,69,110,.75);}
+.paize_content .paize_list li{display: flex;justify-content: space-around;height: 7.58rem;align-items: center;}
+.paize_content .paize_list li .left{display: flex;justify-content: space-around;width: 50%;align-items: center;}
+.paize_content .paize_list li .left img{width: 6rem;}
+.paize_content .paize_list li .left .rank{width: 15rem;}
+
+.paize_content .paize_list li .right{width: 45%;display: flex;justify-content: center;}
+
+
+
+.paize_content .paize_list li div{font-size: 2.2rem;color: #fff;letter-spacing: .2rem;}
+.paize_content .paize_list li:nth-of-type(even){background-color: rgba(15,69,99,.8);}
+
+
+div[prizetype='day'] .round{display: block;}
+div[prizetype='total'] .round{display: none;}

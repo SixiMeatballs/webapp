@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../Content/js/jquery-3.3.1.min.js"></script>
+    <script src="../Content/js/main.js"></script>
+       <script src="/Content/js/vue.min.js"></script>
+    <link rel="stylesheet" href="SuperTeam/css/global.css">
+    <link href="SuperTeam/css/progress.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var d = { 'userToken': '' };
+            //callapi("WorldCup/GetRound", d, "", s, f);
+        });
+
+        function s(data) {
+            console.log(data);
+        }
+
+        function f(data) {
+            console.log(data.Message);
+        }
+    </script>
+</head>
+<body>
+    <input type="hidden" id="hiddenusertoken" value="" />
+    <div id="app" style="position:relative;">
+        <!--<p>{{ message }}</p>
+        <ul>
+            <li v-for="r in list">
+                {{ r.RoundName }}
+            </li>
+        </ul>-->
+        <button v-on:click="reverseMessage">Reverse Message</button>
+
+        <button v-on:click="testfun">test</button>
+
+
+        <div class="salary_panel" name="country_player_tax">
+            <div class="info">
+                <div class="lblSalary">工资帽：</div>
+                <div class="lblFreeSalary">9000万</div>
+                <div class="lblMaxSalary">
+                    1.2亿
+                </div>
+            </div>
+            <div class="salaryBar">
+                <div class="barValue progresswarn">
+                    <div class="leftbarValue" style="width:0rem;"></div>
+                </div>
+                <div class="icoFootball" style="left:0rem;"></div>
+                <div class="Salaryword" style="left:0rem;">0</div>
+            </div>
+            <div class="lblDescription">提示：超出免费工资帽，需缴纳奢侈税，奢侈税可用猜豆购买。</div>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue.js!',
+                list: null，
+                process: {} //{ width: 0, left: 0, type: 0, css:'progresswarn',word:'' };   //type:   0:  <freelen,   1:   freelen和maxlen 之间，  2：>mexlen  word:显示的工资帽
+            },
+            methods: {
+                reverseMessage: function () {
+                    this.message = this.message.split('').reverse().join('')
+                },
+                testfun: function () {
+                    var _self = this;
+                    //var d = { 'userToken': '' };
+                    //callapi("WorldCup/GetRound", d, "", function (data) {
+                    //    _self.message = "afetfserd";
+                    //    _self.list = data.Data;
+                    //});
+
+                    _self.process = calprogress(4000, 12000, 9000);
+                }
+            },
+            compiled: function () {
+                this.testfun();
+            }
+        })
+    </script>
+
+
+    <!--<input type="button" id="btn" value="免费获取验证码" onclick="settime(this)" />
+    <script type="text/javascript">
+        var countdown = 60;
+        function settime(val) {
+            if (countdown == 0) {
+                val.removeAttribute("disabled");
+                val.value = "免费获取验证码";
+                countdown = 60;
+            } else {
+                val.setAttribute("disabled", true);
+                val.value = "重新发送(" + countdown + ")";
+                countdown--;
+            }
+            setTimeout(function () {
+                settime(val)
+            }, 1000)
+        }
+    </script>-->
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>个人中心</title>
+    <link href="css/center.css" rel="stylesheet" />
+    <script src="../../../Content/js/vue.min.js"></script>
+    <script src="../../../Content/js/jquery-3.3.1.min.js"></script>
+    <script src="../../../Content/js/main.js"></script>
+    <script src="js/center.js"></script>
+</head>
+
+<body>
+    <div class="container" id="center" v-cloak>
+        <!-- 用户信息 -->
+        <div class="userInfo">
+            <img :src="userInfo.AccountIconUrl" alt="failed">
+            <span class="userName">{{userInfo.AccountName}}</span>
+        </div>
+        <!-- 账户信息 -->
+        <div class="account">
+            <a class="account-item" href="beans.html?id={{userInfo.BounsMoney}}">
+                <span class="account-num">{{userInfo.BounsMoney}}</span>
+                <span>猜豆余额（个）</span>
+            </a>
+            <div class="line"></div>
+            <a class="account-item" href="discount.html?id={{userInfo.GoldMoney}}">
+                <span class="account-num">{{userInfo.GoldMoney}}</span>
+                <span>抵扣券（张）</span>
+            </a>
+        </div>
+        <!-- 菜单管理 -->
+        <div class="menuList">
+            <a class="menu-item" href="recharge.html">
+                <img class="menu-icon" src="http://placehold.it/48x48" alt="failed">
+                <span class="menu-name">猜豆充值</span>
+                <img class="arrow" src="../static/img/right-arrow.png" />
+            </a>
+            <a class="menu-item" href="beansExchange.html">
+                <img class="menu-icon" src="http://placehold.it/48x48" alt="failed">
+                <span class="menu-name">猜豆兑换礼包</span>
+                <img class="arrow" src="../static/img/right-arrow.png" />
+            </a>
+            <div class="menu-item">
+                <img class="menu-icon" src="http://placehold.it/48x48" alt="failed">
+                <span class="menu-name">猜豆充值</span>
+                <img class="arrow" src="../static/img/right-arrow.png" />
+            </div>
+        </div>
+    </div>
+    <script src="../../../share/js/rem.js"></script>
+</body>
+
+</html>

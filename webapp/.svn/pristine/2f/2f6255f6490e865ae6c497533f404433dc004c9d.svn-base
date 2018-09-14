@@ -1,0 +1,891 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B8B60F98-EDE9-4D95-9426-A52CC66581F0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gudi.Weicai.WebApp</RootNamespace>
+    <AssemblyName>Gudi.Weicai.WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Act\GuessingRates\css\getmyprize.css" />
+    <Content Include="Act\GuessingRates\css\global.css" />
+    <Content Include="Act\GuessingRates\css\help.css" />
+    <Content Include="Act\GuessingRates\css\index.css" />
+    <Content Include="Act\GuessingRates\css\myprize.css" />
+    <Content Include="Act\GuessingRates\css\myrecording.css" />
+    <Content Include="Act\GuessingRates\css\prize.css" />
+    <Content Include="Act\GuessingRates\css\ranking.css" />
+    <Content Include="Act\GuessingRates\css\select_game.css" />
+    <Content Include="Act\GuessingRates\css\select_round.css" />
+    <Content Include="Act\GuessingRates\getmyprize.html" />
+    <Content Include="Act\GuessingRates\help.html" />
+    <Content Include="Act\GuessingRates\img\global\Advanced.png" />
+    <Content Include="Act\GuessingRates\img\global\alert_bottom.png" />
+    <Content Include="Act\GuessingRates\img\global\alter_title_bg.png" />
+    <Content Include="Act\GuessingRates\img\global\back_icon.png" />
+    <Content Include="Act\GuessingRates\img\global\bet_icon.png" />
+    <Content Include="Act\GuessingRates\img\global\bg.png" />
+    <Content Include="Act\GuessingRates\img\global\bg1.png" />
+    <Content Include="Act\GuessingRates\img\global\bg2.png" />
+    <Content Include="Act\GuessingRates\img\global\bg22.png" />
+    <Content Include="Act\GuessingRates\img\global\bg_3.png" />
+    <Content Include="Act\GuessingRates\img\global\bg_4.png" />
+    <Content Include="Act\GuessingRates\img\global\bottom_bg.png" />
+    <Content Include="Act\GuessingRates\img\global\button_long.png" />
+    <Content Include="Act\GuessingRates\img\global\button_long_bg.png" />
+    <Content Include="Act\GuessingRates\img\global\button_small_bg.png" />
+    <Content Include="Act\GuessingRates\img\global\button_s_bg.png" />
+    <Content Include="Act\GuessingRates\img\global\card_ico.png" />
+    <Content Include="Act\GuessingRates\img\global\close_icon.png" />
+    <Content Include="Act\GuessingRates\img\global\countdow.png" />
+    <Content Include="Act\GuessingRates\img\global\guest.png" />
+    <Content Include="Act\GuessingRates\img\global\header_bg.png" />
+    <Content Include="Act\GuessingRates\img\global\help.png" />
+    <Content Include="Act\GuessingRates\img\global\host.png" />
+    <Content Include="Act\GuessingRates\img\global\icon.png" />
+    <Content Include="Act\GuessingRates\img\global\integral_ico.png" />
+    <Content Include="Act\GuessingRates\img\global\lock.png" />
+    <Content Include="Act\GuessingRates\img\global\myprize.png" />
+    <Content Include="Act\GuessingRates\img\global\prize.png" />
+    <Content Include="Act\GuessingRates\img\global\ranking_bottom.png" />
+    <Content Include="Act\GuessingRates\img\global\roundlist_bg.png" />
+    <Content Include="Act\GuessingRates\img\global\Turntable.png" />
+    <Content Include="Act\GuessingRates\img\global\v.png" />
+    <Content Include="Act\GuessingRates\img\global\win_ico.png" />
+    <Content Include="Act\GuessingRates\img\global\x.png" />
+    <Content Include="Act\GuessingRates\img\index\bg.png" />
+    <Content Include="Act\GuessingRates\img\index\bottom_bg.png" />
+    <Content Include="Act\GuessingRates\img\index\button.png" />
+    <Content Include="Act\GuessingRates\img\index\myrecording.png" />
+    <Content Include="Act\GuessingRates\img\index\prize.png" />
+    <Content Include="Act\GuessingRates\img\index\ranking.png" />
+    <Content Include="Act\GuessingRates\img\index\thems.png" />
+    <Content Include="Act\GuessingRates\index.html" />
+    <Content Include="Act\GuessingRates\js\getmyprize.js" />
+    <Content Include="Act\GuessingRates\js\myprize.js" />
+    <Content Include="Act\GuessingRates\js\myrecording.js" />
+    <Content Include="Act\GuessingRates\js\prize.js" />
+    <Content Include="Act\GuessingRates\js\ranking.js" />
+    <Content Include="Act\GuessingRates\js\rem.js" />
+    <Content Include="Act\GuessingRates\js\select_game.js" />
+    <Content Include="Act\GuessingRates\js\select_game1.js" />
+    <Content Include="Act\GuessingRates\js\select_round.js" />
+    <Content Include="Act\GuessingRates\myprize.html" />
+    <Content Include="Act\GuessingRates\myrecording.html" />
+    <Content Include="Act\GuessingRates\prize.html" />
+    <Content Include="Act\GuessingRates\ranking.html" />
+    <Content Include="Act\GuessingRates\select_round.html" />
+    <Content Include="Act\GuessingRates\slecet_game.html" />
+    <Content Include="Act\IndexList\css\information.css" />
+    <Content Include="Act\IndexList\css\load.css" />
+    <Content Include="Act\IndexList\img\1.png" />
+    <Content Include="Act\IndexList\index.html" />
+    <Content Include="Act\IndexList\informationList.html" />
+    <Content Include="Act\IndexList\js\informationList.js" />
+    <Content Include="Act\MakeMoneyInfo\index.css" />
+    <Content Include="Act\MakeMoneyInfo\index.html" />
+    <Content Include="Act\ShopMall\couponCenter.html" />
+    <Content Include="Act\ShopMall\css\base.css" />
+    <Content Include="Act\ShopMall\css\couponCenter.css" />
+    <Content Include="Act\ShopMall\css\index.css" />
+    <Content Include="Act\ShopMall\css\productShow.css" />
+    <Content Include="Act\ShopMall\img\adIcon.png" />
+    <Content Include="Act\ShopMall\img\banner.png" />
+    <Content Include="Act\ShopMall\img\couponBg.png" />
+    <Content Include="Act\ShopMall\img\delete.png" />
+    <Content Include="Act\ShopMall\img\giftIcon.png" />
+    <Content Include="Act\ShopMall\img\headIcon.png" />
+    <Content Include="Act\ShopMall\img\icon.png" />
+    <Content Include="Act\ShopMall\img\receiveBg.png" />
+    <Content Include="Act\ShopMall\img\small-delete.png" />
+    <Content Include="Act\ShopMall\img\successIcon.png" />
+    <Content Include="Act\ShopMall\img\time.png" />
+    <Content Include="Act\ShopMall\index.html" />
+    <Content Include="Act\ShopMall\js\couponCenter.js" />
+    <Content Include="Act\ShopMall\js\index.js" />
+    <Content Include="Act\ShopMall\js\productShow.js" />
+    <Content Include="Act\ShopMall\productShow.html" />
+    <Content Include="Act\SuperTeam\css\global.css" />
+    <Content Include="Act\SuperTeam\css\globalstyle.css" />
+    <Content Include="Act\SuperTeam\css\index.css" />
+    <Content Include="Act\SuperTeam\css\my_player_cards.css" />
+    <Content Include="Act\SuperTeam\css\my_prize.css" />
+    <Content Include="Act\SuperTeam\css\my_prize_get_address.css" />
+    <Content Include="Act\SuperTeam\css\my_team.css" />
+    <Content Include="Act\SuperTeam\css\other.css" />
+    <Content Include="Act\SuperTeam\css\player_detail.css" />
+    <Content Include="Act\SuperTeam\css\prize.css" />
+    <Content Include="Act\SuperTeam\css\progress.css" />
+    <Content Include="Act\SuperTeam\css\ranking_list.css" />
+    <Content Include="Act\SuperTeam\css\style_select_player.css" />
+    <Content Include="Act\SuperTeam\css\style_select_round.css" />
+    <Content Include="Act\SuperTeam\css\team_detail.css" />
+    <Content Include="Act\SuperTeam\getmyprize.html" />
+    <Content Include="Act\SuperTeam\help.html" />
+    <Content Include="Act\SuperTeam\images\createteam\btn_next_activated.png" />
+    <Content Include="Act\SuperTeam\images\createteam\btn_teamname_confirm.png" />
+    <Content Include="Act\SuperTeam\images\createteam\clear.png" />
+    <Content Include="Act\SuperTeam\images\createteam\close.png" />
+    <Content Include="Act\SuperTeam\images\createteam\countdown_bg.png" />
+    <Content Include="Act\SuperTeam\images\createteam\globalbg.png" />
+    <Content Include="Act\SuperTeam\images\createteam\guest.png" />
+    <Content Include="Act\SuperTeam\images\createteam\host.png" />
+    <Content Include="Act\SuperTeam\images\createteam\match_list_bg.png" />
+    <Content Include="Act\SuperTeam\images\createteam\round_list.png" />
+    <Content Include="Act\SuperTeam\images\createteam\sure.png" />
+    <Content Include="Act\SuperTeam\images\createteam\teamname_bg.png" />
+    <Content Include="Act\SuperTeam\images\createteam\text_bg.png" />
+    <Content Include="Act\SuperTeam\images\createteam\vs.png" />
+    <Content Include="Act\SuperTeam\images\global\back.png" />
+    <Content Include="Act\SuperTeam\images\global\bg.png" />
+    <Content Include="Act\SuperTeam\images\global\blankimg.png" />
+    <Content Include="Act\SuperTeam\images\global\btn_next_activated.png" />
+    <Content Include="Act\SuperTeam\images\global\flag.png" />
+    <Content Include="Act\SuperTeam\images\global\help.png" />
+    <Content Include="Act\SuperTeam\images\global\noprize.png" />
+    <Content Include="Act\SuperTeam\images\global\player.png" />
+    <Content Include="Act\SuperTeam\images\global\playercard.png" />
+    <Content Include="Act\SuperTeam\images\global\selectplayer.png" />
+    <Content Include="Act\SuperTeam\images\global\select_round.jpg" />
+    <Content Include="Act\SuperTeam\images\index\btn_index_create.png" />
+    <Content Include="Act\SuperTeam\images\index\btn_myteam.png" />
+    <Content Include="Act\SuperTeam\images\index\btn_playercard.png" />
+    <Content Include="Act\SuperTeam\images\index\btn_prize.png" />
+    <Content Include="Act\SuperTeam\images\index\btn_raking.png" />
+    <Content Include="Act\SuperTeam\images\index\footer.png" />
+    <Content Include="Act\SuperTeam\images\index\main.png" />
+    <Content Include="Act\SuperTeam\images\myplayercard\bronze.png" />
+    <Content Include="Act\SuperTeam\images\myplayercard\bronze_bg.png" />
+    <Content Include="Act\SuperTeam\images\myplayercard\draw_card.png" />
+    <Content Include="Act\SuperTeam\images\myplayercard\gold.png" />
+    <Content Include="Act\SuperTeam\images\myplayercard\gold_bg.png" />
+    <Content Include="Act\SuperTeam\images\myplayercard\silver.png" />
+    <Content Include="Act\SuperTeam\images\myplayercard\silver_bg.png" />
+    <Content Include="Act\SuperTeam\images\myteam\201379143717.jpg" />
+    <Content Include="Act\SuperTeam\images\myteam\clock.png" />
+    <Content Include="Act\SuperTeam\images\myteam\football.png" />
+    <Content Include="Act\SuperTeam\images\myteam\playericon.png" />
+    <Content Include="Act\SuperTeam\images\myteam\prizeicon.png" />
+    <Content Include="Act\SuperTeam\images\myteam\salaryerror.png" />
+    <Content Include="Act\SuperTeam\images\myteam\salarywarn.png" />
+    <Content Include="Act\SuperTeam\images\myteam\salary_bg.png" />
+    <Content Include="Act\SuperTeam\images\myteam\teambg.png" />
+    <Content Include="Act\SuperTeam\images\prize\champion.png" />
+    <Content Include="Act\SuperTeam\images\prize\prize.png" />
+    <Content Include="Act\SuperTeam\images\prize\prize_bg.png" />
+    <Content Include="Act\SuperTeam\images\prize\ranking.png" />
+    <Content Include="Act\SuperTeam\images\prize\secondplace.png" />
+    <Content Include="Act\SuperTeam\images\prize\thirdplace.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\1.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\2.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\3.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\4.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\5.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\6.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\7.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\8.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\9.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\discount_bg.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\forward.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\goldicon.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\player.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\playericon.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\playerpanelbg.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\playertaxbg.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\player_delete.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\salary_bg.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\success.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\triangle.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\unselectedicon.png" />
+    <Content Include="Act\SuperTeam\images\selectplayer\used.png" />
+    <Content Include="Act\SuperTeam\index.html" />
+    <Content Include="Act\SuperTeam\js\drawSalaryBar.js" />
+    <Content Include="Act\SuperTeam\js\getmyprize.js" />
+    <Content Include="Act\SuperTeam\js\index.js" />
+    <Content Include="Act\SuperTeam\js\jquery-3.3.1.min.js" />
+    <Content Include="Act\SuperTeam\js\mobile_draggable_fix.js" />
+    <Content Include="Act\SuperTeam\js\myplayercard.js" />
+    <Content Include="Act\SuperTeam\js\myprize.js" />
+    <Content Include="Act\SuperTeam\js\myteam.js" />
+    <Content Include="Act\SuperTeam\js\page_fm.js" />
+    <Content Include="Act\SuperTeam\js\playerdetails.js" />
+    <Content Include="Act\SuperTeam\js\prize.js" />
+    <Content Include="Act\SuperTeam\js\ranking.js" />
+    <Content Include="Act\SuperTeam\js\rem.js" />
+    <Content Include="Act\SuperTeam\js\select_player.js" />
+    <Content Include="Act\SuperTeam\js\select_round.js" />
+    <Content Include="Act\SuperTeam\js\setrootfontsize.js" />
+    <Content Include="Act\SuperTeam\js\share.js" />
+    <Content Include="Act\SuperTeam\js\teamdetails.js" />
+    <Content Include="Act\SuperTeam\myplayercard.html" />
+    <Content Include="Act\SuperTeam\myprize.html" />
+    <Content Include="Act\SuperTeam\myteam.html" />
+    <Content Include="Act\SuperTeam\playerdetails.html" />
+    <Content Include="Act\SuperTeam\prize.html" />
+    <Content Include="Act\SuperTeam\ranking.html" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\AUTHORS.txt" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\external\jquery\jquery.js" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\images\ui-icons_444444_256x240.png" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\images\ui-icons_555555_256x240.png" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\images\ui-icons_777620_256x240.png" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\images\ui-icons_777777_256x240.png" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\index.html" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\jquery-ui.css" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\jquery-ui.js" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\jquery-ui.min.css" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\jquery-ui.min.js" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\jquery-ui.structure.css" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\jquery-ui.structure.min.css" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\jquery-ui.theme.css" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\jquery-ui.theme.min.css" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\LICENSE.txt" />
+    <Content Include="Act\SuperTeam\select_player.html" />
+    <Content Include="Act\SuperTeam\select_round.html" />
+    <Content Include="Act\SuperTeam\teamdetails.html" />
+    <Content Include="Act\testjs.html" />
+    <Content Include="Act\weixin\center\beans.html" />
+    <Content Include="Act\weixin\center\beansExchange.html" />
+    <Content Include="Act\weixin\center\css\beans.css" />
+    <Content Include="Act\weixin\center\css\center.css" />
+    <Content Include="Act\weixin\center\center.html" />
+    <Content Include="Act\weixin\center\css\change.css" />
+    <Content Include="Act\weixin\center\css\recharge.css" />
+    <Content Include="Act\weixin\center\discount.html" />
+    <Content Include="Act\weixin\center\help.html" />
+    <Content Include="Act\weixin\center\img\10.png" />
+    <Content Include="Act\weixin\center\img\15.png" />
+    <Content Include="Act\weixin\center\img\5.png" />
+    <Content Include="Act\weixin\center\img\change-bg.png" />
+    <Content Include="Act\weixin\center\img\circular-nor.png" />
+    <Content Include="Act\weixin\center\img\circular-sel.png" />
+    <Content Include="Act\weixin\center\img\del-icon.png" />
+    <Content Include="Act\weixin\center\js\beans.js" />
+    <Content Include="Act\weixin\center\js\center.js" />
+    <Content Include="Act\weixin\center\js\discount.js" />
+    <Content Include="Act\weixin\center\js\recharge.js" />
+    <Content Include="Act\weixin\center\mothbeans.html" />
+    <Content Include="Act\weixin\center\mothdiscount.html" />
+    <Content Include="Act\weixin\center\recharge.html" />
+    <Content Include="Act\weixin\static\img\right-arrow.png" />
+    <Content Include="Act\WorldCupShare\board.html" />
+    <Content Include="Act\WorldCupShare\css\ad_share.css" />
+    <Content Include="Act\WorldCupShare\css\announce.css" />
+    <Content Include="Act\WorldCupShare\css\get.css" />
+    <Content Include="Act\WorldCupShare\css\getSuccess.css" />
+    <Content Include="Act\WorldCupShare\css\instructions.css" />
+    <Content Include="Act\WorldCupShare\css\join.css" />
+    <Content Include="Act\WorldCupShare\css\lottery-list.css" />
+    <Content Include="Act\WorldCupShare\css\receive.css" />
+    <Content Include="Act\WorldCupShare\css\repay.css" />
+    <Content Include="Act\WorldCupShare\css\share.css" />
+    <Content Include="Act\WorldCupShare\css\wcshare.css" />
+    <Content Include="Act\WorldCupShare\description.html" />
+    <Content Include="Act\WorldCupShare\images\blank_img.png" />
+    <Content Include="Act\WorldCupShare\images\button.png" />
+    <Content Include="Act\WorldCupShare\images\share1.png" />
+    <Content Include="Act\WorldCupShare\images\share2.jpg" />
+    <Content Include="Act\WorldCupShare\img\alert1.png" />
+    <Content Include="Act\WorldCupShare\img\alert2.png" />
+    <Content Include="Act\WorldCupShare\img\announce\activeTitle.png" />
+    <Content Include="Act\WorldCupShare\img\announce\already.png" />
+    <Content Include="Act\WorldCupShare\img\announce\bg.png" />
+    <Content Include="Act\WorldCupShare\img\announce\bg2.png" />
+    <Content Include="Act\WorldCupShare\img\announce\cancel.png" />
+    <Content Include="Act\WorldCupShare\img\announce\count_bg.png" />
+    <Content Include="Act\WorldCupShare\img\announce\next.png" />
+    <Content Include="Act\WorldCupShare\img\announce\none.png" />
+    <Content Include="Act\WorldCupShare\img\announce\open.png" />
+    <Content Include="Act\WorldCupShare\img\announce\past.png" />
+    <Content Include="Act\WorldCupShare\img\announce\pause.png" />
+    <Content Include="Act\WorldCupShare\img\announce\titleBg.png" />
+    <Content Include="Act\WorldCupShare\img\arrow.png" />
+    <Content Include="Act\WorldCupShare\img\bg-1.jpg" />
+    <Content Include="Act\WorldCupShare\img\close.png" />
+    <Content Include="Act\WorldCupShare\img\com.jpg" />
+    <Content Include="Act\WorldCupShare\img\H5-arrow.png" />
+    <Content Include="Act\WorldCupShare\img\logo.png" />
+    <Content Include="Act\WorldCupShare\img\logos.png" />
+    <Content Include="Act\WorldCupShare\img\receive\bg-ios.png" />
+    <Content Include="Act\WorldCupShare\img\receive\bg.png" />
+    <Content Include="Act\WorldCupShare\img\receive\bg1-ios.png" />
+    <Content Include="Act\WorldCupShare\img\receive\bg1.png" />
+    <Content Include="Act\WorldCupShare\img\receive\bg2-ios.png" />
+    <Content Include="Act\WorldCupShare\img\receive\bg2.png" />
+    <Content Include="Act\WorldCupShare\img\receive\bg3-ios.png" />
+    <Content Include="Act\WorldCupShare\img\receive\bg3.png" />
+    <Content Include="Act\WorldCupShare\img\receive\bg4.png" />
+    <Content Include="Act\WorldCupShare\img\receive\buttonBg.png" />
+    <Content Include="Act\WorldCupShare\img\receive\cancel.png" />
+    <Content Include="Act\WorldCupShare\img\reg-bag.png" />
+    <Content Include="Act\WorldCupShare\img\share\bg2.jpg" />
+    <Content Include="Act\WorldCupShare\img\share\bg2.png" />
+    <Content Include="Act\WorldCupShare\img\share\button.png" />
+    <Content Include="Act\WorldCupShare\img\share\choujiangma1.png" />
+    <Content Include="Act\WorldCupShare\img\share\choujiangma2.png" />
+    <Content Include="Act\WorldCupShare\img\share\countBg.png" />
+    <Content Include="Act\WorldCupShare\img\share\new-bg.jpg" />
+    <Content Include="Act\WorldCupShare\img\share\prize-bg1.png" />
+    <Content Include="Act\WorldCupShare\img\share\prize-set.png" />
+    <Content Include="Act\WorldCupShare\img\share\process.png" />
+    <Content Include="Act\WorldCupShare\img\share\title.png" />
+    <Content Include="Act\WorldCupShare\img\share\userBlank.png" />
+    <Content Include="Act\WorldCupShare\shareImg\1.png" />
+    <Content Include="Act\WorldCupShare\shareImg\bg.png" />
+    <Content Include="Act\WorldCupShare\shareImg\btn.png" />
+    <Content Include="Act\WorldCupShare\shareImg\down-bg.png" />
+    <Content Include="Act\WorldCupShare\shareImg\icon.png" />
+    <Content Include="Act\WorldCupShare\shareImg\receive-btn.png" />
+    <Content Include="Act\WorldCupShare\wcsharedownload.html" />
+    <Content Include="Act\WorldCupShare\js\managecache.js" />
+    <Content Include="Act\WorldCupShare\managecache.html" />
+    <Content Include="Act\WorldCupShare\index.html" />
+    <Content Include="Act\WorldCupShare\js\result_win_use.js" />
+    <Content Include="Act\WorldCupShare\js\result_win_get.js" />
+    <Content Include="Act\WorldCupShare\js\result_win.js" />
+    <Content Include="Act\WorldCupShare\js\list.js" />
+    <Content Include="Act\WorldCupShare\js\board.js" />
+    <Content Include="Act\WorldCupShare\js\index.js" />
+    <Content Include="Act\WorldCupShare\js\my.js" />
+    <Content Include="Act\WorldCupShare\js\rem.js" />
+    <Content Include="Act\WorldCupShare\list.html" />
+    <Content Include="Act\WorldCupShare\wcshare.html" />
+    <Content Include="Act\WorldCupShare\my.html" />
+    <Content Include="Act\WorldCupShare\result_lose.html" />
+    <Content Include="Act\WorldCupShare\result_win_use.html" />
+    <Content Include="Act\WorldCupShare\result_win_get.html" />
+    <Content Include="Act\WorldCupShare\result_win.html" />
+    <Content Include="Act\WorldCupShare\rules.html" />
+    <Content Include="Act\WorldCupShare\weicaipromotion.html" />
+    <Content Include="Act\WorldCupShare\worldcuppromotion.html" />
+    <Content Include="Content\address\css\mui.css" />
+    <Content Include="Content\address\css\mui.picker.css" />
+    <Content Include="Content\address\index.html" />
+    <Content Include="Content\address\js\data.city.js" />
+    <Content Include="Content\address\js\mui.min.js" />
+    <Content Include="Content\address\js\mui.picker.min.js" />
+    <Content Include="Content\boxstyle.css" />
+    <Content Include="Content\js\circle-progress.min.js" />
+    <Content Include="Content\js\clipboard.min.js" />
+    <Content Include="Content\js\device.js" />
+    <Content Include="Content\js\jquery-3.3.1.min.js" />
+    <Content Include="Act\SuperTeam\js\jquery.js" />
+    <Content Include="Act\SuperTeam\js\positionSetter.js" />
+    <Content Include="Act\SuperTeam\js\roundLoader.js" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\ajax-loader.gif" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\action-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\action-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\alert-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\alert-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-d-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-d-l-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-d-l-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-d-r-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-d-r-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-d-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-l-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-l-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-r-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-r-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-u-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-u-l-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-u-l-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-u-r-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-u-r-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\arrow-u-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\audio-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\audio-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\back-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\back-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\bars-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\bars-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\bullets-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\bullets-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\calendar-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\calendar-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\camera-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\camera-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\carat-d-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\carat-d-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\carat-l-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\carat-l-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\carat-r-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\carat-r-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\carat-u-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\carat-u-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\check-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\check-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\clock-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\clock-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\cloud-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\cloud-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\comment-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\comment-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\delete-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\delete-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\edit-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\edit-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\eye-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\eye-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\forbidden-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\forbidden-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\forward-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\forward-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\gear-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\gear-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\grid-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\grid-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\heart-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\heart-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\home-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\home-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\info-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\info-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\location-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\location-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\lock-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\lock-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\mail-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\mail-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\minus-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\minus-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\navigation-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\navigation-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\phone-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\phone-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\plus-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\plus-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\power-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\power-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\recycle-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\recycle-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\refresh-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\refresh-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\search-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\search-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\shop-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\shop-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\star-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\star-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\tag-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\tag-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\user-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\user-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\video-black.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-png\video-white.png" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\action-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\action-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\alert-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\alert-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-d-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-d-l-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-d-l-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-d-r-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-d-r-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-d-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-l-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-l-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-r-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-r-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-u-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-u-l-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-u-l-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-u-r-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-u-r-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\arrow-u-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\audio-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\audio-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\back-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\back-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\bars-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\bars-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\bullets-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\bullets-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\calendar-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\calendar-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\camera-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\camera-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\carat-d-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\carat-d-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\carat-l-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\carat-l-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\carat-r-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\carat-r-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\carat-u-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\carat-u-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\check-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\check-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\clock-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\clock-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\cloud-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\cloud-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\comment-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\comment-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\delete-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\delete-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\edit-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\edit-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\eye-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\eye-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\forbidden-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\forbidden-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\forward-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\forward-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\gear-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\gear-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\grid-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\grid-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\heart-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\heart-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\home-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\home-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\info-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\info-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\location-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\location-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\lock-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\lock-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\mail-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\mail-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\minus-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\minus-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\navigation-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\navigation-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\phone-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\phone-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\plus-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\plus-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\power-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\power-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\recycle-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\recycle-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\refresh-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\refresh-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\search-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\search-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\shop-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\shop-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\star-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\star-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\tag-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\tag-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\user-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\user-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\video-black.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\images\icons-svg\video-white.svg" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile-1.4.5.css" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile-1.4.5.js" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile-1.4.5.min.css" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile-1.4.5.min.js" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile.external-png-1.4.5.css" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile.external-png-1.4.5.min.css" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile.icons-1.4.5.css" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile.icons-1.4.5.min.css" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile.inline-png-1.4.5.css" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile.inline-png-1.4.5.min.css" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile.inline-svg-1.4.5.css" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile.inline-svg-1.4.5.min.css" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile.structure-1.4.5.css" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile.structure-1.4.5.min.css" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile.theme-1.4.5.css" />
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile.theme-1.4.5.min.css" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\moment.min.js" />
+    <Content Include="Content\js\openapp.js" />
+    <Content Include="Content\js\vue.min.js" />
+    <Content Include="Content\layer\layer.js" />
+    <Content Include="Content\layer\mobile\layer.js" />
+    <Content Include="Content\layer\mobile\need\layer.css" />
+    <Content Include="Content\layer\theme\default\icon-ext.png" />
+    <Content Include="Content\layer\theme\default\icon.png" />
+    <Content Include="Content\layer\theme\default\layer.css" />
+    <Content Include="Content\layer\theme\default\loading-0.gif" />
+    <Content Include="Content\layer\theme\default\loading-1.gif" />
+    <Content Include="Content\layer\theme\default\loading-2.gif" />
+    <Content Include="Content\swiper\css\swiper.css" />
+    <Content Include="Content\swiper\css\swiper.min.css" />
+    <Content Include="Content\swiper\js\swiper.esm.bundle.js" />
+    <Content Include="Content\swiper\js\swiper.esm.js" />
+    <Content Include="Content\swiper\js\swiper.js" />
+    <Content Include="Content\swiper\js\swiper.min.js" />
+    <Content Include="DataCenter\basketball_match.html" />
+    <Content Include="DataCenter\basketball_stat.html" />
+    <Content Include="DataCenter\css\basketball_list.css" />
+    <Content Include="DataCenter\css\basketball_match.css" />
+    <Content Include="DataCenter\css\football_list.css" />
+    <Content Include="DataCenter\css\football_match.css" />
+    <Content Include="DataCenter\css\global.css" />
+    <Content Include="DataCenter\css\match.css" />
+    <Content Include="DataCenter\css\team_basketball.css" />
+    <Content Include="DataCenter\css\team_basketba_player.css" />
+    <Content Include="DataCenter\css\team_country.css" />
+    <Content Include="DataCenter\css\team_football.css" />
+    <Content Include="DataCenter\css\team_football_player.css" />
+    <Content Include="DataCenter\css\team_match_list.css" />
+    <Content Include="DataCenter\css\team_player.css" />
+    <Content Include="DataCenter\actionsheetdemo.html" />
+    <Content Include="DataCenter\football_stat.html" />
+    <Content Include="DataCenter\football_match.html" />
+    <Content Include="DataCenter\images\Assists.png" />
+    <Content Include="DataCenter\images\back.png" />
+    <Content Include="DataCenter\images\basketball_court.png" />
+    <Content Include="DataCenter\images\blankpage-imag.png" />
+    <Content Include="DataCenter\images\blank_img.png" />
+    <Content Include="DataCenter\images\change.png" />
+    <Content Include="DataCenter\images\Cricle.png" />
+    <Content Include="DataCenter\images\cricles.png" />
+    <Content Include="DataCenter\images\cricle_fff.png" />
+    <Content Include="DataCenter\images\drop.png" />
+    <Content Include="DataCenter\images\football_court.png" />
+    <Content Include="DataCenter\images\Goals.png" />
+    <Content Include="DataCenter\images\nodata.png" />
+    <Content Include="DataCenter\images\noPenalty.png" />
+    <Content Include="DataCenter\images\ownGoals.png" />
+    <Content Include="DataCenter\images\Penalty.png" />
+    <Content Include="DataCenter\images\player_header.png" />
+    <Content Include="DataCenter\images\replace.png" />
+    <Content Include="DataCenter\images\team_flag.png" />
+    <Content Include="DataCenter\images\team_logo.png" />
+    <Content Include="DataCenter\images\triangle.png" />
+    <Content Include="DataCenter\js\basketball_match.js" />
+    <Content Include="DataCenter\js\basketball_player.js" />
+    <Content Include="DataCenter\js\basketball_stat.js" />
+    <Content Include="DataCenter\js\basketball_team.js" />
+    <Content Include="DataCenter\js\football_match.js" />
+    <Content Include="DataCenter\js\actionsheetdemo.js" />
+    <Content Include="DataCenter\js\football_stat.js" />
+    <Content Include="DataCenter\js\football_team.js" />
+    <Content Include="DataCenter\js\match_statistics_bar.js" />
+    <Content Include="DataCenter\js\navigationSwitcher.js" />
+    <Content Include="DataCenter\js\rem.js" />
+    <Content Include="DataCenter\basketball_team.html" />
+    <Content Include="DataCenter\basketball_player.html" />
+    <Content Include="DataCenter\football_team.html" />
+    <Content Include="DataCenter\football_player.html" />
+    <Content Include="DataCenter\js\football_player.js" />
+    <Content Include="Global.asax" />
+    <Content Include="share\css\index.css" />
+    <Content Include="share\css\room.css" />
+    <Content Include="share\img\arrow.png" />
+    <Content Include="share\img\bg.png" />
+    <Content Include="share\img\game.png" />
+    <Content Include="share\img\guess.png" />
+    <Content Include="share\img\logo.png" />
+    <Content Include="share\img\mall.png" />
+    <Content Include="share\img\member.png" />
+    <Content Include="share\img\message_bg.png" />
+    <Content Include="share\img\rom-bg.png" />
+    <Content Include="share\index.html" />
+    <Content Include="share\js\device.js" />
+    <Content Include="share\js\rem.js" />
+    <Content Include="share\js\index.js" />
+    <Content Include="share\js\room.js" />
+    <Content Include="share\room.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ActController.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Act\MakeMoneyInfo\img\" />
+    <Folder Include="Act\weixin\static\css\" />
+    <Folder Include="Act\weixin\static\js\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Act\SuperTeam\resources\jquery.mobile\jquery.mobile-1.4.5.min.map" />
+    <Content Include="Act\SuperTeam\resources\jquery-ui-1.12.1.custom\package.json" />
+    <Content Include="Content\swiper\js\swiper.min.js.map" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58671</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58671/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

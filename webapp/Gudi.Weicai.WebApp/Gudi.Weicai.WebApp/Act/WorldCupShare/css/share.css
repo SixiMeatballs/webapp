@@ -1,0 +1,88 @@
+*{margin: 0;padding: 0;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+a{text-decoration: none;}
+ul{list-style: none;}
+
+body{width: 100%;background: url(../img/com.jpg) repeat-y;background-size:100%;font-family:'PingFang SC';}
+
+.container {width: 100%;height: 100%;background: url(../img/share/new-bg.jpg) no-repeat;background-size: 100%;overflow: scroll;display: flex;flex-direction: column;position: relative;overflow-x:hidden;}
+
+.back-icon{width:0.56rem;position:fixed;top:0.3rem;left:0.3rem;}
+.eventEnter{width: 0.65rem;height: 0.9rem;font-size: 0.24rem;color: #FFFFFF;background: #e84337;border-radius: 0 0 0.65rem 0.65rem;text-align: center;line-height: 0.35rem;position:fixed;right:0.15rem;z-index:3;}
+
+
+.eventTitle{padding: 0 0.7rem;margin-top: 0.69rem;height:2.3rem;z-index:2;}
+.eventTitle img{width: 100%;}
+
+.lotteryCode{display: flex;flex-direction: column;padding: 2.5rem 0.5rem 0;background:url(../img/share/prize-bg1.png) no-repeat;background-size:100%;height:7.86rem;box-sizing:border-box;margin-top:-0.2rem;}
+.lotteryCode .codeTitle{display: flex;justify-content: space-between;color: #FFFFFF;font-size: 0.24rem;padding: 0.2rem;}
+.lotteryCode .codeTitle .codeNum{color: #fcf126;margin: 0 0.05rem;}
+.lotteryCode .codeContent{display: flex;flex-wrap: wrap;width:6.5rem;height:3rem;margin-bottom:0.35rem;}
+.lotteryCode .codeContent .code{width: 1.98rem;min-width:1.98rem; max-width:1.98rem; height: 1.37rem;background: url(../img/share/choujiangma2.png) no-repeat;background-size: 100% 100%;font-size: 0.28rem;color: #7790c9;text-align: center;line-height: 1.37rem;margin-bottom: 0.25rem;}
+.middleCode{margin: 0 0.25rem;}
+.activatedCode{background: url(../img/share/choujiangma1.png) no-repeat!important;color: #FFFA1B!important;background-size: 100% 100%!important;}
+
+.userInfo{display: flex;align-items: center;}
+.userInfo .userImg{width: 0.7rem;height: 0.7rem;display: flex;} 
+.userInfo .userImg img{width: 100%;border-radius: 50%;}
+.userInfo .userName{font-size: 0.2rem;color: #FFFFFF;margin-left: 0.28rem;}
+
+.count{margin-top: 0.8rem;display: flex;flex-direction: column;height:2.95rem;}
+.count .lotteryDate{width: 3.28rem;height: 0.43rem;background: #4572ff;border-radius: 0.2rem;font-size: 0.24rem;color: #FFFFFF;font-weight: bold;text-align: center;line-height: 0.43rem;align-self: center;margin-bottom: 0.4rem;}
+.count .headline{text-align: center;font-size: 0.28rem;color: #FFFFFF;letter-spacing: 0.02rem;}
+
+.title {display: flex;align-items: center;justify-content: center;text-align: center;font-size: 0.28rem;color: #FFFFFF;letter-spacing: 0.02rem;}
+.title .line{width: 1.25rem;height: 0.01rem;background: #ffff00;}
+.title .dot{width: 0.1rem;height: 0.1rem;border-radius: 50%;background: #ffff00;}
+.title span{font-size: 0.3rem;color: #FFFFFF;align-self: center;letter-spacing: 0.02rem;margin: 0 0.2rem;}
+.count .countdownTime{font-size: 0.45rem;color: #EEEEEE;padding: 0.4rem 1.3rem;display: flex;overflow:hidden;}
+.count .countdown{display: flex;}
+.count .countdown .numBg{width: 0.85rem;height: 0.9rem;background: url(../img/share/countBg.png) no-repeat;background-size: 100% 100%;text-align: center;line-height: 0.9rem;}
+.count .countdown .unit{font-size: 0.24rem;align-self: flex-end;margin: 0 0.05rem;}
+#countCon{width: 4.6rem;height: 0.94rem;background: url(../img/share/bg2.png) no-repeat;background-size: 100% 100%;font-size: 0.45rem;color: #FFFFFF;align-self: center;text-align: center;line-height: 0.94rem;letter-spacing: 0.02rem;margin-bottom: 0.45rem;margin-top: 0.3rem;}
+
+
+.prizeSet{display: flex;flex-direction: column;margin-top: 0.28rem;background:url(../img/share/prize-set.png) no-repeat;background-size:100%;height:8.48rem;}
+.prizeSet .setTitle{font-size: 0.35rem;color: #fdf4eb;text-align: center;opacity:0;}
+.prizeSet .awards{display: flex;flex-direction: column;padding: 0rem 1.2rem 0;height:3.2rem;margin-top:2rem;}
+.prizeSet .awards li{font-size: 0.3rem;color: #ee4059;display: flex;height: 0.7rem;justify-content:space-between;}
+.prizeSet .awards li .ranking{width: 3rem;}
+/*.prizeSet .awards li .prizeCon{margin-left: 0.2rem;}*/
+.prizeSet .awards .rules{font-size: 0.26rem;color: #EE4059;align-self: flex-end;}
+.prizeSet .friends{font-size: 0.24rem;text-align: center;color: #FFFFFF;margin-top: 0.5rem;}
+.prizeSet .awardsList{display: flex;flex-direction: column;padding: 0.4rem 1.15rem 0.4rem;}
+.prizeSet .awardsList li{display: flex;flex-direction: column;font-size: 0.24rem;color: #000000;height: 0.7rem;margin-bottom: 0.4rem;justify-content: space-between;}
+.prizeSet .prizeButton{text-align: center;margin-top: 0.5rem;}
+.prizeSet .prizeButton img{height:0.8rem;width:3.9rem;}
+
+.process{font-size: 0.26rem;color: #FFFFFF;margin: 0.5rem 0;}
+.process img{height:2.2rem;margin-top:0.3rem;}
+.process .processCon{margin: 0.4rem 0.3rem 0;}
+
+.disclaimer{font-size: 0.26rem;color: #FFFFFF;margin: 0.3rem 0.3rem 1.3rem;}
+.disclaimer .processTitle{text-align: center;font-size: 0.34rem;}
+.disclaimer .processCon{margin-top: 0.4rem;}
+.disclaimer .processCon p{margin-bottom: 0.2rem;}
+
+.share {width: 100%;height: 1rem;background: #dd363d;color: #FFFFFF;font-size: 0.34rem;text-align: center;line-height: 1rem;position: fixed;bottom: 0;}
+.iphonex_bottom{bottom:0.3rem!important;}
+
+.alert{width: 100%;height: 100%;position: absolute;top: 0;background: rgba(0,0,0,0.8);z-index: 9;overflow: hidden;}
+.alert .content{position: absolute;top: 1.2rem;left: 0.9rem;width: 5.8rem;height: 8.9rem;}
+.alert .bg{width: 5.8rem;}
+.alert .close{width: 0.4rem;position: absolute;top: 0.55rem;right: 0;}
+.alert div{font-size: 0.24rem;color: #fff;position: absolute;width: 100%;text-align: center;}
+.alert .code{font-size: 0.36rem;color: #DE3F3C;top: 4.9rem;}
+.alert .text{top: 4.3rem;}
+.alert .info{bottom: 2.3rem;}
+.alert a{width: 2.6rem;height: 0.9rem;border-radius: 0.1rem;display: block;font-size: 0.34rem;color: #fff;text-align: center;line-height: 0.9rem;position: absolute;bottom: 0.2rem;}
+.alert .grab{background: #e93534;left: 0;}
+.alert .join{background: #fbf2bb;color: #DE3F3C;right: 0;}
+.alert .joinus{background: #e93534;color: #FFFFFF;right: 0;width: 100%;}
+.alert .infos{top: 2.5rem;display: flex;flex-direction: column;font-size: 0.36rem;font-weight: bold;font-style: oblique;}
+.alert .infos span:nth-child(2){font-size: 0.4rem;margin-top: 0.3rem;}
+
+.alert .message{position: fixed;top: 4.8rem;left: 1.35rem;width: 4.8rem;height: 3.2rem;background:#fff;color:#333;font-size:0.3rem;padding-top:0.3rem;border-radius:0.1rem;}
+.alert .message span{display:flex;justify-content:center;color:#333;}
+.alert .message .title{margin-bottom:0.5rem;font-size:0.34rem;}
+.alert .message .con{margin-bottom:0.24rem;}
+.alert .message .button{height:0.88rem;font-size:0.36rem;line-height:0.88rem;border-top:0.01rem solid #ccc;align-items:center;}

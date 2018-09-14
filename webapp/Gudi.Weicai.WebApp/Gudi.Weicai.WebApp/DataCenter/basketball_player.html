@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="full-screen" content="yes">
+    <title>球员</title>
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/navigationSwitcher.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/global.css?001">
+    <link rel="stylesheet" href="css/team_country.css">
+    <link rel="stylesheet" href="css/team_basketba_player.css">
+    <script src="/Act/SuperTeam/js/jquery.js"></script>
+    <script src="/Content/js/main.js"></script>
+    <script src="/Act/SuperTeam/js/share.js"></script>
+    <script src="/Content/js/vue.min.js"></script>
+    <script src="js/basketball_player.js"></script>   
+</head>
+<body>
+<div class="container" id="basketball_player" v-cloak>
+	<header>
+		<div class="page_title font_1L padding_top_sysbar bg_g">
+	        <div class="btn_back"><img src="images/back.png"/></div>
+	        <div class="title_text">球员</div>
+	    </div>
+        <div class="team_brife bg_g">
+            <div class="logo"><img :src="player.PlayerCover" /></div>
+            <div class="content">
+                <div class="team_name font_3L">{{player.PlayerName}}</div>
+                <div class="team_name_en font_6L">{{player.PlayerEnglishName}}</div>
+                <div class="team_desc font_6L">
+                    {{player.Age}}岁 / {{player.TeamName}} / {{player.Number}}号 / {{player.Place}}
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar font_4A" id="navigation">
+    	<ul class="column_2">
+            <li section-name="intro" class="activated">简介</li>
+            <li section-name="analysis" >数据分析</li>
+        </ul>
+    </nav>    
+    <!--球员简介-->
+    <section name="intro">
+        <div class="content_title font_4A bg_j">
+            <div class="bg_g icon_bar"></div>
+            <div class="font_4A content_title_text">基本资料</div>
+        </div>
+        <div class="content_main bg_l">
+            <ul class="player_info font_5B">
+                <li>
+                    <div>{{player.PlayerName}}</div>
+                    <div class="font_5C">{{player.PlayerEnglishName}}</div>
+                </li>
+                <li>{{player.Country}} · {{player.Age}}岁 ·{{player.Birth}}</li>
+                <li>{{player.Tallness}}cm · {{player.Weight}}kg</li>               
+            </ul>
+        </div>
+        <div class="content_title font_4A bg_j">
+            <div class="bg_g icon_bar"></div>
+            <div class="font_4A content_title_text">现效力球队</div>
+        </div>
+        <div class="content_main bg_l">
+            <ul class="player_team_curr font_5B">
+                <li class="font_5B">
+                    <div class="team_name">现效力球队</div>
+                    <div class="number">球衣号码</div>
+                    <div class="position">位置</div>
+                </li>
+                <li v-for="r in player.TeamList">
+                    <div class="team_name">{{r.TeamName}}</div>
+                    <div class="number">{{r.Number}}</div>
+                    <div class="position">{{r.Place}}</div>
+                </li>
+            </ul>
+        </div>
+        <div class="content_title font_4A bg_j">
+            <div class="bg_g icon_bar"></div>
+            <div class="font_4A content_title_text">球员介绍</div>
+        </div>
+        <div class="content_main font_5C player_desc bg_l">
+            <p v-if="player.PlayerDesc.length==0">暂无数据</p>
+            {{{player.PlayerDesc}}}
+        </div>
+    </section>
+    <!--//球员简介-->    
+    <!--数据分析-->    
+    <section name="analysis" style="display: none;">
+    	<div class="content_title font_4A bg_j">
+            <div class="bg_g icon_bar"></div>
+            <div class="font_4A content_title_text">场均数据{{statlist.Season}}</div>
+        </div> 
+        <ul class="data_container bg_l">
+        	<li v-for="r in statlist.StatsList">
+                <div class="scroe font_3AB">{{r.StatsValue}}</div>
+                <div class="score_name font_5C">{{r.StatsName}}</div>
+        	</li>
+        </ul>
+        
+        <div class="content_title font_4A bg_j">
+            <div class="bg_g icon_bar"></div>
+            <div class="font_4A content_title_text">近5场统计</div>
+        </div>    
+        <div class="player_container bg_l">
+            <ul class="font_5B">
+                <li class="player_container_titles item_bg_j">
+                    <div class="draw four">日期</div>
+                    <div class="victory four">对手</div>
+                    <div class="four" v-for="setting in statlist.SettingList">
+                        {{setting.StatsName}}
+                    </div>
+                </li>
+                <li v-for="s in statlist.ScheduleStatsList">
+                    <div class="victory four">{{s.StartTime}}</div>
+                    <div class="draw four">{{s.Opponent}}</div>
+                    <div class="four" v-for="data in s.List">{{data.StatsValue}}</div>
+                </li>
+            </ul>
+        </div>                   
+    </section>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	var navs=document.querySelectorAll('#navigation ul li');
+	var sections=document.querySelectorAll('section');
+	navigationSwitcher.init(navs,sections);
+</script>

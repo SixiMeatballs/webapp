@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>猜豆兑换</title>
+    <link href="css/change.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="Description">
+            <p class="help-content">说明：抵扣券可以用于微猜商城抵扣现金，抵扣券不兑现，不退款。</p>
+            <p class="help-content">说明：抵扣券可以用于微猜商城抵扣现金，抵扣券不兑现，不退款。</p>
+            <p class="help-content">说明：抵扣券可以用于微猜商城抵扣现金，抵扣券不兑现，不退款。</p>
+            <p class="help-content">说明：抵扣券可以用于微猜商城抵扣现金，抵扣券不兑现，不退款。</p>
+            <p class="help-content">说明：抵扣券可以用于微猜商城抵扣现金，抵扣券不兑现，不退款。</p>
+            <p class="help-content">说明：抵扣券可以用于微猜商城抵扣现金，抵扣券不兑现，不退款。</p>
+            <p class="help-content">说明：抵扣券可以用于微猜商城抵扣现金，抵扣券不兑现，不退款。</p>
+        </div>
+
+    </div>
+    <script src="../../../share/js/rem.js"></script>
+</body>
+
+</html>

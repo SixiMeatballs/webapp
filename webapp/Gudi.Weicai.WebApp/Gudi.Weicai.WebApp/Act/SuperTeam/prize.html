@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="x5-orientation" content="portrait | landscape" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="full-screen" content="yes">
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>活动奖品</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/prize.css?1" />
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.js"></script>
+    <script src="../../Content/js/main.js"></script>
+    <script src="js/share.js"></script>
+    <script src="/Content/js/vue.min.js"></script>
+    <script src="js/prize.js"></script>
+</head>
+<body>
+    <div class="root_container" id="page_prize" v-cloak>
+        <input type="hidden" id="hiddenusertoken" value="" />
+        <div class="header_bg">
+            <div class="back_icon">
+                <img onclick="javascript:window.history.back(-1);" src="images/global/back.png" />
+                <a href="myprize.html">我的奖品</a>
+            </div>
+        </div>
+        <div class="prize_title">
+            <div v-bind:class="{ active: roundtype==='day' }" v-on:click="changeRoundType('day')">日排行奖品</div>
+            <div v-bind:class="{ active: roundtype==='total' }" v-on:click="changeRoundType('total')">总排行奖品</div>
+        </div>
+        <div class="paize_content" prizetype="{{roundtype}}">
+            <ul class="round">
+                <li v-for="r in roundlist" v-on:click="getPrizeList(r.RoundId)" v-bind:class="{activimg:currentroundid === r.RoundId}">
+                    <div>{{r.RoundName}}</div>
+                    <div>{{r.RoundDesc}}</div>
+                </li>
+            </ul>
+            <ul class="paize_list">
+                <li v-for="p in prizelist">
+                    <div class="left">
+                        <template v-if="p.RankMin === p.RankMax && p.RankMin <= 3">
+                            <img v-show="p.RankMin===1" src="images/prize/champion.png" />
+                            <img v-show="p.RankMin===2" src="images/prize/secondplace.png" />
+                            <img v-show="p.RankMin===3" src="images/prize/thirdplace.png" />
+                        </template>
+                        <template v-else>
+                            <img src="images/prize/prize.png" />
+                        </template>
+                        <div class="rank">
+                            <template v-if="p.RankMin === p.RankMax">
+                                第{{p.RankMin}}名
+                            </template>
+                            <template v-else>
+                                第{{p.RankMin}}-{{p.RankMax}}名
+                            </template>
+                        </div>
+                    </div>
+                    <div class="right">{{p.PrizeName}}</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //针对ios做处理
+        var container = document.querySelector('.root_container');
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            container.style.paddingTop = '0.44rem';
+        }
+    </script>
+</body>
+</html>

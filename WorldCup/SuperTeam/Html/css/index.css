@@ -1,0 +1,14 @@
+.root_container{position: relative;}
+
+.header{justify-content: flex-end;}
+.header a{z-index: 9;}
+.header #ico_help{z-index: 1; width:7.8rem; height:7.8rem;margin-right: 3rem; margin-top: 3rem;}
+.index_main_pic{margin-top: -10rem;width: 100%;}
+.index_main_pic img{width: 100%;}
+
+.fix_bottom{position: absolute;bottom: 0;}
+.fix_bottom .index_create_team{width: 100%;height: 8.125rem;margin-bottom:10rem;}
+.fix_bottom .index_create_team a img{width: 100%;}
+.fix_bottom .index_navbar{width: 100%; display: flex;justify-content: space-around;align-items:center; position:relative; z-index:1;}
+.fix_bottom .index_navbar a img{width: 100%; }
+.fix_bottom .index_navbar_bg{margin-top:-1rem;position:relative;z-index:0;}

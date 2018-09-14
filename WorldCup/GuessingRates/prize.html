@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="full-screen" content="yes">
+		<title>奖品预览</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/prize.css"/>
+		<link rel="stylesheet" type="text/css" href="css/ranking.css"/>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="root_container">
+			<div class="header">
+				<img onclick="javascript:window.history.back(-1);" src="img/global/back_icon.png"/>
+				<span>奖品预览</span>
+				<a href="myprize.html">
+		        	<img src="img/global/myprize.png" style="width: 0.6rem;height: 0.6rem;"/>
+		        </a>
+			</div>
+			<div class="con_tittles">
+					<div id="rounds">轮次排行</div>
+					<div id="total">总排行</div>
+			</div>
+			<div class="rank_con" rankingtype="rounds">
+				<ul class="round">
+		    		<li class="activated">
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li class="activated">
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li class="activated">
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li class="activated">
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li class="activated">
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    	</ul>
+		    	<div class="prize_list">
+		    		<ul class="list_cons">
+		    			<li>
+		    				<div class="prize_img">
+		    					<img src="img/global/prize.png"/>
+		    				</div>
+		    				<div class="ranking">第一名</div>
+		    				<div class="prize_name">苹果笔记本</div>
+		    			</li>
+		    			<li>
+		    				<div class="prize_img">
+		    					<img src="img/global/prize.png"/>
+		    				</div>
+		    				<div class="ranking">第二名</div>
+		    				<div class="prize_name">苹果笔记本</div>
+		    			</li>
+		    			<li>
+		    				<div class="prize_img">
+		    					<img src="img/global/prize.png"/>
+		    				</div>
+		    				<div class="ranking">第三名</div>
+		    				<div class="prize_name">苹果笔记本</div>
+		    			</li>
+		    			<li>
+		    				<div class="prize_img">
+		    					<img src="img/global/prize.png"/>
+		    				</div>
+		    				<div class="ranking">第四名</div>
+		    				<div class="prize_name">苹果笔记本</div>
+		    			</li>
+		    			<li>
+		    				<div class="prize_img">
+		    					<img src="img/global/prize.png"/>
+		    				</div>
+		    				<div class="ranking">第五名</div>
+		    				<div class="prize_name">苹果笔记本</div>
+		    			</li>
+		    		</ul>
+		    	</div>
+			</div>	
+		</div>	
+	<script type="text/javascript">
+		var ranking=document.querySelector('.rank_con');
+		var rounds=document.querySelector('#rounds');
+		var total=document.querySelector('#total');
+		rounds.addEventListener('click',function(){
+			ranking.setAttribute("rankingtype","rounds")
+		});
+		total.addEventListener('click',function(){
+			ranking.setAttribute("rankingtype","total")
+		});
+	</script>	
+	</body>
+</html>

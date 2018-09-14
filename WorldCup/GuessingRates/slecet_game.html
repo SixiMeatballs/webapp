@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="full-screen" content="yes">
+		<title>小组赛第2轮</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/select_game.css"/>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/select_game.js"></script>
+	</head>
+	<body>
+		<div class="root_container">
+			<div class="header">
+				<img onclick="javascript:window.history.back(-1);" src="img/global/back_icon.png"/>
+				<span>选择轮次</span>
+				<a href="help.html">
+		        	<img src="img/global/help.png"/>
+		        </a>
+			</div>
+			<div class="roundlist"  id="roundlist" onscroll="roundListBar.onScroll()">
+				<ul id="scrollUl">
+					<li name="roundListItem">
+						<div class="name">A</div>
+						<div class="status">1</div>
+					</li>
+					<li name="roundListItem" class="activated">
+						<div class="name">B</div>
+						<div class="status">2</div>
+					</li>
+					<li name="roundListItem">
+						<div class="name">C</div>
+						<div class="status">3</div>
+					</li>
+					<li name="roundListItem">
+						<div class="name">D</div>
+						<div class="status">4</div>
+					</li>
+					<li name="roundListItem">
+						<div class="name">E</div>
+						<div class="status">5</div>
+					</li>
+					<li name="roundListItem">
+						<div class="name">F</div>
+						<div class="status">3</div>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="center">
+				<div class="con_tittle">选择比赛</div>
+				<div class="match_list">
+					<ul>
+						<li>
+							<div class="match_time">
+								<div class="starttime"> 
+									<div>比赛时间</div>
+									<div>06/23</div>
+									<div>13:20</div>
+								</div>
+								<div class="endtime">
+									<div>封盘时间</div>
+									<div>06/23</div>
+									<div>13:20</div>
+								</div>
+							</div>
+							<div class="match_data">
+								<div class="host team">
+									<div class="hostimg  flag">
+										<img src="img/global/host.png"/>
+									</div>
+									<div class="hostscore  score activated">
+										<span>俄罗斯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+								<div class="vs">
+									<div>VS</div>
+									<div class="score">
+										<span>平</span>
+										<span>+3</span>
+									</div>
+								</div>
+								<div class="guest  team">
+									<div class="guestimg  flag">
+										<img src="img/global/guest.png"/>
+									</div>
+									<div class="guestscore score">
+										<span>沙特阿拉伯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="active">
+							<div class="match_time">
+								<div class="starttime"> 
+									<div>比赛时间</div>
+									<div>06/23</div>
+									<div>13:20</div>
+								</div>
+								<div class="endtime">
+									<div>封盘时间</div>
+									<div>06/23</div>
+									<div>13:20</div>
+								</div>
+							</div>
+							<div class="match_data">
+								<div class="host team">
+									<div class="hostimg  flag">
+										<img src="img/global/host.png"/>
+									</div>
+									<div class="hostscore  score activated">
+										<span>俄罗斯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+								<div class="vs">
+									<div>VS</div>
+									<div class="score">
+										<span>平</span>
+										<span>+3</span>
+									</div>
+								</div>
+								<div class="guest  team">
+									<div class="guestimg  flag">
+										<img src="img/global/guest.png"/>
+									</div>
+									<div class="guestscore score">
+										<span>沙特阿拉伯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="match_time">
+								<div class="starttime"> 
+									<div>比赛时间</div>
+									<div>06/23</div>
+									<div>13:20</div>
+								</div>
+								<div class="endtime">
+									<div>封盘时间</div>
+									<div>06/23</div>
+									<div>13:20</div>
+								</div>
+							</div>
+							<div class="match_data">
+								<div class="host team">
+									<div class="hostimg  flag">
+										<img src="img/global/host.png"/>
+									</div>
+									<div class="hostscore  score activated">
+										<span>俄罗斯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+								<div class="vs">
+									<div>VS</div>
+									<div class="score">
+										<span>平</span>
+										<span>+3</span>
+									</div>
+								</div>
+								<div class="guest  team">
+									<div class="guestimg  flag">
+										<img src="img/global/guest.png"/>
+									</div>
+									<div class="guestscore score">
+										<span>沙特阿拉伯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="match_time">
+								<div class="starttime"> 
+									<div>比赛时间</div>
+									<div>06/23</div>
+									<div>13:20</div>
+								</div>
+								<div class="endtime">
+									<div>封盘时间</div>
+									<div>06/23</div>
+									<div>13:20</div>
+								</div>
+							</div>
+							<div class="match_data">
+								<div class="host team">
+									<div class="hostimg  flag">
+										<img src="img/global/host.png"/>
+									</div>
+									<div class="hostscore  score activated">
+										<span>俄罗斯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+								<div class="vs">
+									<div>VS</div>
+									<div class="score">
+										<span>平</span>
+										<span>+3</span>
+									</div>
+								</div>
+								<div class="guest  team">
+									<div class="guestimg  flag">
+										<img src="img/global/guest.png"/>
+									</div>
+									<div class="guestscore score">
+										<span>沙特阿拉伯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="match_time">
+								<div class="starttime"> 
+									<div>比赛时间</div>
+									<div>06/23</div>
+									<div>13:20</div>
+								</div>
+								<div class="endtime">
+									<div>封盘时间</div>
+									<div>06/23</div>
+									<div>13:20</div>
+								</div>
+							</div>
+							<div class="match_data">
+								<div class="host team">
+									<div class="hostimg  flag">
+										<img src="img/global/host.png"/>
+									</div>
+									<div class="hostscore  score activated">
+										<span>俄罗斯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+								<div class="vs">
+									<div>VS</div>
+									<div class="score">
+										<span>平</span>
+										<span>+3</span>
+									</div>
+								</div>
+								<div class="guest  team">
+									<div class="guestimg  flag">
+										<img src="img/global/guest.png"/>
+									</div>
+									<div class="guestscore score">
+										<span>沙特阿拉伯</span>
+										<span>胜 +5</span>
+									</div>
+								</div>
+							</div>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+			
+			<div class="fix_bottom">
+				<div class="left">
+					<div class="left_top">
+						<div class="icon">
+							<img src="img/global/icon.png"/>
+						</div>
+						<div class="ranking">
+							<div>已选择 2/4</div>
+							<div>当前胜率 40%</div>
+							<div>积分  0分</div>
+						</div>
+					</div>
+					<div class="left_bottom">*参与满4场即可参与积分排名</div>
+				</div>
+				<div class="rights">
+					<div class="clear">清空</div>
+					<div class="sure">确定</div>
+				</div>
+				
+			</div>	
+			
+			<!--比赛信息弹框-->
+			<div class="info_alert" style="display: none;">
+				<div class="alert_cons">
+					<div class="titles">
+						<div>选择参与途径</div>
+						<img src="img/global/close_icon.png"/>
+					</div>
+					<div class="Options">
+						<ul>
+							<li>
+								<div class="team_info">
+									<div class="host">俄罗斯</div>
+									<div class="vs">VS</div>
+									<div class="guest">沙特阿拉伯</div>
+								</div>
+								<div class="win_info">
+									<div class="win_team">俄罗斯胜</div>
+									<div class="get_score">可得积分 5</div>
+								</div>
+							</li>
+							<li>
+								<div class="team_info">
+									<div class="host">俄罗斯</div>
+									<div class="vs">VS</div>
+									<div class="guest">沙特阿拉伯</div>
+								</div>
+								<div class="win_info">
+									<div class="win_team">俄罗斯胜</div>
+									<div class="get_score">可得积分 5</div>
+								</div>
+							</li>
+							<li>
+								<div class="team_info">
+									<div class="host">俄罗斯</div>
+									<div class="vs">VS</div>
+									<div class="guest">沙特阿拉伯</div>
+								</div>
+								<div class="win_info">
+									<div class="win_team">俄罗斯胜</div>
+									<div class="get_score">可得积分 5</div>
+								</div>
+							</li>
+							<li>
+								<div class="team_info">
+									<div class="host">俄罗斯</div>
+									<div class="vs">VS</div>
+									<div class="guest">沙特阿拉伯</div>
+								</div>
+								<div class="win_info">
+									<div class="win_team">俄罗斯胜</div>
+									<div class="get_score">可得积分 5</div>
+								</div>
+							</li>
+							<li>
+								<div class="team_info">
+									<div class="host">俄罗斯</div>
+									<div class="vs">VS</div>
+									<div class="guest">沙特阿拉伯</div>
+								</div>
+								<div class="win_info">
+									<div class="win_team">俄罗斯胜</div>
+									<div class="get_score">可得积分 5</div>
+								</div>
+							</li>
+							<li>
+								<div class="team_info">
+									<div class="host">俄罗斯</div>
+									<div class="vs">VS</div>
+									<div class="guest">沙特阿拉伯</div>
+								</div>
+								<div class="win_info">
+									<div class="win_team">俄罗斯胜</div>
+									<div class="get_score">可得积分 5</div>
+								</div>
+							</li>
+							<li>
+								<div class="team_info">
+									<div class="host">俄罗斯</div>
+									<div class="vs">VS</div>
+									<div class="guest">沙特阿拉伯</div>
+								</div>
+								<div class="win_info">
+									<div class="win_team">俄罗斯胜</div>
+									<div class="get_score">可得积分 5</div>
+								</div>
+							</li>
+							<li>
+								<div class="team_info">
+									<div class="host">俄罗斯</div>
+									<div class="vs">VS</div>
+									<div class="guest">沙特阿拉伯</div>
+								</div>
+								<div class="win_info">
+									<div class="win_team">俄罗斯胜</div>
+									<div class="get_score">可得积分 5</div>
+								</div>
+							</li>
+							<li>
+								<div class="team_info">
+									<div class="host">俄罗斯</div>
+									<div class="vs">VS</div>
+									<div class="guest">沙特阿拉伯</div>
+								</div>
+								<div class="win_info">
+									<div class="win_team">俄罗斯胜</div>
+									<div class="get_score">可得积分 5</div>
+								</div>
+							</li>
+							<li>
+								<div class="team_info">
+									<div class="host">俄罗斯</div>
+									<div class="vs">VS</div>
+									<div class="guest">沙特阿拉伯</div>
+								</div>
+								<div class="win_info">
+									<div class="win_team">俄罗斯胜</div>
+									<div class="get_score">可得积分 5</div>
+								</div>
+							</li>
+							<li>
+								<div class="team_info">
+									<div class="host">俄罗斯</div>
+									<div class="vs">VS</div>
+									<div class="guest">沙特阿拉伯</div>
+								</div>
+								<div class="win_info">
+									<div class="win_team">俄罗斯胜</div>
+									<div class="get_score">可得积分 5</div>
+								</div>
+							</li>
+							<li>
+								<div class="team_info">
+									<div class="host">俄罗斯</div>
+									<div class="vs">VS</div>
+									<div class="guest">沙特阿拉伯</div>
+								</div>
+								<div class="win_info">
+									<div class="win_team">俄罗斯胜</div>
+									<div class="get_score">可得积分 5</div>
+								</div>
+							</li>
+						</ul>
+						<div class="sure_button">确认提交</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		
+	</body>
+</html>
+
+
+<script language="javascript" type="text/javascript">
+    roundListBar.init();
+</script>

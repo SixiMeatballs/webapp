@@ -1,0 +1,342 @@
+[v-cloak] {
+    display: none;
+}
+.iPhoneX {
+    bottom: 0.68rem !important;
+}
+.swiper-pagination-bullet-active {
+    background: #FF0036;
+}
+
+.productShow{
+	/*margin-top: 1rem;*/
+}
+.productShow .banner{
+	width: 100%;
+	height: 6rem;
+	background: #CCCCCC;
+}
+.productShow .banner img{
+	width: 7.5rem;
+	height: 6rem;
+}
+
+.showInfo{
+	/*height: 1.2rem;*/
+	background: #fe7b1a;
+	padding: 0.1rem;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+}
+.showStart{
+	background: #FF0036;
+}
+.showInfo .productPrice{
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+}
+.showInfo .productPrice .originalPrice{
+	font-size: 0.24rem;
+	text-decoration: line-through;
+	margin-bottom: 0.1rem;
+}
+.showInfo .productPrice .currentPrice{
+	display: flex;
+	font-size: 0.48rem;	
+	align-items: baseline;
+}
+.showInfo .productPrice .currentPrice .price{
+	font-weight: bold;
+}
+.showInfo .productPrice .currentPrice .price:first-letter{
+	font-size: 0.3rem;
+}
+.showInfo .productPrice .currentPrice .tips{
+	font-size: 0.26rem;
+	margin-left: 0.2rem;
+}
+.showInfo .productSate{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.24rem;
+	color: #fff;
+}
+.showInfo .productSate .countDown{
+	display: flex;
+	margin-top: 0.15rem;
+}
+.showInfo .productSate .countDown .time{
+	color: #333;
+}
+.showInfo .productSate .countDown .num{
+	width: 0.34rem;
+	height: 0.34rem;
+	border-radius: 0.06rem;
+	background: #000;
+	color: #fff;
+	margin: 0 0.05rem;
+}
+.showInfo .productSate .end{
+	font-size: 0.3rem;
+}
+
+.productInfo{
+	padding: 0.3rem;
+	box-sizing: border-box;
+	font-size: 0.24rem;
+	color: #666;
+}
+.productInfo .productName{
+	color: #333;
+	font-size: 0.28rem;
+	margin-bottom: 0.4rem;
+}
+.productInfo .productOther{
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.ad{
+	width: 100%;
+	height: 1.8rem;
+}
+.ad img{
+	width: 100%;	
+}
+.productDetails{
+	margin-bottom: 0.7rem;
+}
+.productDetails .detailsTiltle{
+	padding: 0.3rem;
+	color: #333;
+	font-size: 0.3rem;
+	border-bottom: 0.02rem solid #F8F8F8;
+}
+.productDetails .details{
+    display:flex;
+    flex-direction:column;
+}
+.productDetails .details p{
+    display:flex;
+    flex-direction:column;
+}
+.productDetails img{
+	width: 100%;
+}
+
+.buyButton {
+	width: 100%;
+	height: 1rem;	
+	background: #999;
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.buyButton a{
+	font-size: 0.3rem;
+	color: #fff;
+}
+.buyProcessing{
+	background: #DF3E3F;
+}
+.buyEnd{
+	background: #999;
+}
+
+.giftAlert{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	background: rgba(0,0,0,.4);
+	z-index: 9;
+}
+.giftPackage{
+	width: 100%;
+	height: 8.2rem;
+	position: fixed;
+	bottom: 0;
+	background: #fff;
+	z-index: 9;
+}
+.giftPackage .packageTitle{
+	height: 1rem;
+	min-height: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	font-size: 0.36rem;
+	color: #333;
+}
+.giftPackage .packageTitle .close{
+	position: absolute;
+	top: 0.3rem;
+	right: 0.3rem;
+	width: 0.44rem;
+	height: 0.44rem;
+	border-radius: 50%;
+}
+.giftPackage .couponList{
+	height: 5.5rem;
+	min-height: 5.5rem;
+	display: flex;
+	flex-direction: column;
+	overflow: scroll;
+	padding: 0.3rem;
+	box-sizing: border-box;
+}
+.giftPackage .couponTips{
+	color: #666;
+	font-size: 0.24rem;
+	margin-bottom: 0.2rem;
+	margin-left: 0.3rem;
+}
+.giftPackage .couponList .couponCeil{
+	height: 1.2rem;
+	min-height: 1.2rem;
+	display: flex;
+	margin-bottom: 0.1rem;
+}
+.giftPackage .couponList .couponCeil .faceValue{
+	width: 2rem;
+	height: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.1rem;
+	background: #f74948;
+	color: #fff;
+	font-size: 0.26rem;
+}
+.giftPackage .couponList .couponCeil .faceValue .value{
+	font-size: 0.44rem;
+	font-weight: bold;
+}
+.giftPackage .couponList .couponCeil .faceValue .value:first-letter{
+	font-size: 0.22rem;
+}
+.giftPackage .couponList .couponCeil .useDate{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex: 1;
+	font-size: 0.24rem;
+	color: #666;
+	margin-left: 0.2rem;
+}
+.giftPackage .couponList .couponCeil .useDate .date{
+    margin-top:0.4rem;
+}
+.giftPackage .couponButton{
+	width: 6.9rem;
+	height: 0.88rem;
+	border-radius: 0.1rem;
+	background: #F62D4A;
+	font-size: 0.3rem;
+	color: #fff;
+	text-align: center;
+	line-height: 0.88rem;
+	margin-left: 0.3rem;
+}
+
+.getGiftAlert{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	background: rgba(0,0,0,.4);
+	z-index: 9;
+}
+.receive{
+	width: 6.02rem;
+	height: 6.7rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+.receive .closeIcon{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+.receive .closeIcon img{
+	width: 0.5rem;
+	border-radius: 50%;
+}
+.receive .closeIcon .line{
+	width: 0.02rem;
+	height: 0.6rem;
+	background: #fff;
+	margin-right: 0.25rem;
+}
+.receive .packageCon{
+	height: 5.6rem;
+	background: linear-gradient(#fc8026,#fa164a);
+	border-radius: 0.2rem;
+	display: flex;
+	flex-direction: column;
+}
+.receive .packageCon .packageTitle{
+	height: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.receive .packageCon .packageTitle span{
+	font-size: 0.48rem;
+	color: #fff;
+	font-family: Noto Sans S Chinese;
+	font-weight: bold;
+}
+.receive .packageCon .phone{
+	width: 4.6rem;
+	height: 0.92rem;
+	border-radius: 0.1rem;
+	color: #999999;
+	font-size: 0.3rem;
+	padding-left: 1.1rem;
+	box-sizing: border-box;
+	margin-left: 0.63rem;
+}
+.receive .packageCon .packageButton{
+	width: 4.6rem;
+	height: 0.92rem;
+	border-radius: 0.1rem;
+	background: #FEAC0F;
+	font-size: 0.36rem;
+	color: #fff;
+	margin-left: 0.63rem;
+	margin-top: 0.3rem;
+	text-align: center;
+	line-height: 0.92rem;
+}
+.successAlert{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	background: rgba(0,0,0,.4);
+	z-index: 9;
+}
+.successAlert .packageTitle .successIcon{
+	width: 1.3rem;
+	height: 1.3rem;
+	border-radius: 50%;
+}

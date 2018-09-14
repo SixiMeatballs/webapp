@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="css/receive.css" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>领取红包</title>
+    <script src="../../Content/js/jquery-3.3.1.min.js"></script>
+    <script src="../SuperTeam/js/share.js"></script>
+    <script src="/Content/js/main.js"></script>
+    <link href="/Content/boxstyle.css" rel="stylesheet" />
+    <script src="/Content/js/vue.min.js"></script>
+    <script src="js/result_win_get.js?0"></script>
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="check">
+            <input type="text" class="phone" placeholder="输入手机号" id="txtphone" />
+            <div class="getCode">
+                <input type="text" class="code" placeholder="输入验证码" id="txtcode" />
+                <template v-if="SendTime==0">
+                    <div class="codeButton" @click="getimgcode()">获取验证码</div>
+                </template>
+                <template v-else>
+                    <div class="codeButton">已获取({{SendTime}})</div>
+                </template>
+            </div>
+            <div class="getBag" @click="getprize()">点击领取</div>
+        </div>
+        <img class="logo" src="img/logos.png" alt="Alternate Text" />
+    </div>
+    <!--请输入验证码-->
+    <div class="alert" style="display: none;" id="boximgcode">
+        <div class="content">
+            <div class="title">
+                <span>请输入图片验证码</span>
+                <img src="img/receive/cancel.png" class="boxclose" />
+            </div>
+            <div class="putCode">
+                <input type="text" placeholder="请输入" id="txtimgcode" />
+                <div class="verification"><img :src="imgcodeurl" alt="" style="width: 100%;" /></div>
+            </div>
+            <div class="true" @click="inputimgcode()">确定</div>
+        </div>
+    </div>
+
+    <div class="alert" style="display: none;" id="boxerror">
+        <div class="content">
+            <div class="title">
+                <img src="img/receive/cancel.png" class="boxclose" />
+            </div>
+            <div class="infos">
+                <span>{{errormessage}}</span>
+            </div>
+            <div class="true boxclose">确定</div>
+        </div>
+    </div>
+
+    <!--<script>
+        var viewHeight = window.innerHeight;
+        $(document).ready(function () {
+            var viewHeight = window.innerHeight;
+            $("body").height(viewHeight);
+            $(".container").height(viewHeight);
+        })
+    </script>-->
+
+</body>
+</html>

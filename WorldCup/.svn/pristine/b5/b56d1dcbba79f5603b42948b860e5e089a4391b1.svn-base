@@ -1,0 +1,14 @@
+.team_detail_root{background:rgba(23,77,110,0.6);}
+.team_detail_item{overflow:auto;min-height: 52rem;}
+.team_player_list{display:flex;flex-direction:column; padding:1.5rem 3rem;overflow:scroll;}
+.team_player_list .player_list_head{display:flex; color:#fff; font-size:2.4rem;padding-bottom:2rem; }
+.team_player_list .player_list_items ul{display:flex; flex-direction:column;}
+.team_player_list .player_list_items ul li{padding:2rem 0rem;border-top:solid 1px #2c5e7c; display:flex; flex-direction:row; justify-content:space-between;}
+.team_player_list .player_list_items ul li .left{width:12.2rem; height:12.2rem;}
+.team_player_list .player_list_items ul li .left .player_icon{width:100%;height:100%; background-size:100%; background-position:center; border-radius:50%;}
+.team_player_list .player_list_items ul li .right{flex-grow:1; display:flex; flex-direction:column; padding-left:2rem;font-size:2.8rem;}
+.team_player_list .player_list_items ul li .right .player_name{font-size:3rem; padding-bottom:1.5rem;}
+.team_player_list .player_list_items ul li .right .player_intro{ padding-bottom:1.2rem; color:#78a1b6;}
+.team_player_list .player_list_items ul li .right .player_teaminfo{ padding-bottom:1.2rem; color:#78a1b6;}
+.team_player_list .player_list_items ul li .right .player_match{padding-bottom:1.2rem; color:#EEE;}
+.team_player_list .player_list_items ul li .right .match_time{ padding-bottom:1.2rem; color:#78a1b6;}

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>活动说明</title>
+    <link rel="stylesheet" type="text/css" href="css/instructions.css" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <script src="../../Content/js/jquery-3.3.1.min.js"></script>
+    <script src="/Content/js/main.js"></script>
+    <script src="../SuperTeam/js/share.js"></script>
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="img/H5-arrow.png" class="wcs back-icon" />
+        <div class="title">
+            <div class="line"></div>
+            <div class="dot"></div>
+            <span>活动说明</span>
+            <div class="dot"></div>
+            <div class="line"></div>
+        </div>
+        <div class="content">
+            <p>一、参与方式：分享活动给好友，每位好友助力一次，您就能获得一个抽奖码，参与好友越多越有机会中奖领取万元现金，助力成功者的好友还有机会获得话费奖励哦；</p>
+            <p>二、单向助力，每位助力者最多有3次为好友助力，不能重复操作同一好友；</p>
+        </div>
+
+        <div class="title" style="margin-top:0.5rem;">
+            <div class="line"></div>
+            <div class="dot"></div>
+            <span>开奖规则</span>
+            <div class="dot"></div>
+            <div class="line"></div>
+        </div>
+        <div class="content">
+            <p>
+                一、开奖码生成</br>
+                &nbsp;&nbsp;1.1、每期活动封盘后，根据抽奖券总数量随机生成中奖编号（如：1 : mjxi36-10000，2 : xpo2l3-100001 …），短信发送开奖码和编号至用户。</br>
+                &nbsp;&nbsp;1.2、中奖编号根据封盘当天高频彩 广东快乐十分第51期（17：30分开奖）八位开奖数值，依次提取每个号码的个位数组成开奖种子mod 总劵数，余数数字为一等奖编号，向下顺延后10位则获得二等奖，后100位则获得三等奖。
+            </p>
+            <p>二、开奖计算公式：一等奖编号 = 开奖种子mod总劵数</p>
+            <p>
+                三、举例：</br>
+                假设总券数10200张，广东快乐十分第51期开奖结果为“16、18、15、12、20、6、3、1”，则种子是68520631;</br>
+                一等奖编号：7231 = 68520631 mod 10200</br>
+                二等奖编号范围：[7232 - 7241]</br>
+                三等奖编号范围：[7242 – 7341]</br>
+            </p>
+            <p>四、每人仅限一次中奖机会，已中奖用户不能参与其他奖项的抽取。</p>
+            <p>五、微猜保证所有中奖码绝对真实有效，欢迎参与者验证！</p>
+            <p>备注：mod为计算的两个数值相除的余数。</p>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+    <script language="JavaScript" type="text/javascript">
+        var container = document.querySelector('.container');
+        var back_icon = document.querySelector('.back-icon');
+
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            back_icon.style.marginTop = '0.64rem';
+        }
+    </script>
+</body>
+</html>

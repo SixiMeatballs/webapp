@@ -1,0 +1,5 @@
+.team_brife{height:1.76rem;min-height:1.76rem;max-height:1.76rem; display:flex;flex-direction:row; }
+.team_brife .logo{width:1rem;height:1rem;margin:0.17rem 0 0 0.54rem;}
+.team_brife .logo img{width:1rem;height:1rem;}
+.team_brife .content{display:flex; margin:0.12rem 0 0 0.5rem; flex-direction:column;}
+.team_brife .content div{margin:0.03rem;}

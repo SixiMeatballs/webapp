@@ -1,0 +1,41 @@
+.team_list{display:flex; flex-direction:column; overflow:scroll; padding:0.15rem;}
+.team_list .team_item{display:flex; flex-direction:column; min-height:5.5rem;}
+.team_list .team_item .team_head{display:flex; height:0.5rem; align-items:center; font-size:0.22rem; width:100%;}
+.team_list .team_item .team_head .ico_clock{margin:0 0.1rem; width:0.2rem; height:0.2rem;}
+.team_list .team_item .team_head .lnkResult{position:absolute; right:3rem; color:#EEE;text-decoration:none; letter-spacing:0.2rem;}
+.team_list .team_item .team_head .createTime{font-size: 0.2rem;color: #7B9FB7;}
+.team_list .team_item .team_head a{flex: 1;display: flex;justify-content: flex-end;}
+
+
+.team_list .team_item .team_content{display:flex; flex-direction:column; width:100%;}
+.team_list .team_item .team_content .team_info{background:#345a70; border-radius:0.1rem 0.1rem 0 0; position:relative; height:1.2rem;min-height: 1.2rem;}
+.team_list .team_item .team_content .team_info .team_name{position:absolute; top:0.2rem; color:#D7DEE2; left:0.2rem; font-size:0.24rem;display: flex;}
+.team_list .team_item .team_content .team_info .team_name a{border: 0.02rem solid #fff;border-radius: 0.1rem;width: 1rem;height: 0.4rem;display: block;font-size: 0.24rem;margin-left: 0.2rem;text-align: center;line-height: 0.4rem;margin-top: -0.1rem;}
+.team_list .team_item .team_content .team_info .ico_prize{position:absolute; top:0.1rem; width:3.9rem; height:4.34rem; right: 15rem;}
+.team_list .team_item .team_content .team_info .team_ranking{ position:absolute; top:0.2rem; right:0.2rem;color:#D2D8DC; font-size:0.21rem;}
+.team_list .team_item .team_content .team_info .team_matchdate{position:absolute; top:0.7rem; color:#7CA1B9; left:.2rem;font-size:0.21rem;}
+.team_list .team_item .team_content .team_info .team_score{position:absolute; top:0.7rem; color:#3bb6ff; right:0.2rem;font-size:0.21rem;}
+.team_list .team_item .team_content .team_salary{position:relative; display:flex; flex-direction:column;  background:#10415d;width:100%;}
+.team_list .team_item .team_content .team_salary .info{padding:0.3rem 2.5% 0 2.5%;color:#57b3c7;font-size:0.2rem;display:flex; position:relative;width:95%; }
+.team_list .team_item .team_content .team_salary .info img{width: 0.14rem;height: 0.14rem;position:absolute;top: 0.62rem;}
+.team_list .team_item .team_content .team_salary .info .lblSalary{margin-left: 0.2rem;}
+.team_list .team_item .team_content .team_salary .info .lblFreeSalary{position:absolute; left:4.5rem;}
+.team_list .team_item .team_content .team_salary .info .lblFreeSalary_img{ left:5rem;}
+.team_list .team_item .team_content .team_salary .info .lblMaxSalary{position:absolute; right:0.4rem;}
+.team_list .team_item .team_content .team_salary .info .lblMaxSalary_img{right:0.4rem;}
+.salaryBar{ position:relative; margin-top:0rem;width:95%; height:0.67rem; padding:0; margin:0px 2.5%;  background:url(../images/myteam/salary_bg.png) no-repeat; background-size:100% 100%;}
+.salaryBar .barValue{ position:absolute; width:96%; height:0.34rem;  margin:1.98rem 0rem 0 1.1rem;  background:url(../images/myteam/salarywarn.png) no-repeat; background-size:100% 100%;max-width: 53rem;}
+.salaryBar .icoFootball{ position:absolute; width:5.1rem !important; height:5.1rem !important; top:2rem;  background:url(../images/myteam/football.png)  no-repeat;}
+.team_list .team_item .team_content .team_salary .salary_tax{margin:0.1rem 2.5% 0.1rem 2.5%;display:flex; flex-direction:row;color:#7DA1B9;font-size:0.2rem; padding-bottom:0.02rem;letter-spacing: 0.01rem;align-items: center;}
+.team_list .team_item .team_content .team_salary .salary_tax .lalSalaryTaxBonus{margin-left:0.5rem;}
+.team_list .team_item .team_content .player_list{display:flex; flex-direction: column;background:#10415d; border-radius:0 0 0.1rem 0.1rem; position:relative; height:1.6rem; }
+.team_list .team_item .team_content .player_list .play_list_title{font-size:0.24rem;  padding:0.1rem 0 0 0.1rem; border-top:solid 0.01rem #27546e;height: 0.3rem;box-sizing: border-box;margin-bottom: 0.1rem;}
+.team_list .team_item .team_content .player_list .player_list_icons{overflow:scroll; overflow-y: hidden;}
+.team_list .team_item .team_content .player_list .player_list_icons ul{display:flex; flex-wrap: nowrap; justify-content: space-between;padding: 0 0.1rem;}
+.team_list .team_item .team_content .player_list .player_list_icons ul li{ min-width:1rem;}
+.team_list .team_item .team_content .player_list .player_list_icons ul li img{width:0.86rem; height:0.86rem;border-radius: 50%;}
+
+.header{z-index: 2;}
+.blank{width: 100%;height: 100%;background-color: #124464;opacity: 0.8;position: absolute;top: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+.blank img{margin-bottom: 0.2rem;width: 3.1rem;height: 1.3rem;}
+.blank span{font-size: 0.23rem; color: #6189a1;}

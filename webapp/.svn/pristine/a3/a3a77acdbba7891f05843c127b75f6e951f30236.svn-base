@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="full-screen" content="yes">
+    <title>选择比赛</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/select_game.css?3" />
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../SuperTeam/js/jquery.js"></script>
+    <script src="../../Content/js/main.js?0"></script>
+    <script src="../SuperTeam/js/share.js"></script>
+    <link href="../../Content/boxstyle.css" rel="stylesheet" />
+    <script src="../../Content/js/vue.min.js"></script>
+    <script src="js/select_game1.js?1"></script>
+    <link href="../../Content/swiper/css/swiper.min.css" rel="stylesheet" />
+</head>
+<body>
+    <input type="hidden" id="hiddenusertoken" value="" />
+    <div class="root_container" id="page_selectmatch" v-cloak>
+        <div class="header">
+            <img onclick="javascript:window.history.back(-1);" src="img/global/back_icon.png" />
+            <span>选择比赛</span>
+            <a href="help.html">
+                <img src="img/global/help.png" />
+            </a>
+        </div>
+        <template v-if="grouplist.length>0">
+            <div class="swiper-container roundlist">
+                <ul class="swiper-wrapper">
+                    <li v-for="(index,r) in grouplist" class="swiper-slide" @click="clickSwiper(index)">
+                        <div class="name">{{r.GroupName}}</div>
+                        <div class="status" v-if="r.Count>0">{{r.Count}}</div>
+                    </li>
+                </ul>
+            </div>
+        </template>
+
+        <div class="center">
+            <div class="con_tittle">选择比赛</div>
+            <div class="match_list">
+                <ul>
+                    <li v-for="r in matchlist" v-bind:class="{ activated:r.Selected }">
+                        <div class="match_time">
+                            <div class="starttime">
+                                <div>比赛时间</div>
+                                <div>{{r.strStartTime}}</div>
+                            </div>
+                            <div class="endtime">
+                                <template v-if="r.MatchStatus==0">
+                                    <div>封盘时间</div>
+                                    <div>{{r.strSealingTime}}</div>
+                                </template>
+                                <template v-else>
+                                    <div>已完赛</div>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="match_data">
+                            <div class="host team">
+                                <div class="hostimg  flag">
+                                    <img :src="r.HomeFlagUrl" />
+                                </div>
+
+                                <template v-if="r.Selected || r.SealingStatus==1">
+                                    <div class="hostscore  score" v-bind:class="{ activated:r.WinType==1 }">
+                                        <span>{{r.HomeSimplifiedName}}</span>
+                                        <span>胜 +{{r.HomeWinScore}}</span>
+                                    </div>
+                                </template>
+                                <template v-else>
+                                    <div class="hostscore  score" v-bind:class="{ activated:r.WinType1==1 }" @click="selectmatch(r,1)">
+                                        <span>{{r.HomeSimplifiedName}}</span>
+                                        <span>胜 +{{r.HomeWinScore}}</span>
+                                    </div>
+                                </template>
+
+
+                            </div>
+                            <div class="vs">
+                                <template v-if="r.MatchStatus==0">
+                                    <div>VS</div>
+                                </template>
+                                <template v-else>
+                                    <div>{{r.HometeamScore}} : {{r.GuestteamScore}}</div>
+                                </template>
+
+                                <template v-if="r.Selected || r.SealingStatus==1">
+                                    <div class=" score" v-bind:class="{ activated:r.WinType==2 }">
+                                        <span>平</span>
+                                        <span>+{{r.DogfallScore}}</span>
+                                    </div>
+                                </template>
+                                <template v-else>
+                                    <div class="score" v-bind:class="{ activated:r.WinType1==2 }" @click="selectmatch(r,2)">
+                                        <span>平</span>
+                                        <span>+{{r.DogfallScore}}</span>
+                                    </div>
+                                </template>
+
+                            </div>
+                            <div class="guest  team">
+                                <div class="guestimg  flag">
+                                    <img :src="r.GuestFlagUrl" />
+                                </div>
+                                <template v-if="r.Selected || r.SealingStatus==1">
+                                    <div class="guestscore  score" v-bind:class="{ activated:r.WinType==3 }">
+                                        <span>{{r.GuestSimplifiedName}}</span>
+                                        <span>胜 +{{r.GuestWinScore}}</span>
+                                    </div>
+                                </template>
+                                <template v-else>
+                                    <div class="guestscore  score" v-bind:class="{ activated:r.WinType1==3 }" @click="selectmatch(r,3)">
+                                        <span>{{r.GuestSimplifiedName}}</span>
+                                        <span>胜 +{{r.GuestWinScore}}</span>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="fix_bottom">
+            <div class="left">
+                <div class="left_top">
+                    <div class="icon">
+                        <img src="img/global/icon.png" />
+                    </div>
+                    <div class="ranking">
+                        <div>已选择 {{TotalCount}}/{{activatedround.MatchCount}}</div>
+                        <div>当前胜率 {{activatedround.WinRate}}</div>
+                        <div>积分  {{activatedround.Score}}分</div>
+                    </div>
+                </div>
+                <div class="left_bottom">*参与满{{activatedround.MatchCount}}场即可参与积分排名</div>
+            </div>
+            <div class="rights">
+                <div class="clear" @click="RestMatch()" v-if="activatedround.TotalCount<activatedround.MatchCount">清空</div>
+
+                <template v-if="activatedround.RoundStatus==1 && TotalCount<=activatedround.MatchCount && activatedround.TotalCount<activatedround.MatchCount">
+                    <div class="sure" @click="SubmitMatchConfirm()">确定</div>
+                </template>
+                <template v-else>
+                    <div class="clear">确定</div>
+                </template>
+
+            </div>
+
+        </div>
+
+
+        <!--比赛信息弹框-->
+        <div class="info_alert" style="display: none;" id="boxmatchinfo">
+            <div class="alert_cons">
+                <div class="titles">
+                    <div>比赛信息</div>
+                    <img src="img/global/close_icon.png" class="boxclose" />
+                </div>
+                <div class="Options">
+                    <ul>
+                        <li v-for="r in selectmatchlist">
+                            <div class="team_info">
+                                <div class="host">{{r.HomeSimplifiedName}}</div>
+                                <div class="vs">VS</div>
+                                <div class="guest">{{r.GuestSimplifiedName}}</div>
+                            </div>
+                            <div class="win_info">
+                                <div class="win_team">{{r.SelectTeam}}</div>
+                                <div class="get_score">可得积分 {{r.SelectTeamScore}}</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="sure_button boxconfirm">确认提交</div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="../../Content/swiper/js/swiper.min.js"></script>
+    <script type="text/javascript">
+        //针对ios做处理
+        var container = document.querySelector('.root_container');
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            container.style.paddingTop = '0.44rem';
+        }
+    </script>
+</body>
+</html>
+

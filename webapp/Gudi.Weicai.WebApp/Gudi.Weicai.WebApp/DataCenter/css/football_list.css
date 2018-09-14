@@ -1,0 +1,54 @@
+nav ul{padding-left: 0.3rem;border-bottom: 0.03rem solid #CCCCCC;}
+nav ul li{border-bottom: 0.03rem solid  #FFFFFF;}
+
+.page_title{box-sizing: content-box;}
+.navbar ul .date{text-align: center;color: #1092FF;display: flex;align-items: center;}
+.navbar ul .date img{width: 0.26rem;height: 0.26rem;margin-left: 0.02rem;}
+section{flex:1;width: 100%;height: 100%;overflow: hidden;}
+
+.player_container{overflow:scroll;width: 100%;height: 100%;display: flex;flex-direction: column;}
+.player_container .player_container_titles{display: flex;min-height: 0.6rem;height: 0.6rem;width: 100%;align-items: center;text-align: center;}
+.player_container .player_container_titles .player{min-width:2.3rem;}
+.player_container .player_container_titles .number{min-width:1rem;padding-left: 0.3rem;}
+.sma{width: 0.45rem;}
+.player_container ul{overflow: auto;box-sizing: border-box;}
+.player_container ul li{display: flex;align-items: center;margin: 0.15rem 0;text-align: center; flex-wrap:nowrap;min-height: 0.92rem;}
+.player_container ul li div{ display: inline-block; white-space: nowrap; min-width:0.5rem;}
+.player_container ul .player_container_titles div{padding:0.2rem 0;}
+.player_container ul li .number{min-width:1rem;padding-left: 0.3rem;}
+.player_container ul li .player{display: flex;align-items: center; min-width:2.3rem;justify-content: flex-start;}
+.player_container ul li .player img{width: 0.54rem;margin-right: 0.1rem;}
+.player_container ul li .pass{padding-right: 0.3rem;}
+.mini{min-width:0.59rem;width: 0.59rem;}
+.small{min-width:1rem;width: 1rem;}
+.middle{min-width: 1.2rem;width: 1.2rem;}
+.large{min-width: 2.5rem;width: 2.5rem;}
+.live{color: #1092FF;}
+
+.sm{width: 0.66rem;}
+
+
+.section{display: flex;height:100%;}
+.section .data_list{height:100%;overflow-y:scroll;}
+.section .data_list li{width: 1.8rem;min-width: 1.8rem; height: 1rem;background: #eee;border-bottom: 0.01rem solid #FFFFFF;text-align: center;line-height: 1rem;}
+.data_list .activated{color: #1092FF;background: #FFFFFF!important;}
+
+.data_content{padding-left: 0.01rem;background: #FFFFFF;-webkit-flex: 1;flex: 1; display: flex;flex-direction: column;}
+.data_content .titles{width:5.66rem;height: 0.6rem;min-height: 0.6rem; display: flex;align-items: center;}
+.data_content .titles div{text-align: center;}
+.data_content .player{min-width:2.2rem;width: 2.2rem;}
+.data_content ul{overflow: scroll;}
+.data_content ul li{display: flex;align-items: center;margin: 0.2rem 0;text-align: center; flex-wrap:nowrap;min-height: 0.92rem;}
+.data_content ul li div{text-align: center;}
+.data_content ul li .player{display: flex;align-items: center; min-width:2.2rem;justify-content: flex-start;}
+.data_content .player img{width: 0.54rem;margin-right: 0.1rem;border-radius: 50%;}
+.data_content .team .player{flex: 1;}
+.data_content ul li .flex{padding-left: 0.5rem;box-sizing: border-box;}
+.flex{flex: 1;}
+
+.button{height: 3rem;background-color: #F0F0F0;}
+.button .cancel{position: absolute;top: 0.1rem;left: 0.2rem;}
+.button .sure{position: absolute;top: 0.1rem;right: 0.2rem;}
+.button .date_list{margin-top: 0.8rem;overflow: scroll;height: 2rem;}
+.button .date_list div{text-align: center;height: 0.8rem;line-height: 0.8rem;}
+.button .date_list .activated{background-color: #fff;border-bottom: 0;color:#333; font-weight:bold;}

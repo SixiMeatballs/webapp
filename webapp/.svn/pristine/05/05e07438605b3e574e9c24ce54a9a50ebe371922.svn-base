@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>最强战队</title>
+    <link rel="stylesheet" href="css/style_select_round.css?5">
+    <link rel="stylesheet" href="css/global.css?1">
+	<meta name="x5-orientation" content="portrait | landscape" />
+	<meta name="screen-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true" />
+	<meta name="full-screen" content="yes">
+	<meta name="format-detection" content="telephone=no, email=no" />
+    <script src="js/jquery.js"></script>
+    <script src="../../Content/js/main.js"></script>
+    <script src="js/share.js"></script>
+    <link href="../../Content/boxstyle.css" rel="stylesheet" />
+    <link href="../../Content/layer/mobile/need/layer.css" rel="stylesheet" />
+    <script src="../../Content/layer/mobile/layer.js"></script>
+	<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+       <script src="/Content/js/vue.min.js"></script>
+    <script src="js/select_round.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(function () {
+                $('.country_flag').error(function () {
+                    $(this).attr("src", "images/global/flag.png");
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="hidden" id="hiddenusertoken" value="" />
+
+    <div class="root_container" id="page_createteam" v-cloak>
+        <div class="header">
+            <div class="back_icon">
+                <img onclick="window.history.go(-1);" src="images/global/back.png" />
+            </div>
+            <div class="title">选择轮次日期</div>
+        </div>
+        <div class="round_list_container">
+            <ul>
+                <li v-for="r in roundlist" v-bind:class="{ activated: r.RoundId==activatedround.RoundId }" v-on:click="changeActivedRound(r)">
+                    <div class="round_name">{{ r.RoundName }}</div>
+                    <div class="round_title">{{ r.RoundDesc }}</div>
+                </li>
+            </ul>
+        </div>
+        <section>
+            <div class="match_list_container">
+                <div class="match_daterange">轮次赛期：{{activatedround.MatchTimeDesc}}</div>
+                <div class="match_list">
+                    <ul>
+                        <li v-for="r in schedulelist">
+                            <div name="matchTitle" class="matchTitle">{{r.MatchDesc}}</div>
+                            <div class="match_data">
+                                <div name="hostTeam" class="hostTeam team">
+                                    <div name="teamLogo" class="teamLogo"><img :src="r.HomeTeamLogo" name="hostLogoPic" class="country_flag" /></div>
+                                    <div name="teamName" class="teamName">{{r.HomeTeamName}}</div>
+                                </div>
+                                <div class="vs"><img src="images/createteam/vs.png" /></div>
+                                <div name="guestTeam" class="guestTeam team">
+                                    <div name="teamName" class="teamName">{{r.GuestTeamName}}</div>
+                                    <div name="teamLogo" class="teamLogo"><img :src="r.GuestTeamLogo" name="guestLogoPic" class="country_flag" /></div>
+                                </div>
+                            </div>
+                            <div name="matchDate" class="match_date">{{r.MatchStartTime}} 开赛</div>
+                        </li>
+                    </ul>
+                    <p class="none" v-if="schedulelist.length==0">暂无比赛信息</p>
+                </div>
+            </div>
+        </section>
+        <div class="fix_bottom">
+            <div class="countdowntime">
+                <div id="countdown">
+                    <div id="days">{{CountDown.dd}}</div>
+                    <div id="hours">{{CountDown.hh}}</div>
+                    <div id="minutes">{{CountDown.mm}}</div>
+                    <div id="seconds">{{CountDown.ss}}</div>
+                </div>
+
+                <div id="salary">
+                    <div id="salary_free">{{activatedround.SalaryCapFree}}万</div>
+                    <div id="salary_max">
+                        <span v-if="activatedround.SalaryCapMax>=10000">{{activatedround.SalaryCapMax/10000}}亿</span>
+                        <span v-else>{{activatedround.SalaryCapMax}}万</span>
+                    </div>
+                </div>
+                <img class="full_width" src="images/createteam/countdown_bg.png" />
+            </div>
+
+
+            <template v-if="activatedround.Status === 0">
+                <div id="bottom_button" class="full_width">不可创建</div>
+            </template>
+            <template v-if="activatedround.Status === 1">
+                <a @click="nextstep()"><img class="full_width" src="images/global/btn_next_activated.png" /></a>
+            </template>
+            <template v-if="activatedround.Status === 2">
+                <div id="bottom_button" class="full_width">已封盘</div>
+            </template>
+            <template v-if="activatedround.Status === 3">
+                <div id="bottom_button" class="full_width">已参加</div>
+            </template>
+            <template v-if="activatedround.Status === 4">
+                <div id="bottom_button" class="full_width">已结束</div>
+            </template>
+        </div>
+
+        <!--弹框-->
+        <div id="select" style="display:none;">
+            <div id="select_alert">
+                <div class="alert_head">
+                    <div class="create_team">创建球队名称</div>
+                    <div id="delete" @click="nextstep()"><img src="images/createteam/close.png" /></div>
+                </div>
+                <div class="alert_con">
+                    <input id="txtTeamName" data-theme="e" type="text" onkeyup="checkclearbtn()" value="" data-clear-btn="true" placeholder="点击输入">
+                    <div><img id="imgclear" src="images/createteam/clear.png" onclick="clearteamname()" /></div>
+                </div>
+                <div class="alert_bottom" @click="writeteamname()"><img class="full_width" src="images/createteam/btn_teamname_confirm.png" /></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        function clearteamname() {
+            $("#txtTeamName").val("");
+            checkclearbtn();
+        }
+
+        function checkclearbtn() {
+            var v = $("#txtTeamName").val();
+            if (v == "") {
+                $("#imgclear").css("display", "none");
+            }
+            else {
+                $("#imgclear").css("display", "");
+            }
+        }
+        checkclearbtn();
+        //针对ios做处理
+        var container = document.querySelector('.root_container');
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            container.style.paddingTop = '0.44rem';
+        }
+    </script>
+
+</body>
+</html>

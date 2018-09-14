@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="full-screen" content="yes">
+		<title>选择轮次</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/select_round.css"/>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="root_container">
+			<div class="header">
+				<img onclick="javascript:window.history.back(-1);" src="img/global/back_icon.png"/>
+				<span>选择轮次</span>
+				<a href="help.html">
+		        	<img src="img/global/help.png"/>
+		        </a>
+			</div>
+			<div class="roundlist">
+				<ul>
+					<li>
+						<div class="name">小组赛第1轮</div>
+						<div class="status">晋级</div>
+					</li>
+					<li class="actived">
+						<div class="name">小组赛第2轮</div>
+						<div class="status">晋级</div>
+					</li>
+					<li>
+						<div class="name">小组赛第3轮</div>
+						<div class="status">淘汰</div>
+					</li>
+					<li>
+						<div class="name">小组赛第3轮</div>
+						<div class="status">淘汰</div>
+					</li>
+					<li>
+						<div class="name">小组赛第3轮</div>
+						<div class="status">淘汰</div>
+					</li>
+					<li>
+						<div class="name">小组赛第3轮</div>
+						<div class="status">淘汰</div>
+					</li>
+					<li>
+						<div class="name">小组赛第3轮</div>
+						<div class="status">淘汰</div>
+					</li>
+					<li>
+						<div class="name">小组赛第3轮</div>
+						<div class="status">淘汰</div>
+					</li>
+				</ul>
+			</div>
+			<div class="process">
+				<ul>
+					<li class="activimg">
+						<div class="process_name">小组</div>
+						<div class="routing"></div>
+					</li>
+					<li class="activated">
+						<div class="process_name">1/8</div>
+						<div class="routing"></div>
+					</li>
+					<li class="activated">
+						<div class="process_name">1/4</div>
+						<div class="routing"></div>
+					</li>
+					<li>
+						<div class="process_name">半决</div>
+						<div class="routing"></div>
+					</li>
+					<li>
+						<div class="process_name">3/4</div>
+						<div class="routing"></div>
+					</li>
+					<li>
+						<div class="process_name">决赛</div>
+						<div class="routing"></div>
+					</li>
+				</ul>
+			</div>
+			<div class="center">
+				<ul>
+						<li>
+							<div class="scroe">积分<span>1000</span></div>
+							<img src="img/global/integral_ico.png"/>
+						</li>
+						<li>
+							<div class="scroe">胜率 <span>40%</span></div>
+							<img src="img/global/win_ico.png"/>
+						</li>
+					</ul>
+				<div class="main_img">
+					<img src="img/global/bg_4.png"/>
+				</div>
+				<div class="prize">
+					<img src="img/global/prize.png"/>
+				</div>
+				<div class="info">前160名可晋级下一轮</div>
+				<div class="Advanced">
+					<img src="img/global/Advanced.png"/>
+				</div>
+			</div>
+			<div class="fix_bottom">
+				<div class="left">
+					<div class="left_top">
+						<div class="icon">
+							<img src="img/global/icon.png"/>
+						</div>
+						<div class="ranking">
+							<div>本轮排名  150</div>
+							<div>选择场数  2/4 </div>
+						</div>
+					</div>
+					<div class="left_bottom">
+						<div class="process"></div>
+					</div>
+				</div>
+				<div class="right">
+					<a href="slecet_game.html">参加</a>
+				</div>
+			</div>
+			
+			<!--倒计时弹框-->
+			<div class="info_alerts" style="display: none;">
+				<div class="alert_con">
+					<div>
+						<img src="img/global/countdow.png"/>
+					</div>
+					<div class="counttitle">小组赛第1轮倒计时</div>
+					<div class="countdown">00:00:50</div>
+				</div>
+			</div>
+			
+			<!--被淘汰弹框-->
+			<div class="info_alerts" style="display: none;">
+				<div class="alert_con">
+					<div>
+						<img src="img/global/lock.png"/>
+					</div>
+					<div class="lock">你上轮被被淘汰无法进行该轮竞猜</div>
+					<div class="join_button">我要参加</div>
+				</div>
+			</div>
+			
+			<!--选择参与途径弹框-->
+			<div class="info_alert" style="display: none;">
+				<div class="alert_cons">
+					<div class="titles">
+						<div>选择参与途径</div>
+						<img src="img/global/close_icon.png"/>
+					</div>
+					<div class="Options">
+						<ul>
+							<li>
+								<div class="left">
+									<img src="img/global/bet_icon.png"/>
+								</div>
+								<div class="mid">
+									<div>完成100次世界杯竞猜</div>
+									<div>0/100</div>
+									<div class="mid_process">
+										<div class="strip"></div>
+									</div>
+								</div>
+								<div class="right">去竞猜</div>
+							</li>
+							<li>
+								<div class="left">
+									<img src="img/global/Turntable.png"/>
+								</div>
+								<div class="mid">
+									<div>完成100次世界杯竞猜</div>
+									<div>0/100</div>
+									<div class="mid_process">
+										<div class="strip"></div>
+									</div>
+								</div>
+								<div class="right">去竞猜</div>
+							</li>
+							<li>
+								<div class="left">
+									<img src="img/global/bet_icon.png"/>
+								</div>
+								<div class="mid">
+									<div>完成100次世界杯竞猜</div>
+									<div>0/100</div>
+									<div class="mid_process">
+										<div class="strip"></div>
+									</div>
+								</div>
+								<div class="right">去竞猜</div>
+							</li>
+							<li>
+								<div class="left">
+									<img src="img/global/bet_icon.png"/>
+								</div>
+								<div class="mid">
+									<div>完成100次世界杯竞猜</div>
+									<div>0/100</div>
+									<div class="mid_process">
+										<div class="strip"></div>
+									</div>
+								</div>
+								<div class="right">去竞猜</div>
+							</li>
+							<li>
+								<div class="left">
+									<img src="img/global/bet_icon.png"/>
+								</div>
+								<div class="mid">
+									<div>完成100次世界杯竞猜</div>
+									<div>0/100</div>
+									<div class="mid_process">
+										<div class="strip"></div>
+									</div>
+								</div>
+								<div class="right">去竞猜</div>
+							</li>
+							<li>
+								<div class="left">
+									<img src="img/global/card_ico.png"/>
+								</div>
+								<div class="mids">购买一张资格卡</div>
+								<div class="right">去竞猜</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<!--被淘汰购买积分卡弹框-->
+			<div class="info_alerts" style="display: none;">
+				<div class="alert_con">
+					<div>
+						<img src="img/global/lock.png"/>
+					</div>
+					<div class="lock">你已被淘汰购买积分卡需要花费</div>
+					<span>5000猜豆</span>
+					<div class="join_button">购买积分卡</div>
+				</div>
+			</div>
+		
+			<!--选择参与途径弹框-->
+			<div class="info_alert" style="display: none;">
+				<div class="alert_cons">
+					<div class="titles">
+						<div>购买积分卡</div>
+						<img src="img/global/close_icon.png"/>
+					</div>
+					<div class="Option">
+						<div class="info">
+							<div>你确定要花费5000猜豆购买积分卡吗？</div>
+							<div>购买积分卡后积分变更为该轮次最后一位晋级者的积分，<span>1000</span>积分。</div>
+						</div>
+						<div class="button">
+							<div class="clear">取消</div>
+							<div class="sure">确定</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+.con_tittles{width: 100%;min-height: 0.74rem;background: url(../img/global/alter_title_bg.png) no-repeat;background-size: 100% 100%;display: flex;justify-content: space-around;align-items: center;margin-top: 0.12rem;}
+.con_tittles div{font-size: 0.24rem;color: #fff;}
+
+.rank_con{width: 100%;display: flex;margin-top: 0.17rem;}
+.rank_con .round{width: 1.5rem;background: rgba(0,0,0,.3);overflow: scroll;min-width: 1.5rem;}
+.rank_con .round li{display: flex;flex-direction: column;justify-content: center;align-items: center;border-top: 0.02rem solid #2f94ec;height: 1.9rem;}
+.rank_con .round li div{font-size: 0.24rem;color: #63E0FF;}
+.rank_con .round .activated div{color: #fff;}
+
+.rank_con .ranking_list{display: flex;flex-direction: column;align-items: center;width: 100%;position: relative;}
+.rank_con .ranking_list .list_title{width: 100%;height: 0.74rem;background: url(../img/global/alter_title_bg.png) no-repeat;background-size: 100% 100%;display: flex;align-items: center;justify-content: space-around;}
+.rank_con .ranking_list .list_title div{color: #fff;font-size: 0.24rem;display: flex;justify-content: center;align-items: center;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.rank_con .ranking_list .user{width: 2.1rem;height: 100%;}
+.rank_con .ranking_list .user img{width: 0.48rem;height: 0.48rem;margin-right: 0.1rem;margin-left: 0.2rem;}
+.rank_con .ranking_list .user div{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 1.2rem;display: block!important;}
+.rank_con .ranking_list .integral,.winrate{width: 1.1rem;height: 100%;}
+.rank_con .ranking_list .ranking{width: 1.6rem;height: 100%;}
+
+.rank_con .ranking_list .list_titles{width: 100%;height: 1.36rem;background: url(../img/global/alter_title_bg.png) no-repeat;background-size: 100% 100%;display: flex;align-items: center;position: absolute;bottom: 0;justify-content: space-around;z-index: 2;}
+.rank_con .ranking_list .list_titles div{color: #fff;font-size: 0.24rem;display: flex;justify-content: center;align-items: center;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+.rank_con .ranking_list .list_con{width: 100%;overflow: scroll;}
+.rank_con .ranking_list .list_con div{color: #fff;font-size: 0.24rem;display: flex;justify-content: center;align-items: center;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.rank_con .ranking_list .list_con li{width: 100%;height: 1.08rem;display: flex;align-items: center;justify-content: space-around;}
+
+
+div[rankingtype='rounds'] .round{display: block;}
+div[rankingtype='total'] .round{display: none;}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="Description" content="杭州古迪科技有限公司"/>
+		<meta name="Keywords" content="古迪，微猜"/>
+		<link rel="icon" type="text/css" href="img/favicon.ico"/>
+		<title>古迪科技</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="containers">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			  <div class="carousel-inner" role="listbox">
+			    <div class="item active">
+			      <img src="img/01.png">
+			    </div>
+			    <div class="item">
+			      <img src="img/02.png" >
+			    </div>
+			    <div class="item">
+			      <img src="img/03.png" >
+			    </div>
+			  </div>
+			</div>
+			<!--导航栏-->	
+			<div class="navs">
+				<div class="container">
+				    <div class="navbar-header">
+				      <a class="navbar-brand" href="#">
+				      	<img  src="img/古迪科技白色.png"/>
+				      </a>
+				    </div>	
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <ul class="nav navbar-nav navbar-right">
+				        <li><a href="#">首页</a></li>
+				        <li><a href="about.html">关于我们</a></li>
+				        <li><a href="contact.html">联系我们</a></li>
+				      </ul>
+				      <ul>
+				      	<li></li>
+				      </ul>
+				    </div>
+				 </div>
+			</div>	 
+			<!--内容-->		
+			<div class="section">
+				<div class="slogan">
+					<span class="s1">品质至上</span>
+					<span class="s2">提供极致的用户体验</span>
+					<a href="about.html" class="btn btn-default"  role="button">了解更多</a>
+				</div>				
+			</div>	
+			<!--底部-->		
+			<div class="footer">杭州古迪科技有限公司 © 2017-2018 guditech.com 版权所有 浙ICP备18005644号-1</div>
+		</div>	
+	</body>
+</html>
+<script type="text/javascript">
+	$('.carousel').carousel({
+	  interval: 3000
+	})
+</script>

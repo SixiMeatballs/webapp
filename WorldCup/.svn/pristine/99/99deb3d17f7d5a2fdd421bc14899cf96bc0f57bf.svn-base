@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>最强战队</title>
+    <link rel="stylesheet" href="css/style_select_round.css">
+    <link rel="stylesheet" href="css/global.css">
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+<div class="root_container">
+    <div class="header">
+        <div class="back_icon" onclick="javascript:window.history.back(-1);"><img src="images/global/back.png"/></div>
+        <div class="title">选择轮次日期</div>
+    </div>
+    <div class="round_list_container">
+        <ul>
+            <li>
+                <div class="round_name">第一轮</div>
+                <div class="round_title">小组赛</div>
+            </li>
+            <li>
+                <div class="round_name">第二轮</div>
+                <div class="round_title">小组赛</div>
+            </li>
+            <li class="activated">
+                <div class="round_name">第三轮</div>
+                <div class="round_title">小组赛</div>
+            </li>
+            <li>
+                <div class="round_name">第四轮</div>
+                <div class="round_title">1/8决赛</div>
+            </li>
+            <li>
+                <div class="round_name">第五轮</div>
+                <div class="round_title">1/4决赛</div>
+            </li>
+            <li>
+                <div class="round_name">第五轮</div>
+                <div class="round_title">1/4决赛</div>
+            </li>
+            <li>
+                <div class="round_name">第五轮</div>
+                <div class="round_title">1/4决赛</div>
+            </li>
+            <li>
+                <div class="round_name">第五轮</div>
+                <div class="round_title">1/4决赛</div>
+            </li>
+        </ul>
+    </div>
+    <div class="match_list_container">
+        <div class="match_daterange">轮次赛期：2018.6.10 - 6.22</div>
+        <div class="match_list">
+            <ul>
+                <li>
+                    <div name="matchTitle" class="matchTitle">D组小组赛第1轮</div>
+                    <div class="match_data">
+                        <div name="hostTeam" class="hostTeam team">
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/host.png" name="hostLogoPic"/></div>
+                            <div name="teamName" class="teamName">巴西</div>
+                        </div>
+                        <div><img src="images/createteam/vs.png"/></div>
+                        <div name="guestTeam" class="guestTeam team">
+                            <div name="teamName" class="teamName">联合</div>
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/guest.png" name="guestLogoPic"/></div>
+                        </div>
+                    </div>
+                    <div name="matchDate"class="match_date">2018-06-18 12:00 开赛</div>
+                </li>
+                <li>
+                    <div name="matchTitle" class="matchTitle">D组小组赛第1轮</div>
+                    <div class="match_data">
+                        <div name="hostTeam" class="hostTeam team">
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/host.png" name="hostLogoPic"/></div>
+                            <div name="teamName" class="teamName">巴西</div>
+                        </div>
+                        <div><img src="images/createteam/vs.png"/></div>
+                        <div name="guestTeam" class="guestTeam team">
+                            <div name="teamName" class="teamName">阿尔巴尼亚联合</div>
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/guest.png" name="guestLogoPic"/></div>
+                        </div>
+                    </div>
+                    <div name="matchDate"class="match_date">2018-06-18 12:00 开赛</div>
+                </li>
+                <li>
+                    <div name="matchTitle" class="matchTitle">D组小组赛第1轮</div>
+                    <div class="match_data">
+                        <div name="hostTeam" class="hostTeam team">
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/host.png" name="hostLogoPic"/></div>
+                            <div name="teamName" class="teamName">巴西</div>
+                        </div>
+                        <div><img src="images/createteam/vs.png"/></div>
+                        <div name="guestTeam" class="guestTeam team">
+                            <div name="teamName" class="teamName">阿尔巴尼亚联合</div>
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/guest.png" name="guestLogoPic"/></div>
+                        </div>
+                    </div>
+                    <div name="matchDate"class="match_date">2018-06-18 12:00 开赛</div>
+                </li>
+                <li>
+                    <div name="matchTitle" class="matchTitle">D组小组赛第1轮</div>
+                    <div class="match_data">
+                        <div name="hostTeam" class="hostTeam team">
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/host.png" name="hostLogoPic"/></div>
+                            <div name="teamName" class="teamName">巴西</div>
+                        </div>
+                        <div><img src="images/createteam/vs.png"/></div>
+                        <div name="guestTeam" class="guestTeam team">
+                            <div name="teamName" class="teamName">阿尔巴尼亚联合</div>
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/guest.png" name="guestLogoPic"/></div>
+                        </div>
+                    </div>
+                    <div name="matchDate"class="match_date">2018-06-18 12:00 开赛</div>
+                </li>
+                <li>
+                    <div name="matchTitle" class="matchTitle">D组小组赛第1轮</div>
+                    <div class="match_data">
+                        <div name="hostTeam" class="hostTeam team">
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/host.png" name="hostLogoPic"/></div>
+                            <div name="teamName" class="teamName">巴西</div>
+                        </div>
+                        <div><img src="images/createteam/vs.png"/></div>
+                        <div name="guestTeam" class="guestTeam team">
+                            <div name="teamName" class="teamName">阿尔巴尼亚联合</div>
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/guest.png" name="guestLogoPic"/></div>
+                        </div>
+                    </div>
+                    <div name="matchDate"class="match_date">2018-06-18 12:00 开赛</div>
+                </li>
+                <li>
+                    <div name="matchTitle" class="matchTitle">D组小组赛第1轮</div>
+                    <div class="match_data">
+                        <div name="hostTeam" class="hostTeam team">
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/host.png" name="hostLogoPic"/></div>
+                            <div name="teamName" class="teamName">巴西</div>
+                        </div>
+                        <div><img src="images/createteam/vs.png"/></div>
+                        <div name="guestTeam" class="guestTeam team">
+                            <div name="teamName" class="teamName">阿尔巴尼亚联合</div>
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/guest.png" name="guestLogoPic"/></div>
+                        </div>
+                    </div>
+                    <div name="matchDate"class="match_date">2018-06-18 12:00 开赛</div>
+                </li>
+                <li>
+                    <div name="matchTitle" class="matchTitle">D组小组赛第1轮</div>
+                    <div class="match_data">
+                        <div name="hostTeam" class="hostTeam team">
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/host.png" name="hostLogoPic"/></div>
+                            <div name="teamName" class="teamName">巴西</div>
+                        </div>
+                        <div><img src="images/createteam/vs.png"/></div>
+                        <div name="guestTeam" class="guestTeam team">
+                            <div name="teamName" class="teamName">阿尔巴尼亚联合</div>
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/guest.png" name="guestLogoPic"/></div>
+                        </div>
+                    </div>
+                    <div name="matchDate"class="match_date">2018-06-18 12:00 开赛</div>
+                </li>
+                <li>
+                    <div name="matchTitle" class="matchTitle">D组小组赛第1轮</div>
+                    <div class="match_data">
+                        <div name="hostTeam" class="hostTeam team">
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/host.png" name="hostLogoPic"/></div>
+                            <div name="teamName" class="teamName">巴西</div>
+                        </div>
+                        <div><img src="images/createteam/vs.png"/></div>
+                        <div name="guestTeam" class="guestTeam team">
+                            <div name="teamName" class="teamName">阿尔巴尼亚联合</div>
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/guest.png" name="guestLogoPic"/></div>
+                        </div>
+                    </div>
+                    <div name="matchDate"class="match_date">2018-06-18 12:00 开赛</div>
+                </li>
+                <li>
+                    <div name="matchTitle" class="matchTitle">D组小组赛第1轮</div>
+                    <div class="match_data">
+                        <div name="hostTeam" class="hostTeam team">
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/host.png" name="hostLogoPic"/></div>
+                            <div name="teamName" class="teamName">巴西</div>
+                        </div>
+                        <div><img src="images/createteam/vs.png"/></div>
+                        <div name="guestTeam" class="guestTeam team">
+                            <div name="teamName" class="teamName">阿尔巴尼亚联合</div>
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/guest.png" name="guestLogoPic"/></div>
+                        </div>
+                    </div>
+                    <div name="matchDate"class="match_date">2018-06-18 12:00 开赛</div>
+                </li>
+                <li>
+                    <div name="matchTitle" class="matchTitle">D组小组赛第1轮</div>
+                    <div class="match_data">
+                        <div name="hostTeam" class="hostTeam team">
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/host.png" name="hostLogoPic"/></div>
+                            <div name="teamName" class="teamName">巴西</div>
+                        </div>
+                        <div><img src="images/createteam/vs.png"/></div>
+                        <div name="guestTeam" class="guestTeam team">
+                            <div name="teamName" class="teamName">阿尔巴尼亚联合</div>
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/guest.png" name="guestLogoPic"/></div>
+                        </div>
+                    </div>
+                    <div name="matchDate"class="match_date">2018-06-18 12:00 开赛</div>
+                </li>
+                <li>
+                    <div name="matchTitle" class="matchTitle">D组小组赛第1轮</div>
+                    <div class="match_data">
+                        <div name="hostTeam" class="hostTeam team">
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/host.png" name="hostLogoPic"/></div>
+                            <div name="teamName" class="teamName">巴西</div>
+                        </div>
+                        <div><img src="images/createteam/vs.png"/></div>
+                        <div name="guestTeam" class="guestTeam team">
+                            <div name="teamName" class="teamName">阿尔巴尼亚联合</div>
+                            <div name="teamLogo" class="teamLogo"><img src="images/createteam/guest.png" name="guestLogoPic"/></div>
+                        </div>
+                    </div>
+                    <div name="matchDate"class="match_date">2018-06-18 12:00 开赛</div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="fix_bottom">
+        <div style="position:relative;">
+            <div id="countdown">
+                <div id="days">8</div>
+                <div id="hours">20</div>
+                <div id="minutes">45</div>
+                <div id="seconds">35</div>
+            </div>
+            <div id="salary">
+            	<div id="salary_free">9000万</div>
+            	<div id="salary_max">1.2亿</div>
+            </div>
+            <img class="full_width" src="images/createteam/countdown_bg.png"/>
+        </div>
+        <a href="select_player.html"><img class="full_width" src="images/global/btn_next_activated.png"/></a>
+        <!--<div id="bottom_button" class="full_width">已参与</div>-->
+    </div>
+	<!--弹框-->
+	<div id="select" style="display: none;">
+		<div id="select_alert">
+			<div class="alert_head">
+				<div>创建球队名称</div>
+				<div id="delete"><img src="images/createteam/close.png"/></div>
+			</div>
+			<div class="alert_con">
+				<div class="input_info">点击输入</div>
+				<input type="text" placeholder="阿斯顿马丁" />
+				<div><img src="images/createteam/clear.png"/></div>
+			</div>
+			<div class="alert_bottom"><img src="images/createteam/btn_teamname_confirm.png"/></div>
+		</div>
+	</div>	
+</div>
+</body>
+</html>

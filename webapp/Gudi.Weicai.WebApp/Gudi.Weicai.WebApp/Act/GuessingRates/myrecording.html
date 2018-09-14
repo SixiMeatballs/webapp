@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="full-screen" content="yes">
+    <title>我的记录</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/select_game.css" />
+    <link rel="stylesheet" type="text/css" href="css/myrecording.css" />
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/select_game.js"></script>
+    <script src="../SuperTeam/js/jquery.js"></script>
+    <script src="../../Content/js/main.js"></script>
+    <script src="../SuperTeam/js/share.js"></script>
+    <script src="../../Content/js/vue.min.js"></script>
+    <link href="../../Content/swiper/css/swiper.min.css" rel="stylesheet" />
+    <script src="js/myrecording.js?v=0410"></script>
+    <link href="../../Content/boxstyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="root_container" id="page_record" v-cloak>
+        <input type="hidden" id="hiddenusertoken" value="" />
+        <div class="header">
+            <img onclick="javascript:window.history.back(-1);" src="img/global/back_icon.png" />
+            <span>我的记录</span>
+            <a href="help.html">
+                <img src="img/global/help.png" />
+            </a>
+        </div>
+        <div class="roundlist swiper-container">
+            <ul class="swiper-wrapper ">
+                <li v-for="(index,r) in roundlist" name="roundListItem" class="swiper-slide" @click="clickSwiper(index)">
+                    <div class="name">{{r.RoundName}}{{r.RoundDesc}}</div>
+                    <template v-if="r.Promotion != ''">
+                        <div class="status">{{r.Promotion}}</div>
+                    </template>
+                </li>
+            </ul>
+        </div>
+        <div class="center">
+            <div class="con_tittles">
+                <div class="integral">本轮积分 {{rounddetails.Score}}</div>
+                <div class="winrate">本轮胜率 {{rounddetails.WinRate}}</div>
+                <div class="ranking">本轮排名 {{rounddetails.Rank}}</div>
+            </div>
+            <div class="match_list">
+                <ul>
+                    <li v-for="m in matchlist">
+                        <div class="match_time">
+                            <div class="starttime">
+                                <div>比赛时间</div>
+                                <div>{{m.strStartTime}}</div>
+                                <template v-if="m.MatchStatus === 1">
+                                    （已完赛）
+                                </template>
+                                <template v-else>
+                                    <div>封盘时间</div>
+                                    <div>{{m.strSealingTime}}</div>
+                                </template>
+                            </div>
+                        </div>
+                        <div class="match_data">
+                            <div class="host team">
+                                <div class="hostimg  flag">
+                                    <img v-bind:src="m.HomeFlagUrl" />
+                                </div>
+                                <div class="hostscore score" v-bind:class="{activated:m.WinType === 1}">
+                                    <span>{{m.HomeSimplifiedName}}</span>
+                                    <span>胜 +{{m.HomeWinScore}}</span>
+                                    <template v-if="m.WinType ===1 && m.ResultType===1">
+                                        <img src="img/global/v.png" />
+                                    </template>
+                                    <template v-if="m.WinType ===1 && m.ResultType===-1">
+                                        <img src="img/global/x.png" />
+                                    </template>
+                                </div>
+                            </div>
+                            <div class="vs">
+                                <div>
+                                    <template v-if="m.MatchStatus === 1">
+                                        {{m.HometeamScore}}  : {{m.GuestteamScore}}
+                                    </template>
+                                    <template v-else>
+                                        VS
+                                    </template>
+                                </div>
+                                <div class="score" v-bind:class="{activated:m.WinType === 2}">
+                                    <span>平</span>
+                                    <span>+{{m.DogfallScore}}</span>
+                                    <template v-if="m.WinType ===2 && m.ResultType===1">
+                                        <img src="img/global/v.png" />
+                                    </template>
+                                    <template v-if="m.WinType ===2 && m.ResultType===-1">
+                                        <img src="img/global/x.png" />
+                                    </template>
+                                </div>
+                            </div>
+                            <div class="guest  team">
+                                <div class="guestimg  flag">
+                                    <img v-bind:src="m.GuestFlagUrl" />
+                                </div>
+                                <div class="guestscore score" v-bind:class="{activated:m.WinType === 3}">
+                                    <span>{{m.GuestSimplifiedName}}</span>
+                                    <span>胜 +{{m.GuestWinScore}}</span>
+                                    <template v-if="m.WinType ===3 && m.ResultType===1">
+                                        <img src="img/global/v.png" />
+                                    </template>
+                                    <template v-if="m.WinType ===3 && m.ResultType===-1">
+                                        <img src="img/global/x.png" />
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../../Content/swiper/js/swiper.min.js"></script>
+    <script type="text/javascript">
+        //针对ios做处理
+        var container = document.querySelector('.root_container');
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            container.style.paddingTop = '0.44rem';
+        }
+    </script>
+</body>
+</html>

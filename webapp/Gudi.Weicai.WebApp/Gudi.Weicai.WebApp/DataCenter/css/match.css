@@ -1,0 +1,74 @@
+.match_brief{display:flex; flex-direction:row; justify-content:space-between; align-items: center; padding:0.2rem 0.5rem;}
+.match_brief .team{display:flex; flex-direction:column; align-items: center;}
+.match_brief .team .team_logo{width:1rem; height:1rem;}
+.match_brief .team .team_logo img{width:1rem; height:1rem;}
+.match_brief .team .team_name {display:flex; width:1rem; height:1rem; flex-wrap: nowrap; width:2.2rem; align-items: center; justify-content: center;}
+.match_brief .match_data{display:flex; flex-direction:column; align-items:center; justify-content: space-between; height:1.5rem;}
+
+.lineuphead{background:#87d39a; display:flex; justify-content: space-between; padding:0.17rem 0.5rem;}
+.lineup .host_country{position: absolute;top: 0.4rem;left: 0.5rem;}
+.lineup .guest_country{position: absolute;top: 0.1rem;left: 0.5rem;}
+.lineup ul li{display: flex;justify-content: center;margin-bottom: 0.1rem;min-height: 0.84rem;}
+.lineup ul li .player_position{display: flex;flex-direction: column;align-items: center;position: relative;margin: 0 0.05rem;width: 1.1rem;min-width: 1.1rem;}
+.lineup ul li .player_position .player_number{width: 0.5rem;height: 0.5rem;border-radius: 50%;background-color: #1092FF;border: 0.02rem solid #FFFFFF;box-sizing: border-box;display: flex;justify-content: center;align-items: center;}
+.lineup ul li .player_position .player_name{width: 1.1rem;text-align: center;}
+.lineup ul li .player_position .change_in{display: flex;align-items: center;position: absolute;top: -0.05rem;right: -0.2rem;} 
+.lineup ul li .player_position .change_in img{width: 0.26rem;height: 0.26rem;}
+.lineup .host{padding-top: 0.35rem;flex-direction: column;box-sizing: border-box;}
+.lineup .guest{padding-top: 0.2rem;flex-direction: column-reverse;box-sizing: border-box;}
+.red_bg{background-color: #D0021B!important;}
+
+
+
+.team_members{width:50%;}
+.team_members .team_info{display:flex; align-items: center;}
+.team_members .team_info .team_name{margin-left:0.3rem;}
+.team_members .team_info img{width:0.96rem; height:0.56rem;}
+
+.member_list{display:flex;flex-direction:column;}
+.member_list li{display:flex; flex-direction:row; align-items: center; justify-content: left; padding:0.3rem 0 0 0;}
+.member_list .member_no{color:#fff; background:#1092ff; border-radius:0.26rem; min-width:0.52rem; width:0.52rem; height:0.52rem; font-size:0.22rem; text-align:center; line-height:0.52rem;}
+.member_list .member_name{margin-left:0.1rem}
+.member_list li img{width: 0.19rem;height: 0.19rem;margin:0.04rem 0.1rem 0;}
+.member_list .change_in,.change_out{margin-top:0.04rem;}
+
+.match_statistics{display:flex; flex-direction:column;}
+.match_statistics li{display:flex; flex-direction:row; justify-content:center; align-items:center; margin-top:0.1rem; flex-wrap: nowrap; overflow-x: visible;height: 0.45rem;min-height: 0.45rem;}
+.match_statistics li .itemTitle{width:1.3rem; min-width:1.3rem; text-align:center;}
+.match_statistics li .statisticsBarBg{width:2rem; min-width:2rem; height:0.14rem;}
+.match_statistics li .statisticsBarBg div{height:0.14rem;}
+.match_statistics li .statisticsValue{padding:0 0.2rem;}
+
+.match_action{display:flex; flex-direction:column; align-items:center;}
+.match_action li .start,.end{width:0.3rem;height:0.3rem; border-radius:50%;}
+.match_action li{display:flex; flex-direction:row; align-items:center;padding:0.15rem 0;z-index: 2;}
+.match_action li .actionTime{width:0.5rem;height:0.5rem; border-radius:50%; line-height:0.5rem; text-align: center;}
+.match_action li .left{text-align:right; margin-right:0.5rem;}
+.match_action li .right{text-align:left; margin-left:0.5rem;}
+
+.statistics_title{display:flex; flex-direction:row; justify-content:space-between;padding:0 0.4rem;height: 0.6rem;min-height: 0.6rem;}
+.statistics_items{display:flex; flex-direction:column;}
+.statistics_items li{display:flex; flex-direction:row; justify-content: center; align-items: center;height: 0.6rem;min-height: 0.6rem;}
+.statistics_items li div{text-align: center;}
+.statistics_items li .title{width:2.5rem;}
+.statistics_items li .score{width:2.2rem;}
+
+.player_container{margin-top:0.25rem; overflow:scroll;width: 100%;}
+.player_container ul li{display: flex;align-items: center;margin-bottom: 0.4rem;text-align: center; flex-wrap:nowrap;}
+.player_container ul li div{ display: inline-block; white-space: nowrap; min-width:1rem;}
+.player_container ul .player_container_titles div{padding:0.2rem 0;}
+.player_container ul li .number{min-width:1rem;}
+.player_container ul li .player{display: flex;align-items: center;width: 2.2rem; min-width:2.2rem;justify-content: flex-start;}
+.player_container ul li .player img{width: 0.54rem;margin-right: 0.1rem;border-radius: 50%;}
+.player_container ul li .four{min-width: 1.5rem;width: 1.5rem;}
+
+
+
+.red{background-color: #d0021b!important;}
+.live{color: #1092FF;}
+
+.get_scores{display: flex;}
+.get_score_title div{margin: 0.1rem 0;height: 0.3rem;}
+.get_score{flex: 1;display: flex;overflow: scroll;}
+.get_score li{min-width: 1rem;margin: 0 0.2rem;}
+.get_score li div{height: 0.3rem;margin: 0.1rem 0;text-align: center;}

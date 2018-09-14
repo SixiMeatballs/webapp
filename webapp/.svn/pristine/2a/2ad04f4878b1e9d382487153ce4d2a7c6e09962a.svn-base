@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="full-screen" content="yes">
+    <title>排行</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/ranking.css?1" />
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../SuperTeam/js/jquery.js"></script>
+    <script src="../../Content/js/main.js"></script>
+    <script src="../SuperTeam/js/share.js"></script>
+    <script src="../../Content/js/vue.min.js"></script>
+    <script src="js/ranking.js"></script>
+    <link href="../../Content/boxstyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="root_container" id="page_ranking" v-cloak>
+        <input type="hidden" id="hiddenusertoken" value="" />
+        <div class="header">
+            <img onclick="javascript:window.history.back(-1);" src="img/global/back_icon.png" />
+            <span class="ranking_title">排行<!--<span class="">排名=积分*(0.8+胜率*0.2)</span>--></span>           
+            <a href="help.html">
+                <img src="img/global/help.png" />
+            </a>
+        </div>
+        <div class="con_tittles">
+            <div  id="rounds"  v-bind:class="{activated:roundtype==='round'}" v-on:click="changeRoundType('round')">轮次排行</div>
+            <div id="total" v-bind:class="{activated:roundtype==='total'}" v-on:click="changeRoundType('total')">总排行</div>
+        </div>
+        <div class="rank_con">
+            <ul class="round" v-show="roundtype === 'round'">
+                <li v-for="r in roundlist" v-on:click="getRankList(r.Id)" v-bind:class="{activated:currentroundid === r.Id}">
+                    <div>{{r.RoundName}}</div>
+                    <div>{{r.RoundDesc}}</div>
+                </li>
+            </ul>
+            <div class="ranking_list">
+                <div class="list_title">
+                    <div class="user">用户信息</div>
+                    <div class="integral">积分</div>
+                    <div class="winrate">胜率</div>
+                    <div class="ranking">本轮排名</div>
+                </div>
+                <div class="list_titles" v-show="ranklist.ContainMe">
+                    <div class="user">
+                        <img v-bind:src="ranklist.Mine.LogoUrl" />
+                        <div>{{ranklist.Mine.UserName}}</div>
+                    </div>
+                    <div class="integral">{{ranklist.Mine.TotalScore}}</div>
+                    <div class="winrate">{{ranklist.Mine.WinRate}}</div>
+                    <div class="ranking">第{{ranklist.Mine.Rank}}名</div>
+                </div>
+                <ul class="list_con">
+                    <li v-for="rank in ranklist.ListRank">
+                        <div class="user">
+                            <img v-bind:src="rank.LogoUrl" />
+                            <div>{{rank.UserName}}</div>
+                        </div>
+                        <div class="integral">{{rank.TotalScore}}分</div>
+                        <div class="winrate">{{rank.WinRate}}</div>
+                        <div class="ranking">第{{rank.Rank}}名</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        //针对ios做处理
+        var container = document.querySelector('.root_container');
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            container.style.paddingTop = '0.44rem';
+        }
+    </script>
+</body>
+</html>

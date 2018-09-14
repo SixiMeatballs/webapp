@@ -1,0 +1,63 @@
+.header_bg{width:100%;height:3.45rem;min-height:3.45rem;background: url(../images/prize/ranking.png) no-repeat;background-size: 100% 100%;}
+.header_bg .back_icon{padding:0 0.3rem;}
+.header_bg .back_icon img{width: 0.72rem;}
+
+
+.prize_title{width: 100%;height: 0.65rem;min-height: 0.65rem;background: rgb(34,81,109);display: flex; justify-content: space-around;align-items: center;}
+.prize_title div{width: 50%;height: 100%;line-height: 0.65rem;text-align: center;font-size: 0.27rem;color: #E2E4E7;letter-spacing: 0.02rem;}
+.prize_title .active{border-bottom: 0.03rem solid #fff;box-sizing: border-box;}
+
+
+.paize_content{display: flex;justify-content: flex-start;width: 100%;overflow: scroll; height:100%;position: relative;}
+
+.paize_content ul{overflow:scroll;}
+.paize_content .round{background-color: rgba(18,65,95,.75);min-width: 1rem;}
+.paize_content .round li{width: 1rem;min-width: 1rem; height: 0.8rem;border-bottom: 0.01rem solid #144B6E;display: flex;flex-direction: column;align-items: center;background-color: #19608E;padding-top: 0.12rem;box-sizing: border-box;}
+.paize_content .round li div{font-size: 0.2rem;color: #fff;letter-spacing: 0.02rem;}
+.paize_content .round  .activated div{color: #6E92AD;}
+.paize_content .round  .activimg{background-color: #1E79B2;}
+
+.paize_lists {display: flex;flex-direction: column;align-items: center;flex: 1;position: relative;background-color: rgba(15,69,110,.75);width: 6.5rem;min-width: 6.5rem;}
+.paize_lists .list_title{width: 100%;height: 0.8rem;display: flex;justify-content: space-around;background-color: #155072;align-items: center;}
+.paize_lists .list_title div{font-size: 0.24rem;color: #F5E65D;font-weight: bold;letter-spacing: 0.03rem;}
+
+.paize_lists .list_title .title_left{width: 1.5rem;text-align: center;}
+.paize_lists .list_title .title_mid{width: 3.5rem;display: flex;justify-content: center;}
+.paize_lists .list_title .title_right{width: 1rem;text-align: center;}
+.paize_lists .list_title .title_num{width: 1.5rem;text-align: center;}
+
+.paize_lists .list_titles{width: 100%;height: 0.8rem;display: flex;justify-content: space-around;background-color: #2F5E7C;align-items: center;}
+.paize_lists .list_titles div{font-size: 0.22rem;color: #Fff;font-weight: bold;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.paize_lists .list_titles .left{width: 1.5rem;text-align: center;}
+.paize_lists .list_titles .right{width: 1rem;text-align: center;}
+.paize_lists .list_titles  .rank{display: flex;align-items: center;width: 3.5rem;}
+.paize_content .list_titles .rank img{width: 0.6rem;height:0.6rem;border-radius: 50%;background-color: #fff;margin-right: 0.08rem;}
+
+.paize_lists .list_content{width: 100%;position: relative;}
+.paize_lists .list_content li{width: 100%;display: flex;justify-content: space-around;height: 0.8rem;align-items: center;}
+.paize_lists .list_content li div{font-size: 0.22rem;color: #fff;letter-spacing: 0.02rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.paize_lists .list_content li:nth-of-type(even){background-color: rgba(15,69,99,.85);}
+
+.paize_lists .list_content li .left{width: 1.5rem;text-align: center;display: flex;align-items: center;justify-content: center;}
+.paize_lists .list_content li .right{width: 1rem;text-align: center;}
+.paize_lists .list_content li .title_num{width: 1.5rem;text-align: center;}
+
+.paize_lists .list_content li .rank{display: flex;align-items: center;width: 3.5rem;}
+.paize_content .list_content li .rank img{width: 0.6rem;height: 0.6rem; border-radius: 50%;background-color: #fff;margin-right: 0.08rem;}
+
+.paize_lists .list_content li .one,.two,.three{width: 0.35rem;height: 0.35rem;border-radius: 50%;color: #000;letter-spacing: 0;text-align:center;line-height: 0.35rem;}
+.paize_lists .list_content li .one{background: linear-gradient(#FF7B33,#FF7C33);}
+.paize_lists .list_content li .two{background: linear-gradient(#E39243,#E39244);}
+.paize_lists .list_content li .three{background: linear-gradient(#CF9E3D,#D1A03C);}
+
+
+
+div[prizetype='day'] .round{display: block;}
+div[prizetype='total'] .round{display: none;}
+
+.header_bg{z-index: 2;}
+.prize_title{z-index: 2;}
+
+.blank{width: 100%;height: calc(100% - 0.8rem);background-color: #124464;opacity: 0.8;position: absolute;top: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;margin-top: 0.8rem;}
+.blank img{margin-bottom: 0.2rem;width: 3.1rem;height: 1.3rem;}
+.blank span{font-size: 0.23rem; color: #6189a1;}

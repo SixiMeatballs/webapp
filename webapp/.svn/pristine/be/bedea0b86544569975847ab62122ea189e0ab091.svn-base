@@ -1,0 +1,13 @@
+.prize_list {height: 100%;overflow: scroll;margin-top: 0.11rem;}
+.prize_list ul {display: flex;flex-direction: column;}
+.prize_list ul li {min-height: 2.0rem;margin-bottom: 0.1rem;background: rgba(255,255,255,.1);}
+.prize_list ul li .prize_panel {padding: 0.3rem;display: flex;align-items: center;position: relative;z-index: 0;color: #7b9eb5;}
+.prize_list ul li .prize_panel .prize_img {width: 0.9rem;height: 1.3rem;}
+.prize_list ul li .prize_panel .prize_img img {width: 100%;height: 100%;}
+.prize_list ul li .prize_panel .prize_intro {margin-left: 0.22rem;font-size: 0.2rem;}
+.prize_list ul li .prize_panel .prize_intro .prize_name {color: #fff;font-size: 0.24rem;margin-bottom: 0.1rem;}
+.prize_list ul li .prize_panel .prize_state {align-self: right;position: absolute;right: 0.5rem;top: 45%;}
+.prize_list ul li .prize_panel .prize_state .state_txt {font-size: 0.24rem;color: #fff;}
+.prize_list ul li .prize_panel .prize_state .state_btn {margin-top: -0.5rem;font-size: 0.24rem;color: #000;text-align: center;line-height: 1.4rem;width: 1.85rem;height: 1.1rem;background: url(../img/global/button_s_bg.png) no-repeat;background-size: 100% 100%;}
+.prize_list ul li .prize_deliver {display: flex;	justify-content: space-around;height: 0.5rem;align-items: center;}
+.prize_list ul li .prize_deliver div{font-size: 0.19rem;color: rgba(255,255,255,.25);}

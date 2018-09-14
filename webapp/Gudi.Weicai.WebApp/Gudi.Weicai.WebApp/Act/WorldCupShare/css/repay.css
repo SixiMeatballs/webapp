@@ -1,0 +1,81 @@
+*{margin: 0;padding: 0;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+a{text-decoration: none;}
+ul{list-style: none;}
+.font_3L{font-size: 0.30rem;color: #FFFFFF;}
+
+body{width: 100%;height: 100%;background: url(../img/com.jpg) repeat-y;font-family:'PingFang SC';}
+
+.container{width: 100%;height: 100%;background: url(../img/bg-1.jpg) no-repeat;background-size: 100%;overflow: scroll;display: flex;flex-direction: column;position: relative;}
+
+.eventEnter{align-self: flex-end;margin-right: 0.15rem;}
+.eventInfo{width: 0.65rem;height: 0.9rem;font-size: 0.24rem;color: #FFFFFF;background: #e84337;border-radius: 0 0 0.65rem 0.65rem;text-align: center;line-height: 0.35rem;font-family: "PingFang SC";}
+
+.eventTitle{padding: 0 0.7rem;margin-top: 0.25rem;}
+.eventTitle img{width: 100%;}
+
+.buttons{height:8.2rem;background:url(../img/reg-bag.png) no-repeat;background-size:100%;display:flex;flex-direction:column;margin-top:-0.4rem;}
+.helpButton{font-size: 0.5rem;color: #000000;font-weight: bold;text-align: center;margin-top: 4.83rem;}
+.activated {color: #de3f3c;}
+.redBag{width: 3.39rem;height: 0.98rem;font-size: 0.34rem;color: #FFFFFF;border: 0.02rem solid #FFFFFF;border-radius: 0.98rem 0.98rem;align-self: center;text-align: center;line-height: 0.98rem;margin-top: 0.45rem;}
+
+.count{display: flex;flex-direction: column;}
+.count .headline{text-align: center;font-size: 0.28rem;color: #FFFFFF;letter-spacing: 0.02rem;}
+.title {display: flex;align-items: center;justify-content: center;text-align: center;font-size: 0.28rem;color: #FFFFFF;letter-spacing: 0.02rem;}
+.title .line{width: 1.25rem;height: 0.01rem;background: #ffff00;}
+.title .dot{width: 0.1rem;height: 0.1rem;border-radius: 50%;background: #ffff00;}
+.title span{font-size: 0.34rem;color: #FFFFFF;align-self: center;letter-spacing: 0.02rem;margin: 0 0.2rem;}
+
+.count .countCon {width: 4.6rem;height: 0.94rem;background: url(../img/share/bg2.png) no-repeat;background-size: 100% 100%; font-size: 0.45rem; color: #FFFFFF;align-self: center;text-align: center;line-height: 0.94rem;letter-spacing: 0.02rem;margin-bottom: 0.45rem;margin-top: 0.3rem;}
+.count .countdownTime{font-size: 0.45rem;color: #EEEEEE;padding: 0.4rem 1.3rem;display: flex;}
+.count .countdown{display: flex;}
+.count .countdown .numBg{width: 0.85rem;height: 0.9rem;background: url(../img/share/countBg.png) no-repeat;background-size: 100% 100%;text-align: center;line-height: 0.9rem;}
+.count .countdown .unit{font-size: 0.24rem;align-self: flex-end;margin: 0 0.05rem;}
+
+
+
+.prizeSet{display: flex;flex-direction: column;margin-top: 0.28rem;background:url(../img/share/prize-set.png) no-repeat;background-size:100%;height:8.48rem;}
+.prizeSet .setTitle{font-size: 0.35rem;color: #fdf4eb;text-align: center;opacity:0;}
+
+
+.prizeSet .awards{display: flex;flex-direction: column;padding: 0rem 1.2rem 0;height:3.2rem;margin-top:2rem;}
+.prizeSet .awards li{font-size: 0.3rem;color: #ee4059;display: flex;height: 0.7rem;justify-content:space-between;}
+
+.prizeSet .awards li .ranking{width: 3rem;}
+.prizeSet .awards li .prizeCon{margin-left: 0.2rem;}
+.prizeSet .awards .rules{font-size: 0.24rem;color: #EE4059;align-self: flex-end;}
+.prizeSet .friends{font-size: 0.24rem;text-align: center;color: #FFFFFF;margin-top: 0.5rem;}
+.prizeSet .awardsList{display: flex;flex-direction: column;padding: 0.4rem 1.15rem 0.4rem;}
+.prizeSet .awardsList li{display: flex;flex-direction: column;font-size: 0.24rem;color: #000000;height: 0.7rem;margin-bottom: 0.4rem;justify-content: space-between;}
+.prizeSet .prizeButton{text-align: center;margin-top: 0.5rem;}
+.prizeSet .prizeButton img{height:0.8rem;width:3.9rem;}
+
+
+
+.disclaimer{font-size: 0.3rem;color: #FFFFFF;margin: 0rem 0.3rem 1.3rem;}
+.title {display: flex;align-items: center;justify-content: center;margin-top: 0.5rem;}
+.title .line{width: 1.25rem;height: 0.01rem;background: #ffff00;}
+.title .dot{width: 0.1rem;height: 0.1rem;border-radius: 50%;background: #ffff00;}
+.title span{font-size: 0.3rem;color: #FFFFFF;align-self: center;letter-spacing: 0.02rem;margin: 0 0.2rem;}
+.disclaimer .processTitle{font-size: 0.26rem;}
+.disclaimer .processCon p{font-size: 0.26rem;margin: 0.2rem 0;}
+
+
+.button{position: fixed;bottom: 0rem;width: 100%;height: 0.92rem;background-color: rgba(0,0,0,0.8);padding: 0.21rem;box-sizing: border-box;color: #faf212;display:flex;justify-content:center;align-items:center;}
+.button  img{width:0.48rem;height: 0.48rem;margin-right: 0.2rem;}
+.iphonex_bottom{bottom:0.3rem!important;}
+
+
+.alert{width: 100%;height: 100%;position: absolute;top: 0;background: rgba(0,0,0,0.8);z-index: 9;overflow: hidden;}
+.alert .content{position: absolute;top: 1.3rem;left: 0.8rem;width: 5.8rem;height: 8.9rem;}
+.alert .bg{width: 5.8rem;pointer-events: none;}
+.alert .close{width: 0.4rem;position: absolute;top: 0.55rem;right: 0;}
+.alert div{font-size: 0.24rem;color: #fff;position: absolute;width: 100%;text-align: center;}
+.alert .code{font-size: 0.36rem;color: #DE3F3C;top: 4.9rem;}
+.alert .text{top: 4.3rem;}
+.alert .info{bottom: 2.3rem;}
+.alert a{width: 2.6rem;height: 0.9rem;border-radius: 0.1rem;display: block;font-size: 0.34rem;color: #fff;text-align: center;line-height: 0.9rem;position: absolute;bottom: 0.2rem;}
+.alert .grab{background: #e93534;left: 0;}
+.alert .join{background: #fbf2bb;color: #DE3F3C;right: 0;}
+.alert .joinus{background: #e93534;color: #FFFFFF;right: 0;width: 100%;}
+.alert .infos{top: 2.5rem;display: flex;flex-direction: column;font-size: 0.36rem;font-weight: bold;font-style: oblique;}
+.alert .infos span:nth-child(2){font-size: 0.4rem;margin-top: 0.3rem;}

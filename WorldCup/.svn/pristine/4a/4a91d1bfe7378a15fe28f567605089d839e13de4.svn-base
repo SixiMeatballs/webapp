@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no"/>
+    <title>最强战队</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <script src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript">
+            $(window).bind('resize load', function() {
+                //console.log($(window).width());
+                //console.log($(window).width()/ 750.0);
+                $("body").css("zoom", $(window).width() / 750.0);
+                $("body").css("display", "block");
+                //$("body").css("zoom", $(window).width() / 750);
+            });
+
+    </script>
+</head>
+<body>
+    <div class="container1">
+        <div class="header">
+            <div class="back left"><img src="images/index/back.png" alt=""/></div>
+            <div class="help right"><img src="images/index/help.png" alt=""/></div>
+        </div>
+        <div class="main">
+                <img src="images/index/main.png" alt=""/>
+        </div>
+        <div class="createteam">
+                <img src="images/index/createteam.png" alt=""/>
+        </div>
+        <div class="nav">
+                <a href="#page_myplayercard"><img src="images/index/btn1.png?id=0" alt=""/></a>
+                <a href="#page_myplayercard"><img src="images/index/btn2.png" alt=""/></a>
+                <a href="#page_myprize"><img src="images/index/btn3.png" alt=""/></a>
+                <a href="#page_raking"><img src="images/index/btn4.png" alt=""/></a>
+        </div>
+        <div class="footer1">
+                <img src="images/index/footerbg.png" alt=""/>
+        </div>
+
+    </div>
+
+</body>
+</html>

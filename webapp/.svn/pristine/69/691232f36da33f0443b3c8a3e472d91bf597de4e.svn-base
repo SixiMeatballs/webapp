@@ -1,0 +1,14 @@
+
+.address_content{padding: 0.3rem 0.5rem;height: 82%;min-height: 10rem;}
+
+
+.cons{width: 100%;display: flex;flex-direction: column; margin-bottom: 0.2rem;}
+.cons div{color: #8DB1C8;font-size: 0.26rem;}
+.cons input{width: 100%;height: 0.6rem;min-height:0.6rem;font-size: 0.3rem;background-color: #0E3753;outline: none;border: none;border-radius:0.2rem ;margin-top: 0.2rem;color: #fff;padding: 0 0.2rem;box-sizing: border-box;}
+
+.cons #address{height: 1.2rem;}
+
+
+#bottom_button{background:url(../images/createteam/text_bg.png) no-repeat top center;background-size: 100% 100%;text-align: center;font-size: 0.3rem;color: #8E908F;height: 1rem;line-height: 1rem;color: #FFC000;letter-spacing: 0.05rem;}
+
+

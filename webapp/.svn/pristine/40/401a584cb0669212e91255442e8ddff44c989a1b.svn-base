@@ -1,0 +1,32 @@
+.team_brife .logo img{border-radius:50%;}
+.player_info{display:flex;flex-direction:column;padding:0 0.25rem;box-sizing:border-box;}
+.player_info li:first-child{display:flex;}
+.player_info li:first-child div:first-child{margin-right:0.2rem;}
+.player_info li{margin:0.1rem 0;}
+
+.player_team_curr{display:flex; flex-direction:column;}
+.player_team_curr li{display:flex;flex-direction:row; justify-content: space-between; align-items:center; margin-bottom:0.3rem; text-align: center;}
+.player_team_curr li .team_name{width:2.65rem;}
+.player_team_curr li .number{width:2.2rem;}
+.player_team_curr li .position{width:2rem;}
+
+.player_transfer{display:flex;flex-direction: column;}
+.player_transfer li{display:flex; flex-direction:row;margin-bottom:0.2rem;}
+.player_transfer li div{display:flex; flex-direction:row; width:50%;}
+.player_transfer li div span{margin:0 0.05rem;}
+
+.player_desc{display:flex;flex-direction:column;justify-content: center;align-items: center;min-height: 3rem;}
+.player_desc p{text-indent: 0.52rem;line-height: 2;}
+
+
+.player_container{border-top:0.1rem solid #fff; overflow:scroll;width: 100%;}
+.player_container ul li{display: flex;align-items: center;margin-bottom: 0.12rem;text-align: center; flex-wrap:nowrap;height: 0.6rem;min-height: 0.6rem;}
+.player_container ul li div{ display: inline-block; white-space: nowrap; min-width:1rem;}
+.player_container ul .player_container_titles div{padding:0.2rem 0;}
+.player_container ul li .double{min-width:1rem;}
+.player_container ul li .four{min-width: 1.5rem}
+.player_container ul li .large{min-width: 2.5rem}
+
+.data_container{width: 100%;min-height: 1.86rem;padding: 0.3rem; box-sizing: border-box;display: flex;align-items: center;flex-wrap: wrap;}
+.data_container li{display: flex;flex-direction: column;align-items: center;width: 1.5rem;margin: 0.1rem 0.1rem;}
+.data_container li .score{margin-bottom: 0.24rem;}

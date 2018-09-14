@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="full-screen" content="yes">
+    <title>足球统计排行</title>
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/global.css?001">
+    <link rel="stylesheet" href="css/football_list.css?001">
+    <script src="js/navigationSwitcher.js"></script>
+    <script src="/Act/SuperTeam/js/jquery.js"></script>
+    <script src="/Content/js/main.js"></script>
+    <script src="/Act/SuperTeam/js/share.js"></script>
+    <script src="/Content/js/vue.min.js"></script>
+    <link href="../../Content/address/css/mui.css" rel="stylesheet" />
+    <link href="../../Content/address/css/mui.picker.css" rel="stylesheet" />
+    <script src="../../Content/address/js/mui.min.js"></script>
+    <script src="../../Content/address/js/mui.picker.min.js"></script>
+    <script src="js/football_stat.js"></script>
+</head>
+<style type="text/css">
+	.navbar ul li{border-bottom: none;}
+</style>
+<body>
+    <div class="container" id="page_football_stat"  v-cloak>
+        <input type="hidden" id="hiddenusertoken" value="" />
+        <header>
+            <div class="page_title font_1L padding_top_sysbar bg_g">
+                <div class="btn_back"><img src="images/back.png" /></div>
+                <div class="title_text">{{gamename}}</div>
+            </div>
+        </header>
+        <nav class="navbar font_4A" id="navigation">
+            <ul v-bind:class='[havescore == 1?"column_4":"column_3"]'>
+                <template v-if="currentseason != null">
+                    <div class="date" v-on:click="SeasonSelectOpen()">{{currentseason}}<img src="images/drop.png" alt=""></div>
+                </template>
+                <template v-else>
+                    <div class="date">未知赛季</div>
+                </template>
+                <li section-name="integral" class="activated" v-show="havescore == 1">积分</li>
+                <li section-name="player_list" v-on:click="GetPlayerOptions()" v-bind:class="{activated:havescore==0}">球员榜</li>
+                <li section-name="team_list" v-on:click="GetTeamOptions()">球队榜</li>
+            </ul>
+        </nav>
+        <!--积分排行-->
+        <section name="integral" v-show="havescore == 1">
+            <div class="player_container">
+                <template v-if="scorelist != null && scorelist.length > 0">
+                	<div class="player_container_titles font_6A bg_j">
+                		<div class="number small">排名</div>
+                        <div class="player">球队</div>
+                        <div class="position sma">赛</div>
+                        <div class="shooting sm">胜</div>
+                        <div class="shoot_in_door sm">平</div>
+                        <div class="key_pass sm">负</div>
+                        <div class="dribbling middle">进/失</div>
+                        <div class="pass sm">积分</div>
+                	</div>
+                    <ul class="font_6A bg_l">
+                        <li v-for="s in scorelist">
+                            <div class="number sm">{{s.Ranking}}</div>
+                            <div class="player">
+                                <img v-bind:src="s.TeamCover">
+                                <div class="text_nowrap_ellipsis" onclick="gotourl('football_team.html?id={{s.TeamId}}&&teamtype=2')">{{s.TeamName}}</div>
+                            </div>
+                            <div class="position live sm">{{s.Match}}</div>
+                            <div class="shooting sm">{{s.Win}}</div>
+                            <div class="shoot_in_door live  sm">{{s.Draw}}</div>
+                            <div class="key_pass sm">{{s.Fail}}</div>
+                            <div class="dribbling middle live">{{s.Get}}/{{s.Lost}}</div>
+                            <div class="pass sm">{{s.Score}}</div>
+                        </li>
+                    </ul>
+                </template>
+                <template v-else>
+                    <div class="blank font_3C bg_j">
+                        <img src="images/nodata.png" alt="">
+                        <span>暂无积分！</span>
+                    </div>
+                </template>
+            </div>
+        </section>
+        <!--//积分排行-->
+        <!--球员榜-->
+        <section name="player_list" v-show="havescore == 0">
+            <div class="section">
+                <template v-if="playerstat.options != null && playerstat.options.length > 0">
+                    <ul class="data_list font_4A">
+                        <li class="text_nowrap_ellipsis" v-for="o in playerstat.options" v-bind:class="{activated:o.StatsId === playerstat.currentoptionid}" v-on:click="GetPlayerData(o.StatsId)">{{o.StatsName}}</li>
+                    </ul>
+                </template>              
+                <template v-if="playerstat.currentdatalist != null && playerstat.currentdatalist.length > 0">
+                    <div class="data_content">
+                        <div class="titles bg_j font_6C">
+                            <div class="ranking small">排名</div>
+                            <div class="player">球员</div>
+                            <div class="team middle">球队</div>
+                            <div class="total small">总计</div>
+                        </div>
+                        <ul class="font_6A">
+                            <li v-for="(index,d) in playerstat.currentdatalist">
+                                <div class="ranking small">{{index+1}}</div>
+                                <div class="player">
+                                    <img v-bind:src="d.PlayerCover">
+                                    <div class="text_nowrap_ellipsis" onclick="gotourl('football_player.html?id={{d.PlayerId}}')">{{d.PlayerName}}</div>
+                                </div>
+                                <div class="team middle text_nowrap_ellipsis">{{d.TeamName}}</div>
+                                <div class="total small">{{d.StatsValue}}</div>
+                            </li>
+                        </ul>
+                    </div>
+                </template>
+                <template v-else>
+                    <div class="blank font_3C" style="flex: 1;">
+                        <img src="images/nodata.png" alt="">
+                        <span>暂无数据！</span>
+                    </div>
+                </template>
+            </div>
+        </section>
+        <!--//球员榜-->
+        <!--球队榜-->
+        <section name="team_list" style="display: none;">
+            <div class="section">
+                <ul class="data_list font_4A">
+                    <li class="text_nowrap_ellipsis" v-for="o in teamstat.options" v-bind:class="{activated:o.StatsId === teamstat.currentoptionid}" v-on:click="GetTeamData(o.StatsId)">{{o.StatsName}}</li>
+                </ul>
+                <template v-if="teamstat.currentdatalist != null && teamstat.currentdatalist.length > 0">
+                    <div class="data_content">
+                        <div class="titles bg_j font_6C">
+                            <div class="ranking small">排名</div>
+                            <div class="player flex">球队</div>
+                            <div class="total small">总计</div>
+                        </div>
+                        <ul class="font_6A">
+                            <li v-for="(index,d) in teamstat.currentdatalist">
+                                <div class="ranking small">{{index+1}}</div>
+                                <div class="player flex">
+                                    <img v-bind:src="d.TeamCover">
+                                    <div class="text_nowrap_ellipsis" onclick="gotourl('football_team.html?id={{d.TeamId}}&&teamtype=2')">{{d.TeamName}}</div>
+                                </div>
+                                <div class="total small">{{d.StatsValue}}</div>
+                            </li>
+                        </ul>
+                    </div>
+                </template>
+                <template v-else>
+                    <div class="blank font_3C" style="flex: 1;background: #fff;">
+                        <img src="images/nodata.png" alt="">
+                        <span>暂无数据！</span>
+                    </div>
+                </template>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+<script language="javascript" type="text/javascript">
+    var navs = document.querySelectorAll('#navigation ul li');
+    var sections = document.querySelectorAll("section");
+    navigationSwitcher.init(navs, sections);
+ </script>

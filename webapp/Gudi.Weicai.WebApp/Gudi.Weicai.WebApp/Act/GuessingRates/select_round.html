@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="full-screen" content="yes">
+    <title>选择轮次</title>
+    <link rel="stylesheet" type="text/css" href="css/global.css?1" />
+    <link rel="stylesheet" type="text/css" href="css/select_round.css?3" />
+    <script src="../SuperTeam/js/jquery.js"></script>
+    <script src="../../Content/js/main.js?1"></script>
+    <script src="../SuperTeam/js/share.js"></script>
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../Content/js/vue.min.js"></script>
+    <script src="js/select_round.js?2"></script>
+    <link href="../../Content/swiper/css/swiper.min.css" rel="stylesheet" />
+    <link href="../../Content/boxstyle.css?0" rel="stylesheet" />
+</head>
+<body>
+    <input type="hidden" id="hiddenusertoken" value="" />
+    <div class="root_container" id="page_selectround" v-cloak>
+        <div class="header">
+            <img onclick="javascript:window.history.back(-1);" src="img/global/back_icon.png" />
+            <span>选择轮次</span>
+            <a href="help.html">
+                <img src="img/global/help.png" />
+            </a>
+        </div>
+        <div class="swiper-container roundlist">
+            <ul class="swiper-wrapper ">
+                <li v-for="(index,r) in roundlist" class="swiper-slide" @click="clickSwiper(index)">
+                    <div class="name">{{ r.RoundName }}{{ r.RoundDesc }}</div>
+                </li>
+            </ul>
+        </div>
+        <div class="process">
+            <ul>
+                <li v-for="r in matchstagelist" v-bind:class="{ activing: r.Status==1,activated:r.Status==3 }">
+                    <div class="process_name">{{r.Desc}}</div>
+                    <div class="routing"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="center">
+            <ul>
+                <li>
+                    <div class="scroe">积分<span>{{activatedround.Score}}</span></div>
+                    <img src="img/global/integral_ico.png" />
+                </li>
+                <li>
+                    <div class="scroe">胜率 <span>{{activatedround.WinRate}}</span></div>
+                    <img src="img/global/win_ico.png" />
+                </li>
+            </ul>
+            <div class="main_img">
+                <template v-if="activatedround.BackCover.length==0">
+                    <img src="img/global/bg_4.png" />
+                </template>
+                <template v-else>
+                    <img :src="activatedround.BackCover" />
+                </template>
+            </div>
+            <div class="prize" v-if="activatedround.PrizeId>0">
+                <img src="img/global/prize.png" onclick="gotourl('myprize.html')" />
+            </div>
+            <div class="info">{{activatedround.PromotionRankDes}}</div>
+            <div class="Advanced" v-if="activatedround.PromotionType==1 || activatedround.PromotionType==3">
+                <img src="img/global/Advanced.png" />
+            </div>
+        </div>
+        <div class="fix_bottom">
+            <div class="left">
+                <div class="left_top">
+                    <div class="icon">
+                        <img src="img/global/icon.png" />
+                    </div>
+                    <div class="ranking">
+                        <div>本轮排名  {{activatedround.Rank}}</div>
+                        <div>选择场数  {{activatedround.TotalCount}}/{{activatedround.MatchCount}} </div>
+                    </div>
+                </div>
+                <div class="left_bottom">
+                    <template v-if="activatedround.MatchCount>0">
+                        <div class="process" style="width:{{activatedround.TotalCount*100.0/activatedround.MatchCount}}%;"></div>
+                    </template>
+                    <template v-else>
+                        <div class="process" style="width:0;"></div>
+                    </template>
+                </div>
+            </div>
+            <div class="rightgray" v-if="activatedround.RoundStatus==2">
+                <a>已完赛</a>
+            </div>
+            <div class="rightgray" v-if="activatedround.RoundStatus==0">
+                <a>参加</a>
+            </div>
+            <div class="right" v-if="activatedround.RoundStatus==1">
+                <template v-if="activatedround.TotalCount<activatedround.MatchCount">
+                    <a @click="gotoselectgame(activatedround.Id)">参加</a>
+                </template>
+                <template v-else>
+                    <a @click="gotoselectgame(activatedround.Id)">查看</a>
+                </template>
+            </div>
+        </div>
+
+        <!--倒计时弹框-->
+        <template v-if="activatedround.RoundStatus==0 && activatedround.SelingTotalSeconds>0">
+            <div class="info_alerts">
+                <div class="alert_con">
+                    <div>
+                        <img class="loading" src="img/global/countdow.png" />
+                    </div>
+                    <div class="counttitle">{{activatedround.RoundName}}{{activatedround.RoundDesc}}倒计时</div>
+                    <div class="countdown" v-if="CountDown.dd>0">{{CountDown.dd}}天{{CountDown.hh}}时{{CountDown.mm}}分{{CountDown.ss}}秒</div>
+                    <div class="countdown" v-if="CountDown.dd==0">{{CountDown.hh}}:{{CountDown.mm}}:{{CountDown.ss}}</div>
+                </div>
+            </div>
+        </template>
+
+
+        <!--被淘汰弹框-->
+        <template v-if="activatedround.RoundStatus==1 && activatedround.MineRoundStatus==0 && activatedround.Id==currentroundid">
+            <div class="info_alerts">
+                <div class="alert_con">
+                    <div>
+                        <img src="img/global/lock.png" />
+                    </div>
+                    <div class="lock">你上轮被淘汰无法进行该轮竞猜</div>
+                    <div class="join_button" @click="boxbuycard()">我要参加</div>
+                </div>
+            </div>
+        </template>
+
+
+        <!--选择参与途径弹框-->
+        <template v-if="activatedround.RoundStatus==1 && activatedround.MineRoundStatus==0 && activatedround.Id==currentroundid">
+            <div class="info_alert topbox" style="display: none;" id="boxbuycard">
+                <div class="alert_cons">
+                    <div class="titles">
+                        <div>选择参与途径</div>
+                        <img src="img/global/close_icon.png" class="boxclose" />
+                    </div>
+                    <div class="Options">
+                        <ul>
+                            <li v-for="r in tasklist" v-if="r.Type==1">
+                                <div class="left">
+                                    <img :src="r.IconUrl" />
+                                </div>
+                                <div class="mid">
+                                    <div>{{r.Description}}</div>
+                                    <div>{{r.CompletedValue}}/{{r.TargetValue}}</div>
+                                    <div class="mid_process">
+                                        <template v-if="r.TargetValue>0">
+                                            <div class="strip" style="width:{{r.CompletedValue*100.0/r.TargetValue}}%;"></div>
+                                        </template>
+                                        <template v-else>
+                                            <div class="strip" style="width:0;"></div>
+                                        </template>
+                                    </div>
+                                </div>
+                                <div class="right" @click="joinway(r)">去竞猜</div>
+                            </li>
+                            <li>
+                                <div class="left">
+                                    <img src="img/global/card_ico.png" />
+                                </div>
+                                <div class="mids">购买一张资格卡</div>
+                                <div class="right" @click="buycardconfirm()">购买</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="info_alert topbox" style="display: none;" id="boxbuyrightcardconfirm">
+                <div class="alert_cons">
+                    <div class="titles">
+                        <div>购买资格卡</div>
+                        <img src="img/global/close_icon.png" />
+                    </div>
+                    <div class="Option">
+                        <div class="info">
+                            <div>
+                                你确定要花费{{activatedround.BuyRightCardBonus}}猜豆购买资格卡吗？
+                            </div>
+                        </div>
+                        <div class="button">
+                            <div class="clear boxclose">取消</div>
+                            <div class="sure boxconfirm">确定</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+
+        <template v-if="activatedround.RoundStatus==2 && activatedround.PromotionType==2">
+            <div class="info_alerts" id="boxbuyscorecard">
+                <div class="alert_con">
+                    <div>
+                        <img src="img/global/lock.png" />
+                    </div>
+                    <div class="lock">你已被淘汰购买积分卡需要花费</div>
+                    <span>{{activatedround.BuyScoreCardBonus}}猜豆</span>
+                    <div class="join_button" @click="boxbuyscorecard()">购买积分卡</div>
+                </div>
+            </div>
+
+            <!--选择参与途径弹框-->
+            <div class="info_alert topbox" style="display: none;" id="boxbuyscorecardconfirm">
+                <div class="alert_cons">
+                    <div class="titles">
+                        <div>购买积分卡</div>
+                        <img src="img/global/close_icon.png" class="boxclose" />
+                    </div>
+                    <div class="Option">
+                        <div class="info">
+                            <div>你确定要花费{{activatedround.BuyScoreCardBonus}}猜豆购买积分卡吗？</div>
+                            <div>购买积分卡后积分变更为该轮次最后一位晋级者的积分，<span>{{activatedround.LastScore}}</span>积分。</div>
+                        </div>
+                        <div class="button">
+                            <div class="clear boxclose">取消</div>
+                            <div class="sure boxconfirm">确定</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <!--被淘汰购买积分卡弹框-->
+        <!--<div id="divback" @click="handleback()" style="display:none;">处理返回的，不要删除</div>-->
+    </div>
+
+    <script src="../../Content/swiper/js/swiper.min.js"></script>
+    <script type="text/javascript">
+        //针对ios做处理
+        var container = document.querySelector('.root_container');
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            container.style.paddingTop = '0.44rem';
+        }
+    </script>
+</body>
+</html>

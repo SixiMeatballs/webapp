@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="full-screen" content="yes">
+    <title>篮球统计排行</title>
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/global.css?1">
+    <link rel="stylesheet" href="css/basketball_list.css">
+    <script src="js/navigationSwitcher.js"></script>
+    <script src="/Act/SuperTeam/js/jquery.js"></script>
+    <script src="/Content/js/main.js"></script>
+    <script src="/Act/SuperTeam/js/share.js"></script>
+    <script src="/Content/js/vue.min.js"></script>
+    <script src="js/basketball_stat.js"></script>
+    <style>
+        body { height: 100%; overflow: hidden; display: flex; flex-direction: column; }
+        .publictop{position: fixed;top: 2.18rem;width: 100%;}
+        section{display: flex;flex-direction: column;}
+        .blank{flex: 1;}
+    </style>
+</head>
+<body id="page_basketball_stat"  v-cloak>
+    <header>
+        <div class="page_title font_1L padding_top_sysbar bg_g">
+            <div class="btn_back"><img src="images/back.png" /></div>
+            <div class="title_text">{{gamename}}</div>
+        </div>
+    </header>
+    <nav class="navbar font_4A" id="navigation">
+        <ul class="column_2">
+            <li section-name="player_list" class="activated">球队榜</li>
+            <li section-name="team_list" v-on:click="GetPlayerData()">球员榜</li>
+        </ul>
+    </nav>
+    <!--球队排行-->
+    <section name="player_list" class=" bg_j">
+        <template v-if="ranklist != null && ranklist.length > 0">
+            <div class="player_container">
+                <ul class="font_5B" v-for="l in ranklist">
+                    <li class="player_container_titles item_bg_j">
+                        <div class="player">{{l.LocationName===null?'球队名称':l.LocationName}}</div>
+                        <div class="shooting middle">胜</div>
+                        <div class="key_pass middle">负</div>
+                        <div class="dribbling middle">胜率</div>
+                        <div class="pass mini">胜差</div>
+                    </li>
+                    <li v-for="r in l.List">
+                        <div class="player">
+                            <div>{{r.Order}}</div>
+                            <img v-bind:src="r.TeamCover">
+                            <div class="text_nowrap_ellipsis" onclick="gotourl('basketball_team.html?id={{r.TeamId}}&&teamtype=2')">{{r.TeamName}}</div>
+                        </div>
+                        <div class="shooting middle live">{{r.WinCount}}</div>
+                        <div class="key_pass middle">{{r.LossCount}}</div>
+                        <div class="dribbling middle live">{{r.WinScale}}%</div>
+                        <div class="pass mini">{{r.Victories}}</div>
+                    </li>
+                </ul>
+            </div>
+        </template>
+        <template v-else>
+            <div class="blank font_3C">
+                <img src="images/nodata.png" alt="">
+                <span class="font_3C">暂无数据！</span>
+            </div>
+        </template>
+
+    </section>
+    <!--//球队排行-->
+    <!--球员排行-->
+    <section name="team_list" style="display: none;background-color: #eee;" id="playerlist">
+        <template v-if="playerstat != null && playerstat.length > 0">
+            <div class="score" type="charactor_block" v-for="(index,data) in playerstat" value="{{data.StatsId}}" id="A"> 
+                <template v-if="index === 0">
+                    <div class="publictop title bg_l">
+                        <div class="font_5A live" id="pubtext">{{data.StatsName}}</div>
+                    </div>
+                </template>            	
+                <div class="title bg_l" name="title">
+                    <div class="font_5A live title_list">{{data.StatsName}}</div>
+                    <div class="font_5A" style="display:none;" v-on:click="CloseList(data.StatsId)" tag="listheader_{{data.StatsId}}">
+                        收起
+                        <div class="circle"><img src="images/back.png" /></div>
+                    </div>
+                </div>
+                <div class="content bg_l">
+                    <ul name="content_list">
+                        <li v-for="(index,item) in data.List" v-show="index < 5" tag="listitem_{{data.StatsId}}">
+                            <div class="play_info font_6B">
+                                <div class="ranking">{{index+1}}</div>
+                                <img v-bind:src="item.PlayerCover" />
+                                <div class="player_name" onclick="gotourl('basketball_player.html?id={{item.PlayerId}}')">{{item.PlayerName}}</div>
+                                <div class="team font_6C">
+                                    <span>{{item.TeamName}}</span> |
+                                    <span>{{item.PlayerPlace}}</span>
+                                </div>
+                            </div>
+                            <div class="fraction font_8B">{{item.StatsValue}}</div>
+                        </li>
+                        <div class="footer font_6C" v-on:click="OpenList(data.StatsId)" tag="listfooter_{{data.StatsId}}">
+                            展开查看更多数据
+                            <div class="circle">
+                                <img src="images/back.png" />
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <div class="splite_blank"></div>
+            </div>
+        </template>
+        <template v-else>
+            <div class="blank font_3C bg_j">
+                <img src="images/nodata.png" alt="">
+                <span class="font_3C">暂无数据！</span>
+            </div>
+        </template>
+    </section>
+    <!--//球员排行-->
+    <script language="javascript" type="text/javascript">
+        var initDockTop = function () {	
+        	
+			var scrollele=document.querySelector('#playerlist');
+			var Elist = document.querySelectorAll('.title_list');
+			scrollele.addEventListener('scroll',function(){
+				var valTop = scrollele.scrollTop;
+				var scrTop = document.querySelector('#A').lastElementChild.offsetTop;  
+                var playList = document.querySelectorAll('.score');
+                if (scrTop - valTop <= 416) {
+		            document.querySelector('.publictop').style.display = "block";  
+		        }else{  
+		            document.querySelector('.publictop').style.display = "none";  
+               }
+		        for(var i=0;i<playList.length;i++){  
+                    if (valTop - playList[i].offsetTop >= -108) {
+		                document.querySelector('#pubtext').innerHTML=Elist[i].innerHTML;  
+		            }
+		        }    
+			});
+        };
+        window.onload = function () {
+            initscroll();
+        };
+        var initscroll = function () {
+            remAdjuster.adjust();
+            window.onresize = remAdjuster.adjust();   // 检测屏幕变化
+            var navs = document.querySelectorAll('#navigation ul li');
+            var sections = document.querySelectorAll("section");
+            navigationSwitcher.init(navs, sections, [null, function () { initDockTop() }]); 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>奖品</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/prize.css"/>
+</head>
+<body>
+	<div class="root_container">
+		<div class="header_bg">
+			<div class="back_icon" onclick="javascript:window.history.back(-1);"><img src="images/global/back.png"/></div>
+		</div>
+	    <div class="prize_title">
+	    	<div class="active">日排行奖品</div>
+	    	<div >总排行奖品</div>
+	    </div> 
+	    <div class="paize_content"  prizetype="day">
+	    	<ul class="round">
+	    		<li class="activated">
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    		<li class="activimg">
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    		<li>
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    		<li>
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    		<li>
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    		<li>
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    		<li>
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    		<li>
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    		<li>
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    		<li>
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    		<li>
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    		<li>
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    		<li>
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    		<li>
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    		<li>
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    		<li>
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li><li>
+	    			<div>小组赛</div>
+	    			<div>第1轮</div>
+	    		</li>
+	    	</ul>
+	    	<ul class="paize_list">
+	    		<li>
+	    			<div class="left">
+	    				<img src="images/prize/champion.png"/>
+	    				<div class="rank">第1名</div>
+	    			</div>
+	    			<div class="right">3000猜豆</div>
+	    		</li>
+	    		<li>
+	    			<div class="left">
+	    				<img src="images/prize/secondplace.png"/>
+	    				<div class="rank">第2名</div>
+	    			</div>
+	    			<div class="right">3000猜豆</div>
+	    		</li>
+	    		<li>
+	    			<div class="left">
+	    				<img src="images/prize/thirdplace.png"/>
+	    				<div class="rank">第3名</div>
+	    			</div>
+	    			<div class="right">3000猜豆</div>
+	    		</li>
+	    		<li>
+	    			<div class="left">
+	    				<img src="images/prize/prize.png"/>
+	    				<div class="rank">第4-10名</div>
+	    			</div>
+	    			<div class="right">30000000猜豆</div>
+	    		</li>
+	    		<li>
+	    			<div class="left">
+	    				<img src="images/prize/prize.png"/>
+	    				<div class="rank">第61-100名</div>
+	    			</div>
+	    			<div class="right">3000000猜豆</div>
+	    		</li>
+	    		<li>
+	    			<div class="left">
+	    				<img src="images/prize/prize.png"/>
+	    				<div class="rank">第61-100名</div>
+	    			</div>
+	    			<div class="right">3000000猜豆</div>
+	    		</li>
+	    		<li>
+	    			<div class="left">
+	    				<img src="images/prize/prize.png"/>
+	    				<div class="rank">第61-100名</div>
+	    			</div>
+	    			<div class="right">3000000猜豆</div>
+	    		</li>
+	    		<li>
+	    			<div class="left">
+	    				<img src="images/prize/prize.png"/>
+	    				<div class="rank">第61-100名</div>
+	    			</div>
+	    			<div class="right">3000000猜豆</div>
+	    		</li>
+	    		<li>
+	    			<div class="left">
+	    				<img src="images/prize/prize.png"/>
+	    				<div class="rank">第61-100名</div>
+	    			</div>
+	    			<div class="right">3000000猜豆</div>
+	    		</li>
+	    		<li>
+	    			<div class="left">
+	    				<img src="images/prize/prize.png"/>
+	    				<div class="rank">第61-100名</div>
+	    			</div>
+	    			<div class="right">3000000猜豆</div>
+	    		</li>
+	    		<li>
+	    			<div class="left">
+	    				<img src="images/prize/prize.png"/>
+	    				<div class="rank">第61-100名</div>
+	    			</div>
+	    			<div class="right">3000000猜豆</div>
+	    		</li>
+	    	</ul>
+	   </div>    
+	</div>
+</body>
+</html>                                                                                       

@@ -1,0 +1,46 @@
+.player_container{overflow:scroll;width: 100%;}
+.player_container .titles{display: flex;align-items: center;text-align: center; flex-wrap:nowrap;min-height: 0.6rem;position: absolute;}
+
+.player_container .title .player{min-width:3.5rem;}
+
+.player_container ul{overflow: auto;}
+.player_container ul li{display: flex;align-items: center;margin-bottom: 0.4rem;text-align: center; flex-wrap:nowrap;min-height: 0.6rem;}
+
+.player_container ul li div{ display: inline-block; white-space: nowrap; min-width:1rem;}
+.player_container ul .player_container_titles div{padding:0.2rem 0;}
+.player_container ul li .number{min-width:1rem;}
+.player_container ul li .player{display: flex;align-items: center; min-width:3.5rem;}
+.player_container ul li:first-child .player{padding-left: 0.5rem;box-sizing: border-box;}
+.player_container ul li .player img{width: 0.54rem;margin-right: 0.1rem;}
+
+.mini{min-width:0.59rem;width: 0.59rem;}
+.small{min-width:1rem;width: 1rem;}
+.middle{min-width: 1.2rem;width: 1.2rem;}
+.large{min-width: 2.5rem;width: 2.5rem;}
+.live{color: #1092FF;}
+
+.score{width: 100%;overflow:auto; box-sizing: border-box;margin-bottom: 0.1rem;}
+.score .title{display: flex;align-items: center;border-bottom: 0.02rem solid #f0f0f0;height: 0.68rem;box-sizing: border-box;width: 100%;padding:0.2rem 0.4rem;}
+.score .title div{width: 50%;}
+.score .title div:nth-child(2){display: flex;align-items: center;justify-content: flex-end;padding-right: 0.3rem;box-sizing: border-box;}
+.score .title .circle{width: 0.2rem;height: 0.2rem;border-radius: 50%;display: flex;align-items: center;background-color: #1092FF;justify-content: center;margin-left: 0.1rem;}
+.score .title .circle img{width: 0.1rem;transform: rotate(90deg);}
+.score .content{padding-top:0.2rem; padding-left:0.4rem; box-sizing: border-box;}
+.score .title .title_list{transition: all 1s;}
+
+.score li{display: flex;width: 100%;height: 0.6rem;margin: 0.2rem 0;}
+
+.score li .play_info{width: 4.7rem;display: flex; align-items: center;}
+.score li .play_info img{width: 0.54rem;height: 0.54rem;border-radius: 50%;margin: 0 0.1rem 0 0.3rem;}
+.score li .play_info .team{margin-left: 0.16rem;}
+
+.score li .fraction{width: 1.4rem;text-align: center;line-height: 0.6rem;min-width: 1.4rem;flex: 1;}
+
+.score .footer{width: 100%;height: 0.6rem;display: flex;justify-content: center;align-items: center;}
+.score .footer .circle{width: 0.2rem;height: 0.2rem;border-radius: 50%;display: flex;align-items: center;background-color: #1092FF;justify-content: center;margin-left: 0.1rem;}
+.score .footer img{width: 0.1rem;transform: rotate(-90deg);}
+
+.score .splite_blank{height:0.2rem;}
+
+body{background-color: #F0F0F0;}
+ul{background-color: #FFFFFF;}

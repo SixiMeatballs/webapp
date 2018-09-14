@@ -1,0 +1,29 @@
+.team_list{display:flex; flex-direction:column; overflow:scroll; padding:1.5rem;}
+.team_list .team_item{display:flex; flex-direction:column; min-height:52rem;}
+.team_list .team_item .team_head{display:flex; height:4.875rem; align-items:center; font-size:2.275rem; width:100%;}
+.team_list .team_item .team_head .ico_clock{margin:0 1rem; width:2rem; height:2rem;}
+.team_list .team_item .team_head .lnkResult{position:absolute; right:3rem; color:#EEE;text-decoration:none; letter-spacing:0.2rem;}
+.team_list .team_item .team_head .createTime{letter-spacing:0.2rem;}
+
+.team_list .team_item .team_content{display:flex; flex-direction:column; width:100%;}
+.team_list .team_item .team_content .team_info{background:#345a70; border-radius:1rem 1rem 0 0; position:relative; height:14.2rem;}
+.team_list .team_item .team_content .team_info .team_name{position:absolute; top:2.6rem; color:#eee; left:2.8rem; font-size:2.6rem;}
+.team_list .team_item .team_content .team_info .ico_prize{position:absolute; top:1.52rem; width:3.9rem; height:4.34rem; left:53.5rem;}
+.team_list .team_item .team_content .team_info .team_ranking{ position:absolute; top:2.6rem; color:#eee; left:58.94rem;font-size:2.6rem;}
+.team_list .team_item .team_content .team_info .team_matchdate{position:absolute; top:8.125rem; color:#8cb2c8; left:2.82rem;font-size:1.95rem;}
+.team_list .team_item .team_content .team_info .team_score{position:absolute; top:7.475rem; color:#3bb6ff; left:59rem;font-size:2.6rem;}
+.team_list .team_item .team_content .team_salary{position:relative; display:flex; flex-direction:column;  background:#10415d;width:100%;}
+.team_list .team_item .team_content .team_salary .info{padding:3rem 2.5% 0 2.5%;color:#57b3c7;font-size:1.95rem;display:flex; position:relative;width:95%; }
+.team_list .team_item .team_content .team_salary .info .lblFreeSalary{position:absolute; left:51.45rem;}
+.team_list .team_item .team_content .team_salary .info .lblMaxSalary{position:absolute; right:1rem;}
+.salaryBar{ position:relative; margin-top:0rem;width:95%; height:6.7rem; padding:0; margin:0px 2.5%;  background:url(../images/myteam/salary_bg.png) no-repeat; background-size:100% 100%;}
+.salaryBar .barValue{ position:absolute; width:97%; height:3.4rem;  margin:1.98rem 0rem 0 1.1rem;  background:url(../images/myteam/salarywarn.png) no-repeat; background-size:100% 100%;}
+.salaryBar .icoFootball{ position:absolute; width:5.1rem !important; height:5.1rem !important; top:2rem;  background:url(../images/myteam/football.png)  no-repeat;}
+.team_list .team_item .team_content .team_salary .salary_tax{margin:1rem 2.5% 0 2.5%;display:flex; flex-direction:row;color:#57b3c7;font-size:1.95rem; border-bottom:solid 1px #28536e; padding-bottom:2rem;}
+.team_list .team_item .team_content .team_salary .salary_tax .lalSalaryTaxBonus{margin-left:5rem;}
+.team_list .team_item .team_content .player_list{display:flex; flex-direction: column;background:#10415d; border-radius:0 0 1rem 1rem; position:relative; height:14.2rem; }
+.team_list .team_item .team_content .player_list .play_list_title{font-size:1.95rem;  padding:1rem 0 0 2rem; border-top:solid 1px #27546e;}
+.team_list .team_item .team_content .player_list .player_list_icons{overflow:scroll; margin:2rem; height:7rem;}
+.team_list .team_item .team_content .player_list .player_list_icons ul{display:flex; flex-wrap: nowrap; justify-content: space-between;}
+.team_list .team_item .team_content .player_list .player_list_icons ul li{ margin:0 0.2rem; overflow:auto;min-width:6.3rem; min-height:6.3rem; }
+.team_list .team_item .team_content .player_list .player_list_icons ul li img{min-width:6.3rem; min-height:6.3rem; width:6.3rem; height:6.3rem;}

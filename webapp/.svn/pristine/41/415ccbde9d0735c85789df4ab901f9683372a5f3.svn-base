@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "pingfang sc ";
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-appearance: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+.container .account-info {
+  height: 3rem;
+  min-height: 3rem;
+  padding: 0.8rem 0.4rem 0.5rem;
+  box-sizing: border-box;
+  background: linear-gradient(#df4a40, #e03443);
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-size: 0.24rem;
+}
+.container .account-info .acconut-num {
+  font-size: 0.72rem;
+  margin-top: 0.2rem;
+}
+.container .history {
+  background: #fff;
+}
+.container .history .subtitle {
+  width: 100%;
+  height: 0.65rem;
+  min-height: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.3rem;
+  box-sizing: border-box;
+  color: #333;
+  font-size: 0.28rem;
+  background: #f0f0f0;
+}
+.container .history .subtitle .search-btn {
+  display: flex;
+  align-items: center;
+  color: #999;
+}
+.container .history .subtitle .search-btn img {
+  width: 0.28rem;
+  height: 0.28rem;
+}
+.container .history .listItem {
+  margin-left: 0.3rem;
+  height: 1.2rem;
+  min-height: 1.2rem;
+  border-bottom: 0.01rem solid #eee;
+  padding: 0.28rem 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+  font-size: 0.30rem;
+}
+.container .history .listItem img {
+  width: 0.64rem;
+  height: 0.64rem;
+  border-radius: 0.64rem;
+}
+.container .history .listItem .titleInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.30rem;
+}
+.container .history .listItem .titleInfo .userDate {
+  font-size: 0.24rem;
+  color: #999;
+}
+.container .history .listItem .userNum {
+  margin-right: 0.28rem;
+}

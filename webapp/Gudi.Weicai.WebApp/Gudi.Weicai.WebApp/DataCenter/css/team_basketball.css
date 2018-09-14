@@ -1,0 +1,41 @@
+.statistics{display:flex;flex-direction:row;flex-wrap: wrap; justify-content:space-around; align-content: center;}
+.statistics .item{width:33%; display:flex; flex-direction:column; align-items: center; margin:0.2rem 0;}
+.statistics .item div{margin:0.14rem 0;}
+
+.team_brife .content .team_name{display: flex;align-items: center;}
+.team_brife .content .team_name img{width: 0.3rem;height: 0.2rem;margin-left: 0.1rem;}
+
+.content_main p{text-indent: 0.48rem;}
+
+.player_list .player_list_header{position: absolute;width: 100%;}
+
+.player_list li{display: flex;align-items:center; margin-bottom:0.2rem;min-height: 0.6rem;}
+.player_list li:nth-child(2){padding-top: 0.8rem;box-sizing: border-box;}
+.player_list li div{text-align: center;}
+.player_list li .name{display:flex;align-items: center; width:3rem;margin-left: 0.3rem;}
+.player_list li .name img{width: 0.54rem; margin-right:0.2rem;border-radius: 50%;}
+.player_list li .number{width:2rem;}
+.player_list li .position{width:2rem;}
+.player_list li .price{width:1.8rem;}
+.player_list li .country{width:1.4rem}
+
+.match_list li .match_item_title{ padding:0.15rem 0.2rem; display:flex; flex-direction:row; align-items: center;}
+.match_list li .match_item_title .match_state{width:0.2rem;height:0.2rem;border-radius:50%; margin:0 0.2rem;}
+.match_list li{display:flex; flex-direction:column;}
+.match_list li .match_item_data{display:flex; flex-direction:column; padding:0.22rem 0.6rem 0.36rem 0.6rem;}
+.match_list li .match_item_data .match_state{width:1.3rem;height:0.36rem;line-height:0.36rem;text-align:center; border-radius:0.18rem;margin-left:0.16rem;}
+.match_list li .match_item_data .match_title{display:flex; flex-direction:row; align-items:center;}
+.match_list li .match_item_data .match_result div{display:flex;flex-direction:column; align-items:center; justify-content:center;width: 2.5rem;min-width: 2.5rem;}
+.match_list li .match_item_data .match_result .match_team .host{flex-direction: row;}
+.match_list li .match_item_data .match_result .country{display: flex;flex-direction: row;}
+.match_list li .match_item_data .match_result .country span{margin-left: 0.14rem;}
+.match_list li .match_item_data .match_result{display:flex; flex-direction:row; padding-top:0.5rem; justify-content:center; align-items: center;}
+.match_list li .match_item_data .match_result .match_score{margin:0 0.2rem; letter-spacing:0.05rem;width: 2rem;min-width: 2rem;}
+.match_list li .match_item_data .match_result .match_team .match_team_logo{width:0.6rem; height:0.6rem; margin-bottom:0.24rem;}
+.match_list li .match_item_data .match_result .match_team .match_team_logo img{width:0.6rem;height:0.6rem;}
+
+.match_list .comingsoon .match_state{background-color:#f62707;}
+.match_list .playing .match_state{background-color:#41b92d;}
+.match_list .delay .match_state{background-color:#f66416;}
+.match_list .cancel .match_state{background-color:#0367bf;}
+.match_list .finished .match_state{background-color:#999999;}

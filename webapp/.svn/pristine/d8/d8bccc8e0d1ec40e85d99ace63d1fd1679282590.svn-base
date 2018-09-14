@@ -1,0 +1,334 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="full-screen" content="yes">
+    <title>足球-球队比赛</title>
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/global.css?001">
+    <link rel="stylesheet" href="css/match.css?001">
+    <link rel="stylesheet" type="text/css" href="css/football_match.css?001" />
+    <script src="js/match_statistics_bar.js"></script>
+    <script src="js/navigationSwitcher.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/Content/js/main.js"></script>
+    <script src="/Act/SuperTeam/js/share.js"></script>
+    <script src="/Content/js/vue.min.js"></script>
+    <link href="/Content/address/css/mui.css" rel="stylesheet" />
+    <link href="/Content/address/css/mui.picker.css" rel="stylesheet" />
+    <script src="/Content/address/js/mui.min.js"></script>
+    <script src="/Content/address/js/mui.picker.min.js"></script>
+    <script src="js/football_match.js"></script>
+</head>
+<body>
+    <input type="hidden" id="hiddenusertoken" value="" />
+    <div class="container" id="football_match"  v-cloak>
+        <header>
+            <div class="page_title font_1L padding_top_sysbar bg_g">
+                <div class="btn_back"><img src="images/back.png" /></div>
+            </div>
+            <div class="match_brief bg_g">
+                <div class="team">
+                    <div class="team_logo"><img :src="LineupRes.HomeTeamCover" /></div>
+                    <div class="team_name">
+                        <div class="font_3LB text_nowrap_ellipsis">{{LineupRes.HomeTeamName}}</div>
+                        <div class="font_6L">(主)</div>
+                    </div>
+                </div>
+                <div class="match_data">
+                    <div class="font_6L">{{LineupRes.GameName}}</div>
+                    <div class="font_1LB" v-if="LineupRes.Status==6">{{LineupRes.HomeTeamScore}} - {{LineupRes.GuestTeamScore}}</div>
+                    <div class="font_1LB" v-if="LineupRes.Status!=6 && LineupRes.Status!=5">VS</div>
+                    <div class="font_6L">{{LineupRes.strStatus}}</div>
+                </div>
+                <div class="team">
+                    <div class="team_logo"><img :src="LineupRes.GuestTeamCover" /></div>
+                    <div class="team_name">
+                        <div class="font_3LB text_nowrap_ellipsis">{{LineupRes.GuestTeamName}}</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="navbar font_4A" id="navigation">
+            <ul class="column_3">
+                <li section-name="match_lineup" class="activated">阵容</li>
+                <li section-name="match_data">赛事数据</li>
+                <li section-name="player_statistics">球员数据</li>
+            </ul>
+        </nav>
+        <!--赛事数据-->
+        <section name="match_data" style="display:none;">
+            <div class="content_title font_4A bg_j">
+                <template v-if="ScheduleStats.StatsList != null && ScheduleStats.StatsList.length > 0">
+                    <div class="bg_g icon_bar"></div>
+                </template>
+                <template v-else>
+                    <div class="bg_c icon_bar"></div>
+                </template>
+                <div class="font_4A content_title_text">本场技术统计</div>
+            </div>
+            <div class="content_main bg_l">
+                <ul class="match_statistics">
+                    <li v-for="r in ScheduleStats.StatsList" name="statisticsItem">
+                        <div name="hostValue" value="{{r.HomeStatsValue}}" class="font_5B statisticsValue">{{r.HomeStatsValue}}{{r.Unit}}</div>
+                        <div name="hostBar" class="bg_j statisticsBarBg flex_right">
+                            <div name="barVal" v-bind:class="{bg_g:r.HomeStatsValue>=r.GuestStatsValue,bg_c:r.HomeStatsValue<r.GuestStatsValue}" style="width:{{r.HomeRate}}%"></div>
+                        </div>
+                        <div class="font_5A itemTitle text_nowrap_ellipsis">{{r.StatsName}}</div>
+                        <div name="guestBar" class="bg_j statisticsBarBg flex_left">
+                            <div name="barVal" v-bind:class="{bg_g:r.GuestStatsValue>=r.HomeStatsValue,bg_c:r.GuestStatsValue<r.HomeStatsValue}" style="width:{{r.GuestRate}}%"></div>
+                        </div>
+                        <div name="guestValue" value="{{r.GuestStatsValue}}" class="font_5B  statisticsValue">{{r.GuestStatsValue}}{{r.Unit}}</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content_title font_4A bg_j">
+                <template v-if="ScheduleStats.EventList != null && ScheduleStats.EventList.length > 0">
+                    <div class="bg_g icon_bar"></div>
+                </template>
+                <template v-else>
+                    <div class="bg_c icon_bar"></div>
+                </template>
+                <div class="font_4A content_title_text">详细事件</div>
+            </div>
+            <div class="content_main bg_l">
+                <template v-if="ScheduleStats.EventList != null && ScheduleStats.EventList.length > 0">
+                    <ul class="match_action">
+                        <div class="line"></div>
+                        <li><div class="start bg_g"></div></li>
+                        <li v-for="r in ScheduleStats.EventList">
+                            <div class="left pop font_6A" v-if="r.EventState==0 || r.EventState==1">
+                                <div class="player_name left_player" v-for="r1 in r.List" v-if="r1.IsHome">
+                                    <img :src="r1.EventCover" />{{r1.PlayerName}}
+                                </div>
+                                <div class="arrow right"></div>
+                            </div>
+                            <div class="left pop font_6A hidden" v-if="r.EventState==2"></div>
+                            <div class="actionTime font_8L bg_g">{{r.EventTime}}'</div>
+                            <div class="right pop font_6A" v-if="r.EventState==0 || r.EventState==2">
+                                <div class="player_name" v-for="r1 in r.List" v-if="!r1.IsHome">
+                                    <img :src="r1.EventCover" />{{r1.PlayerName}}
+                                </div>
+                                <div class="arrow left"></div>
+                            </div>
+                            <div class="right pop font_6A hidden" v-if="r.EventState==1"></div>
+                        </li>
+                        <li><div class="end bg_g"></div></li>
+                    </ul>
+                    <ul class="match_info font_8A">
+                        <li>
+                            <img src="images/Goals.png" />
+                            <div>进球</div>
+                        </li>
+                        <li>
+                            <img src="images/Penalty.png" />
+                            <div>点球</div>
+                        </li>
+                        <li>
+                            <img src="images/noPenalty.png" />
+                            <div>点球未进</div>
+                        </li>
+                        <li>
+                            <img src="images/ownGoals.png" />
+                            <div>乌龙球</div>
+                        </li>
+                        <li>
+                            <img src="images/Assists.png" />
+                            <div>助攻</div>
+                        </li>
+                    </ul>
+                </template>
+            </div>
+            <div class="content_title font_4A bg_j">
+                <div class="bg_g icon_bar"></div>
+                <div class="font_4A content_title_text">技统数据</div>
+            </div>
+            <div class="content_main bg_l">
+                <div class="statistics_title">
+                    <div class="font_4A">近3场 / 近10场</div>
+                    <div class="font_4A">近3场 / 近10场</div>
+                </div>
+                <ul class="statistics_items">
+                    <li v-for="r in ScheduleStats.StatsNearList">
+                        <div class="font_5B score">{{r.HomeStatsValue_Near3}}/{{r.HomeStatsValue_Near10}}</div>
+                        <div class="font_5A title">{{r.StatsName}}</div>
+                        <div class="font_5B score">{{r.GuestStatsValue_Near3}}/{{r.GuestStatsValue_Near10}}</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--//赛事数据-->
+        <!--阵容-->
+        <section name="match_lineup">
+            <div class="content_title font_4A bg_j">
+                <div class="bg_g icon_bar"></div>
+                <div class="font_4A content_title_text">首发阵容</div>
+            </div>
+            <div class="lineuphead font_5L">
+                <div>主裁：{{LineupRes.Referee}}</div>
+                <div>场地：{{LineupRes.Field}}</div>
+            </div>
+            <div class="lineup">
+                <ul class="host font_8L">
+                    <div class="host_country">{{LineupRes.HomeTeamName}}</div>
+
+                    <li v-for="r in LineupRes.HomeFirstRow" class="row_{{r}}">
+                        <div class="player_position" v-for="r1 in LineupRes.HomeFirstList" v-if="r==r1.Row">
+                            <div class="player_number">{{r1.Number}}</div>
+                            <div class="player_name text_nowrap_ellipsis">{{r1.PlayerName}}</div>
+                            <div class="change_in" v-if="r1.ChangeTimeNum>0"><img src="images/change.png" />{{r1.ChangeTimeNum}}′</div>
+                        </div>
+                    </li>
+
+                </ul>
+                <ul class="guest  font_8L">
+                    <li v-for="r in LineupRes.GuestFirstRow" class="row_{{r}}">
+                        <div class="player_position" v-for="r1 in LineupRes.GuestFirstList" v-if="r==r1.Row">
+                            <div class="player_number red_bg">{{r1.Number}}</div>
+                            <div class="player_name text_nowrap_ellipsis">{{r1.PlayerName}}</div>
+                            <div class="change_in" v-if="r1.ChangeTimeNum>0"><img src="images/change.png" />{{r1.ChangeTimeNum}}′</div>
+                        </div>
+                    </li>
+                    <div class="guest_country">{{LineupRes.GuestTeamName}}</div>
+                </ul>
+            </div>
+            <div class="content_title font_4A bg_j">
+                <div class="bg_g icon_bar"></div>
+                <div class="font_4A content_title_text">替补阵容</div>
+            </div>
+            <div class="content_main flex_row bg_l">
+                <div class="team_members">
+                    <div class="team_info">
+                        <img :src="LineupRes.HomeTeamCover" />
+                        <div class="team_name font_5B">{{LineupRes.HomeTeamName}}</div>
+                    </div>
+                    <ul class="member_list">
+                        <li v-for="r1 in LineupRes.HomeBenchList">
+                            <div class="member_no">{{r1.Number}}</div>
+                            <div class="font_6A member_name">{{r1.PlayerName}}</div>
+                            <div class="change_in font_8A" v-if="r1.ChangeTimeNum>0"><img src="images/replace.png" />{{r1.ChangeTimeNum}}'</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="team_members">
+                    <div class="team_info">
+                        <img :src="LineupRes.GuestTeamCover" />
+                        <div class="team_name font_5B">{{LineupRes.GuestTeamName}}</div>
+                    </div>
+                    <ul class="member_list">
+                        <li v-for="r1 in LineupRes.GuestBenchList">
+                            <div class="member_no red">{{r1.Number}}</div>
+                            <div class="font_6A member_name">{{r1.PlayerName}}</div>
+                            <div class="change_in font_8A" v-if="r1.ChangeTimeNum>0">
+                                <img src="images/replace.png" />
+                                {{r1.ChangeTimeNum}}'
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--//阵容-->
+        <!--球员统计-->
+        <section name="player_statistics" style="display:none;" id="playerlist">
+        	<div class="content_title font_4A bg_j publictop">
+                <div class="bg_g icon_bar"></div>
+                <div class="font_4A content_title_text" id="pubtext">{{LineupRes.HomeTeamName}}</div>
+            </div>
+            <div class="score charactor"  id="A">
+                <div class="content_title font_4A bg_j">
+                    <div class="bg_g icon_bar"></div>
+                    <div class="font_4A content_title_text title_list">{{LineupRes.HomeTeamName}}</div>
+                </div>
+                <div class="player_container bg_l">
+                    <ul class="font_5B">
+                        <li class="player_container_titles item_bg_j bg_j">
+                            <div class="number">号码</div>
+                            <div class="player">球员</div>
+                            <div class="position">位置</div>
+                            <div class="four" v-for="setting in PlayerStats.SettingList">
+                                {{setting.StatsName}}
+                            </div>
+                        </li>
+                        <li v-for="r in PlayerStats.HomeTeamPlayerStatsList">
+                            <div class="number">{{r.Number}}</div>
+                            <div class="player">
+                                <img :src="r.PlayerCover">
+                                <div class="text_nowrap_ellipsis" @click="gotoPlayerDetail(r.PlayerId)">{{r.PlayerName}}</div>
+                            </div>
+                            <div class="position">{{r.Place}}</div>
+                            <div class="four" v-for="data in r.StatsList">{{data.StatsValue}}</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="score charactor">
+                <div class="content_title font_4A bg_j" name="title">
+                    <div class="bg_g icon_bar"></div>
+                    <div class="font_4A content_title_text title_list">{{LineupRes.GuestTeamName}}</div>
+                </div>
+                <div class="player_container bg_l">
+                    <ul class="font_5B" style="padding-bottom: 1rem;">
+                        <li class="player_container_titles item_bg_j bg_j">
+                            <div class="number">号码</div>
+                            <div class="player">球员</div>
+                            <div class="position">位置</div>
+                            <div class="four" v-for="setting in PlayerStats.SettingList">
+                                {{setting.StatsName}}
+                            </div>
+                        </li>
+                        <li v-for="r in PlayerStats.GuestTeamPlayerStatsList">
+                            <div class="number">{{r.Number}}</div>
+                            <div class="player">
+                                <img :src="r.PlayerCover">
+                                <div class="text_nowrap_ellipsis" @click="gotoPlayerDetail(r.PlayerId)">{{r.PlayerName}}</div>
+                            </div>
+                            <div class="position">{{r.Place}}</div>
+                            <div class="four" v-for="data in r.StatsList">{{data.StatsValue}}</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="button">
+                <li v-for="r in controllist.options" @click="changeSelect(r)" v-if="controllist.opened==1 || controllist.value==r.value" v-bind:class="{activated:controllist.value==r.value}">
+                    {{r.text}}
+                </li>
+            </ul>
+        </section>
+        <!--//球员统计-->
+    </div>
+    <script language="javascript" type="text/javascript">
+        var initDockTop = function () {		
+			var scrollele=document.querySelector('#playerlist');
+			var Elist = document.querySelectorAll('.title_list');
+			scrollele.addEventListener('scroll',function(){
+				var valTop = scrollele.scrollTop;
+				var scrTop = document.querySelector('#A').lastElementChild.offsetTop;  
+                var playList = document.querySelectorAll('.charactor');
+                if (scrTop - valTop <= 416) {
+		            document.querySelector('.publictop').style.display = "block";  
+		        }else{  
+		            document.querySelector('.publictop').style.display = "none";  
+               }
+		        for(var i=0;i<playList.length;i++){ 	        	
+                    if (valTop - playList[i].offsetTop >= -230) {
+                      	document.querySelector('#pubtext').innerHTML=Elist[i].innerHTML;  
+		            }
+		        }    
+			});
+        };
+        window.onload = function () {
+            initscroll();
+        };
+        var initscroll = function () {
+            remAdjuster.adjust();
+            window.onresize = remAdjuster.adjust();   // 检测屏幕变化
+            var navs = document.querySelectorAll('#navigation ul li');
+            var sections = document.querySelectorAll("section");
+            navigationSwitcher.init(navs, sections, [null, null,function () { initDockTop() }]); 
+        }
+    </script>      
+    
+</body>
+</html>

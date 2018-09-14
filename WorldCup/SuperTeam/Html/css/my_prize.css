@@ -1,0 +1,14 @@
+.prize_list{height:100%;overflow:scroll; margin:4rem 3rem;}
+.prize_list ul{ display:flex; flex-direction:column;}
+.prize_list ul li{min-height:20rem; margin-bottom:3rem;border-radius:3rem; background:#0c354e; }
+.prize_list ul li .prize_panel{padding:3rem; display:flex; align-items: center; position:relative; z-index: 0; color:#7b9eb5;}
+.prize_list ul li .prize_panel .prize_img{width:9rem; height:13rem;}
+.prize_list ul li .prize_panel .prize_img img{width:100%; height:100%;}
+.prize_list ul li .prize_panel .prize_intro{margin-left:2.2rem; font-size:2rem;}
+.prize_list ul li .prize_panel .prize_intro .prize_name{color:#3bb5ff; font-size:2.4rem;margin-bottom: 1rem;}
+.prize_list ul li .prize_panel .prize_state{align-self:right; position:absolute; right:2rem; top:45%;}
+.prize_list ul li .prize_panel .prize_state .state_txt{font-size:2.1rem; color:#fff;}
+.prize_list ul li .prize_panel .prize_state .state_btn{margin-top:-3rem;font-size:2.4rem; color:#fff; padding:2rem 3rem; background:#fe8f39; border-radius:1.5rem;}
+.prize_list ul li .prize_deliver{height:10rem; background-color:#0d3853; border-radius:0 0 3rem 3rem; margin-top:-0.5rem; z-index:1; position:relative; display:flex; flex-direction:row; align-items: center;}
+.prize_list ul li .prize_deliver ul{display:flex; flex-direction:column; min-height:0;}
+.prize_list ul li .prize_deliver li{min-height:0; margin:0; padding:0.5rem 2rem; font-size:2rem; color:#7b9eb5;}

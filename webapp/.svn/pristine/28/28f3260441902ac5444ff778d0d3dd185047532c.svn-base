@@ -1,0 +1,35 @@
+*{padding:0; margin:0;border:0;font-family: "pingfang sc ";text-decoration:none;list-style-type: none;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);-webkit-appearance: none;-webkit-text-size-adjust:100%;-webkit-user-select:none;max-height:9999999px;-webkit-text-size-adjust:none; -webkit-tap-highlight-color:rgba(255,255,255,0);}
+body,html{height: 100%;overflow: auto;font-family: pingfang sc;background: #681fc1;}
+
+.font_1L{font-size: 0.36rem;color: #FFFFFF;}
+.font_3L{font-size: 0.30rem;color: #FFFFFF;}
+.font_4L{font-size: 0.28rem;color: #FFFFFF;}
+.font_7L{font-size: 0.22rem;color: #FFFFFF;}
+.font_6L{font-size: 0.24rem;color: #FFFFFF;}
+
+.container{background: url(../img/rom-bg.png) no-repeat;background-size: 100% auto;display: flex;flex-direction: column;padding-top: 6.4rem;box-sizing: border-box;overflow: scroll;}
+
+.container .info{text-align: center;}
+
+.container .roomCode{width: 5rem;height: 1.2rem;border: 0.01rem solid #f2defb; border-radius: 0.1rem;align-self: center;font-size: 0.48rem;color: #faf107;text-align: center;line-height: 1.2rem;font-weight: bold;margin: 0.3rem 0 0.28rem;}
+
+.container .prompt{text-align: center;color: #8d7be0;margin-bottom: 2.1rem;}
+
+ 
+.container .content {display: flex;margin-top: 0.7rem;padding-left: 0.4rem;flex-wrap: wrap;margin-bottom: 0.92rem;}
+.container .content .con_intro{width: 50%; display: flex;margin-bottom: 0.7rem;}
+.container .content .con_intro  img{width: 0.72rem;height: 0.72rem;margin-right: 0.2rem;}
+.container .content .con_intro .introduction{flex: 1;display: flex;flex-direction: column;}
+
+.container .logo{width: 100%;height: 0.5rem;display: flex;justify-content: center;align-items: center;margin-top: 0.84rem;}
+.container .logo img{width: 0.48rem;height: 0.48rem;margin-right: 0.2rem;}
+
+.container .button{position: fixed;bottom: 0rem;width: 100%;height: 0.92rem;background-color: rgba(0,0,0,.55);padding: 0.21rem;box-sizing: border-box;}
+.container .button a{width: 100%;height: 100%;display: block;}
+.container .button .logo{margin-top: 0;float: left;width: auto;margin-left: 0.3rem;}
+.container .button .open_now{display: flex;align-items: center;color: #faf212;margin-right: 0.3rem;float: right;height: 0.5rem;}
+.container .button .open_now img{width: 0.12rem;height: 0.24rem;margin-left: 0.24rem;}
+.iPhoneX{bottom:0.68rem!important;}
+
+.alert{width:100%;height:100%;position:absolute;top:0;}
+.alert .contents{position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;background:rgba(0,0,0,0.8);width:4rem;height:2rem;font-size:0.3rem;color:#fff;text-align:center;line-height:2rem;}

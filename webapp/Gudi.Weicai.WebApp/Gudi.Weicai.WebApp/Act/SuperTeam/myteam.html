@@ -1,0 +1,156 @@
+﻿
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="x5-orientation" content="portrait | landscape" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="full-screen" content="yes">
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>我的球队</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="css/my_team.css?2" />
+    <link href="../../Content/boxstyle.css" rel="stylesheet" />
+    <script src="js/jquery.js"></script>
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../Content/js/main.js?0"></script>
+    <script src="js/share.js"></script>
+    <script src="/Content/js/vue.min.js"></script>
+    <link href="css/progress.css" rel="stylesheet" />
+    <script src="js/myteam.js"></script>
+</head>
+
+<body>
+    <div class="root_container" id="page_myteam" v-cloak>
+        <input type="hidden" id="hiddenusertoken" value="" />
+        <div class="header">
+            <div class="back_icon"><img onclick="javascript:window.history.back(-1);" src="images/global/back.png" /></div>
+            <div class="title">我的球队</div>
+        </div>
+        <div class="team_list">
+            <div class="team_item" v-for="t in teamlist">
+                <div class="team_head">
+                    <img class="ico_clock" src="images/myteam/clock.png" />
+                    <div class="createTime">创建时间：{{t.CreateTime}}</div>
+                    <template v-if="t.CalculateStatus===0">
+                        <a name="lnkResult">等待成绩</a>
+                    </template>
+                    <template v-if="t.CalculateStatus===1">
+                        <a name="lnkResult">部分比赛结束</a>
+                    </template>
+                    <template v-if="t.CalculateStatus===2">
+                        <a name="lnkResult">所有比赛结束</a>
+                    </template>
+                </div>
+                <div class="team_content" onclick="javascript:gotourl('teamdetails.html?id={{t.TeamId}}');">
+                    <div class="team_info">
+                        <template v-if="t.CalculateStatus===0">
+                            <div class="team_name">{{t.TeamName}} <a v-show="t.CanDelete" v-on:click.stop="disbandTeam(t.TeamId)">解散球队</a></div>
+                            <div class="team_ranking">当前排名：--</div>
+                            <div class="team_matchdate">轮次日期 : {{t.RoundDesc}} {{t.MatchTimeDesc}}</div>
+                            <div class="team_score">当前积分：--</div>
+                        </template>
+                        <template v-else>
+                            <div class="team_name">{{t.TeamName}}</div>
+                            <img class="ico_prize" src="images/myteam/prizeicon.png" />
+                            <div class="team_ranking">当前排名：{{t.Rank}}</div>
+                            <div class="team_matchdate">轮次日期 : {{t.RoundDesc}} {{t.MatchTimeDesc}}</div>
+                            <div class="team_score">当前积分：{{t.Score}}</div>
+                        </template>
+                    </div>
+                    <div class="team_salary">
+                        <div class="info">
+                            <div class="lblSalary">工资帽：</div>
+                            <template v-if="t.SalaryCapFree>=10000">
+                                <div class="lblFreeSalary">{{t.SalaryCapFree/10000}}亿(免费)</div>
+                                <img class="lblFreeSalary_img" src="images/selectplayer/triangle.png" />
+                            </template>
+                            <template v-else>
+                                <div class="lblFreeSalary">{{t.SalaryCapFree}}万(免费)</div>
+                                <img class="lblFreeSalary_img" src="images/selectplayer/triangle.png" />
+                            </template>
+
+                            <template v-if="t.SalaryCapMax>=10000">
+                                <div class="lblMaxSalary">{{t.SalaryCapMax/10000}}亿</div>
+                                <img class="lblMaxSalary_img" src="images/selectplayer/triangle.png" />
+                            </template>
+                            <template v-else>
+                                <div class="lblMaxSalary">{{t.SalaryCapMax}}万</div>
+                                <img class="lblMaxSalary_img" src="images/selectplayer/triangle.png" />
+                            </template>
+                        </div>
+                        <!--<div class="salaryBar" freeSalary="{{t.SalaryCapFree}}" maxSalary="{{t.SalaryCapMax}}" salary="{{t.FinalTotalValue}}">
+                            <div class="barValue"></div>
+                            <div class="icoFootball"></div>
+                        </div>-->
+                        <div class="salaryBar" style="position:relative; margin-top:0.1rem;">
+                            <div class="barValue {{t.process.css}}">
+                                <div class="leftbarValue" style="width:{{t.process.width}}rem;"></div>
+                            </div>
+                            <div class="icoFootball" style="left:{{t.process.left}}rem;"></div>
+                            <div class="Salaryword" style="left:{{t.process.wordleft}}rem;">{{t.process.word}}</div>
+                        </div>
+                        <div class="salary_tax">
+                            <div class="lblSalaryTax">缴纳奢侈税：</div>
+                            <div class="talaryTax">
+                                <template v-if="t.FinalTotalValue>t.SalaryCapFree">
+                                    {{t.FinalTotalValue-t.SalaryCapFree}}万
+                                </template>
+                                <template v-else>
+                                    0
+                                </template>
+                            </div>
+                            <div class="lalSalaryTaxBonus">猜豆：</div>
+                            <div class="talaryTaxBonus">{{t.LuxuryTax}}</div>
+                        </div>
+                    </div>
+                    <div class="player_list">
+                        <div class="play_list_title">所选球员：11</div>
+                        <div class="player_list_icons">
+                            <ul>
+                                <li v-for="p in t.listPlayer">
+                                    <img :src="p.PlayerPicture" class="selectedplayerimg" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="info_alert" style="display: none;" id="boxnext">
+            <div class="boxmessage">
+                <div class="boxmessage_con">确认解散该球队么？</div>
+                <div class="buttons full_width">
+                    <div class="boxclose">取消</div>
+                    <div class="line"></div>
+                    <div class="boxconfirm">确定</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="info_alert" style="display: none;" id="boxok">
+            <div class="boxmessage"><div class="boxmessage_con">已解散</div><div class="button full_width boxclose">确定</div></div>
+        </div>
+
+        <div class="blank" v-if="teamlist.length==0">
+            <img src="images/global/blankimg.png" />
+            <span>暂无球队</span>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        $('.selectedplayerimg').error(function () {
+            $(this).attr("src", "images/global/selectplayer.png");
+        });
+        //针对ios做处理
+        var container = document.querySelector('.root_container');
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            container.style.paddingTop = '0.44rem';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+.cards_title{width: 100%;height: 6.5rem;min-height:6.5rem;background: rgba(34,81,109,.6);display: flex;justify-content: space-between;align-items: center;}
+.cards_title div{width: 33.33%;height: 100%;line-height: 6.5rem;text-align: center;font-size: 2.4rem;color: #778D9D;letter-spacing: .2rem;}
+.cards_title .active{border-bottom: 0.43rem  solid #fff;box-sizing: border-box;color: #E8EBED;}
+
+.root_container{position: relative;}
+.mask{width: 100%;height: 100%;position: absolute;top: 0;filter: blur(5rem);background: rgba(0,0,0,.6);}
+
+
+
+.card_con{width: 100%;padding:4.33rem  1.95rem ;box-sizing: border-box; min-height:5rem; overflow:scroll;}
+
+.card_con .player_card{border-radius:2rem;background:#0f2e3e;display: flex;justify-content: flex-start;align-items: center;height: 15.16rem;position:relative; margin-bottom:3rem;}
+.card_con .player_card .left{width: 15.08rem;background: #0C344E;height:100%;border-radius:2rem 0 0 2rem;position:relative;}
+.card_con .player_card .left img{width: 12rem;left: 2rem;position:absolute;bottom:0;margin:0 auto;}
+.card_con .player_card .middle {padding-left:3rem;font-size: 3.6rem;letter-spacing: 0.2rem;display: flex;flex-direction:column;justify-content: space-around;}
+.card_con .player_card .middle .card_name{font-size: 2.5rem;}
+.card_con .player_card .middle .coins{margin-top:1rem; padding-left:4rem; background-position-y:0.5rem;font-size: 2.3rem;}
+.card_con .player_card .right{position:absolute;right:2rem;}
+.card_con .player_card .right div{width: 10.51rem;height: 4.875rem;border-radius: 1rem 1rem;background-color: #FE8E3A;text-align: center;line-height: 4.875rem;font-size:2.4rem;letter-spacing: .2rem;}
+
+.card_con .player_card .middle .player_name{font-size: 2.4rem;color: #F0873B;}
+.card_con .player_card .middle .get_time{display: flex;flex-direction: column;margin-top: 0.6rem;}
+.card_con .player_card .middle .get_time div{font-size: 2.2rem;color: #859197;}
+.card_con .player_card .bg{align-self: flex-start;background: url(../images/selectplayer/discount_bg.png) no-repeat ; margin-left: 6.3rem;margin-top: 1rem;width: 6rem;height: 6rem;background-size: 100%;position: relative;}
+.card_con .player_card .bg img{position: absolute;top: 1rem;right: .6rem;}
+.card_con .player_card .card_names{position: absolute;bottom: 1rem;right: 1rem;font-size: 2rem;letter-spacing: .2rem;}
+
+.card_con .player_card #used{position: absolute;top: 4rem;right: 7rem;}
+.card_con  .mask{width: 100%;height: 100%;background-color: rgba(0,0,0,.3);position: absolute;top: 0;z-index: 3;}
+
+div[cardtype='card1']{box-shadow:0 0 2rem #02b5eb;}
+div[cardtype='card1'] .card_name{color:#02c3ff;}
+div[cardtype='card1'] .card_names{color:#02c3ff;}
+div[cardtype='card1'] .coins{background:url(../images/myplayercard/bronze.png) no-repeat; }
+div[cardtype='card2']{box-shadow:0 0 2rem #cdd1d7;}
+div[cardtype='card2'] .card_name{color:#FFF;}
+div[cardtype='card2'] .card_names{color:#FFF;}
+div[cardtype='card2'] .coins{background:url(../images/myplayercard/silver.png) no-repeat; }
+div[cardtype='card3']{box-shadow:0 0 2rem #e3d941;}
+div[cardtype='card3'] .card_name{color:#FFbf00;}
+div[cardtype='card3'] .card_names{color:#FFbf00;}
+div[cardtype='card3'] .coins{background:url(../images/myplayercard/gold.png) no-repeat; }
+
+.card_alert{position: absolute;top:0;right: 0;left: 0;bottom: 0;margin: auto;width: 100%;height: 35%;background: #0E364F;display: flex;flex-direction: column;}
+.card_alert .alert_con{width: 100%;height: 75%;padding: 4rem;box-sizing: border-box;} 
+.card_alert .alert_btn{width: 100%;flex: 1;display: flex;justify-content: space-around;background: url(../images/createteam/text_bg.png) no-repeat;background-size: 100% 100%;}
+.card_alert .alert_btn div{font-size: 2.3rem;color: #FFC000;display: flex;align-items: center;letter-spacing: .3rem;}
+.card_alert .alert_btn .line{width: 2px;height:100%;background-color: #386D8F;}
+
+
+.card_alert .alert_con .player_card .middle .get_time div{font-size: 1.8rem;}
+.card_alert .alert_btns{font-size: 2.3rem;color: #FFC000;display: flex;align-items: center;letter-spacing: .3rem;}
+.card_alert .alert_con .player_card .card_name{position: absolute;bottom: 1rem;right: 1rem;font-size: 2rem;letter-spacing: .2rem;}

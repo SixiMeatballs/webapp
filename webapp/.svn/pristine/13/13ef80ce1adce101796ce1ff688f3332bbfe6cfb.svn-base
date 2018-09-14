@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <link href="css/beans.css" rel="stylesheet" />
+    <script src="../../../Content/js/vue.min.js"></script>
+    <script src="../../../Content/js/jquery-3.3.1.min.js"></script>
+    <script src="../../../Content/js/main.js"></script>
+    <script src="js/beans.js"></script>
+</head>
+
+<body>
+    <div class="container" id="beans">
+        <div class="account-info">
+            <div>猜豆余额</div>
+            <div class="acconut-num">{{beansNum}}</div>
+        </div>
+        <div class="history">
+            <div class="subtitle">
+                <div class="dates">本月</div>
+                <a class="search-btn" href="mothbeans.html">
+                    <span>查看月账单</span>
+                    <img src="../static/img/right-arrow.png" alt="">
+                </a>
+            </div>
+            <div class="listItem" v-for="v in historyList">
+                <img :src="v.TagIcon" alt="">
+                <div class="titleInfo">
+                    <span>{{v.TagName}}</span>
+                    <span class="userDate">{{v.DataTime}}</span>
+                </div>
+                <div class="userNum" v-if="item1.ChangeCount>0">+{{v.ChangeCount}}猜豆</div>
+                <div class="userNum" v-else>{{v.ChangeCount}}猜豆</div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../share/js/rem.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="full-screen" content="yes">
+		<title>排行</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/ranking.css"/>
+		
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="root_container">
+			<div class="header">
+				<img onclick="javascript:window.history.back(-1);" src="img/global/back_icon.png"/>
+				<span>排行</span>
+				<a href="help.html">
+		        	<img src="img/global/help.png"/>
+		        </a>
+			</div>
+			<div class="con_tittles">
+				<div id="rounds">轮次排行</div>
+				<div id="total">总排行</div>
+			</div>
+			<div class="rank_con" rankingtype="rounds">
+				<ul class="round">
+		    		<li class="activated">
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li class="activated">
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li class="activated">
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li class="activated">
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li class="activated">
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    		<li>
+		    			<div>小组赛</div>
+		    			<div>第1轮</div>
+		    		</li>
+		    	</ul>
+		    	<div class="ranking_list">
+		    		<div class="list_title">
+	    				<div class="user">用户信息</div>
+		    			<div class="integral">积分</div>
+		    			<div class="winrate">胜率</div>
+		    			<div class="ranking">本轮排名</div>
+		    		</div>
+		    		<div class="list_titles">
+	    				<div class="user">
+	    					<img src="img/global/guest.png"/>
+	    					<div>戴帽子的鱼</div>
+	    				</div>
+		    			<div class="integral">100分</div>
+		    			<div class="winrate">100%</div>
+		    			<div class="ranking">第1名</div>
+		    		</div>
+		    		<ul class="list_con">
+		    			<li>
+		    				<div class="user">
+	    					<img src="img/global/guest.png"/>
+	    					<div>戴帽子的鱼</div>
+	    				</div>
+		    			<div class="integral">100分</div>
+		    			<div class="winrate">100%</div>
+		    			<div class="ranking">第1名</div>
+		    			</li>
+		    			<li>
+		    				<div class="user">
+	    					<img src="img/global/guest.png"/>
+	    					<div>戴帽子的鱼</div>
+	    				</div>
+		    			<div class="integral">100分</div>
+		    			<div class="winrate">100%</div>
+		    			<div class="ranking">第1名</div>
+		    			</li>
+		    			<li>
+		    				<div class="user">
+	    					<img src="img/global/guest.png"/>
+	    					<div>戴帽子的鱼</div>
+	    				</div>
+		    			<div class="integral">100分</div>
+		    			<div class="winrate">100%</div>
+		    			<div class="ranking">第1名</div>
+		    			</li>
+		    			<li>
+		    				<div class="user">
+	    					<img src="img/global/guest.png"/>
+	    					<div>戴帽子的鱼</div>
+	    				</div>
+		    			<div class="integral">100分</div>
+		    			<div class="winrate">100%</div>
+		    			<div class="ranking">第1名</div>
+		    			</li>
+		    			<li>
+		    				<div class="user">
+	    					<img src="img/global/guest.png"/>
+	    					<div>戴帽子的鱼</div>
+	    				</div>
+		    			<div class="integral">100分</div>
+		    			<div class="winrate">100%</div>
+		    			<div class="ranking">第1名</div>
+		    			</li>
+		    			<li>
+		    				<div class="user">
+	    					<img src="img/global/guest.png"/>
+	    					<div>戴帽子的鱼</div>
+	    				</div>
+		    			<div class="integral">100分</div>
+		    			<div class="winrate">100%</div>
+		    			<div class="ranking">第1名</div>
+		    			</li>
+		    			<li>
+		    				<div class="user">
+	    					<img src="img/global/guest.png"/>
+	    					<div>戴帽子的鱼</div>
+	    				</div>
+		    			<div class="integral">100分</div>
+		    			<div class="winrate">100%</div>
+		    			<div class="ranking">第1名</div>
+		    			</li>
+		    			<li>
+		    				<div class="user">
+	    					<img src="img/global/guest.png"/>
+	    					<div>戴帽子的鱼</div>
+	    				</div>
+		    			<div class="integral">100分</div>
+		    			<div class="winrate">100%</div>
+		    			<div class="ranking">第1名</div>
+		    			</li>
+		    			<li>
+		    				<div class="user">
+	    					<img src="img/global/guest.png"/>
+	    					<div>戴帽子的鱼</div>
+	    				</div>
+		    			<div class="integral">100分</div>
+		    			<div class="winrate">100%</div>
+		    			<div class="ranking">第1名</div>
+		    			</li>
+		    			<li>
+		    				<div class="user">
+	    					<img src="img/global/guest.png"/>
+	    					<div>戴帽子的鱼</div>
+	    				</div>
+		    			<div class="integral">100分</div>
+		    			<div class="winrate">100%</div>
+		    			<div class="ranking">第1名</div>
+		    			</li>
+		    			<li>
+		    				<div class="user">
+	    					<img src="img/global/guest.png"/>
+	    					<div>戴帽子的鱼</div>
+	    				</div>
+		    			<div class="integral">100分</div>
+		    			<div class="winrate">100%</div>
+		    			<div class="ranking">第1名</div>
+		    			</li>
+		    			<li>
+		    				<div class="user">
+	    					<img src="img/global/guest.png"/>
+	    					<div>戴帽子的鱼</div>
+	    				</div>
+		    			<div class="integral">100分</div>
+		    			<div class="winrate">100%</div>
+		    			<div class="ranking">第1名</div>
+		    			</li>
+		    			<li>
+		    				<div class="user">
+	    					<img src="img/global/guest.png"/>
+	    					<div>戴帽子的鱼</div>
+	    				</div>
+		    			<div class="integral">100分</div>
+		    			<div class="winrate">100%</div>
+		    			<div class="ranking">第1名</div>
+		    			</li>
+		    			<li>
+		    				<div class="user">
+	    					<img src="img/global/guest.png"/>
+	    					<div>戴帽子的鱼</div>
+	    				</div>
+		    			<div class="integral">100分</div>
+		    			<div class="winrate">100%</div>
+		    			<div class="ranking">第1名</div>
+		    			</li>
+		    		</ul>
+		    	</div>
+			</div>	
+		</div>	
+	<script type="text/javascript">
+		var ranking=document.querySelector('.rank_con');
+		var rounds=document.querySelector('#rounds');
+		var total=document.querySelector('#total');
+		rounds.addEventListener('click',function(){
+			ranking.setAttribute("rankingtype","rounds")
+		});
+		total.addEventListener('click',function(){
+			ranking.setAttribute("rankingtype","total")
+		});
+	</script>	
+	</body>
+</html>

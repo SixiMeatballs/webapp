@@ -1,0 +1,13 @@
+*{margin: 0;padding: 0;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);-webkit-user-select:none;}
+body,html{height: 100%;}
+body{width: 100%;height: 100%;background: url(../img/com.jpg) repeat-y;background-size:100%; font-family:'PingFang SC';}
+
+.container{width: 100%;display: flex;flex-direction: column;}
+.back-icon{width:0.56rem;position:fixed;top:0.3rem;left:0.3rem;}
+.title {display: flex;align-items: center;justify-content: center;margin-top: 1.5rem;}
+.title .line{width: 1.25rem;height: 0.01rem;background: #ffff00;}
+.title .dot{width: 0.1rem;height: 0.1rem;border-radius: 50%;background: #ffff00;}
+.title span{font-size: 0.3rem;color: #FFFFFF;align-self: center;letter-spacing: 0.02rem;margin: 0 0.2rem;}
+
+.content{font-size: 0.26rem;color: #FFFFFF;padding: 0 0.3rem;}
+.content p{margin: 0.2rem 0;line-height:0.5rem;letter-spacing:0.02rem;}
